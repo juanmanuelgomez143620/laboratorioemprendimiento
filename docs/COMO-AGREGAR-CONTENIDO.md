@@ -385,6 +385,12 @@ Reglas:
 
 No cambies los avisos para sugerir avales, convenios o financiamiento que no estén confirmados por escrito. Si la situación institucional cambia, actualizá el texto y dejá constancia de la fuente y la fecha de verificación.
 
+### Escudo institucional
+
+El escudo incorporado para esta versión está en `public/institucional/escudo-escuela-normal-9.png`. Se muestra en el pie de página y en la tarjeta institucional de `/proyecto`, a través de `src/components/ui/InstitutionalCrest.tsx`.
+
+Si la escuela entrega una versión autorizada en mejor resolución, reemplazá el archivo conservando el mismo nombre o actualizá la ruta y las dimensiones en el componente. El escudo es una referencia de identidad institucional: no debe presentarse como sello de certificación, aval o convenio.
+
 ---
 
 ## 10. Estilo y accesibilidad del contenido

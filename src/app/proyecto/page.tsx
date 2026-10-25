@@ -17,6 +17,7 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import { InstitutionalCrest } from "@/components/ui/InstitutionalCrest";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { site, feasibilityNotes } from "@/content/site";
 
@@ -173,7 +174,21 @@ export default function ProjectPage() {
           </div>
 
           <div className="rounded-[1.4rem] border border-brand-200 bg-gradient-to-br from-brand-950 to-brand-900 p-6 text-white shadow-lift sm:p-7">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sea-300">
+            <div className="flex flex-wrap items-center gap-4 border-b border-white/10 pb-5">
+              <InstitutionalCrest size="md" />
+              <div className="min-w-0">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-sea-300">
+                  Escudo institucional
+                </p>
+                <p className="mt-1 text-sm font-extrabold leading-snug text-white">
+                  {site.institution.name}
+                </p>
+                <p className="mt-0.5 text-xs text-white/55">
+                  {site.institution.locality}, {site.institution.province}
+                </p>
+              </div>
+            </div>
+            <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-sea-300">
               En una frase
             </p>
             <blockquote className="mt-3 text-xl font-extrabold leading-snug text-white">

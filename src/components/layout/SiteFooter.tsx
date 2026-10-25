@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, GraduationCap, MapPin, ShieldCheck } from "lucide-react";
 import { site } from "@/content/site";
+import { InstitutionalCrest } from "@/components/ui/InstitutionalCrest";
 import { Logo } from "@/components/ui/Logo";
 
 const campusLinks = [
@@ -26,6 +27,12 @@ export function SiteFooter() {
       <div className="container-page py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.8fr_0.9fr_1fr]">
           <div>
+            <figure className="mb-5 flex items-center gap-3">
+              <InstitutionalCrest size="md" />
+              <figcaption className="max-w-[9.5rem] text-[10px] font-extrabold uppercase leading-relaxed tracking-[0.16em] text-sea-300">
+                Escudo institucional
+              </figcaption>
+            </figure>
             <Logo inverted />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65">
               Un campus abierto para aprender, crear y transformar. Cursos breves, herramientas y

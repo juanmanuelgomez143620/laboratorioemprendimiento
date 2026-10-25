@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { courses } from "@/content/courses";
@@ -172,5 +172,21 @@ describe("catálogo de herramientas", () => {
     expect(diagnostic?.origin).toBe("campus");
     expect(costoClaro?.href).toBe("https://calculodecosto.vercel.app/");
     expect(yoEmprendedor?.href).toBe("https://yoemprendedor.com.ar/login/?next=/");
+  });
+});
+
+describe("identidad institucional", () => {
+  it("incluye el escudo institucional como archivo PNG válido", () => {
+    const crestPath = join(
+      process.cwd(),
+      "public",
+      "institucional",
+      "escudo-escuela-normal-9.png",
+    );
+
+    expect(existsSync(crestPath)).toBe(true);
+    expect(readFileSync(crestPath).subarray(0, 8)).toEqual(
+      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+    );
   });
 });

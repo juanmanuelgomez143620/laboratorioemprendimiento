@@ -4,7 +4,7 @@
  * - Los recursos estáticos con nombre versionado se sirven desde caché.
  * - No se cachean datos personales: el progreso vive en localStorage, no en la red.
  */
-const CACHE_NAME = "normal9-impulsa-v1";
+const CACHE_NAME = "normal9-impulsa-v2";
 const PRECACHE_URLS = [
   "/",
   "/cursos",
@@ -44,6 +44,7 @@ self.addEventListener("activate", (event) => {
 function isStaticAsset(url) {
   return (
     url.pathname.startsWith("/_next/static/") ||
+    url.pathname.startsWith("/_next/image") ||
     url.pathname.startsWith("/icons/") ||
     url.pathname.startsWith("/recursos/") ||
     /\.(?:css|js|woff2?|png|jpe?g|webp|svg|ico)$/i.test(url.pathname)

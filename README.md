@@ -117,7 +117,7 @@ Resultados obtenidos en este entorno el **24/10/2026**:
 
 | Verificación | Resultado |
 | --- | --- |
-| `npm run test` | **59 pruebas aprobadas** en 4 archivos |
+| `npm run test` | **60 pruebas aprobadas** en 4 archivos |
 | `npm run typecheck` | **0 errores** |
 | `npm run lint` | **0 errores y 0 advertencias** |
 | `npm run build` | **Compilación exitosa**, 49 páginas estáticas generadas |
@@ -131,6 +131,7 @@ Resultados obtenidos en este entorno el **24/10/2026**:
 | Diagnóstico | 10/10 respuestas, resultado **100 % · Avanzado**, recomendaciones y enlaces; respuestas no guardadas |
 | Biblioteca | Búsqueda, filtro por categoría, estado vacío y descargas reales |
 | Menú móvil | Apertura, foco en el primer enlace, cierre con Escape y `aria-expanded` correcto |
+| Escudo institucional | Visible en el pie y en `/proyecto`; imagen PNG válida, sin desborde horizontal a 1440 px y 390 px |
 | Enlaces externos | Presentes y rotulados como externos; **no se verificó la disponibilidad de los servicios de terceros** |
 
 Las pruebas cubren, entre otros casos:
@@ -138,7 +139,8 @@ Las pruebas cubren, entre otros casos:
 - aprobación exacta en el 70 %, redondeo que no debe aprobar (2/3 = 67 %), respuestas sin contestar y fuera de rango;
 - normalización de datos corruptos o incompletos en `localStorage`, límite de 25 intentos, reinicio y elegibilidad de constancia;
 - puntajes del diagnóstico, límites de nivel, respuestas incompletas y recomendaciones;
-- integridad del contenido: 4 cursos, lecciones y evaluaciones válidas, 5 categorías con recursos, enlaces internos existentes y descargas que apuntan a archivos reales.
+- integridad del contenido: 4 cursos, lecciones y evaluaciones válidas, 5 categorías con recursos, enlaces internos existentes y descargas que apuntan a archivos reales;
+- presencia y validez del archivo PNG del escudo institucional.
 
 > Este entorno no realizó ningún despliegue. No se declara una URL pública de producción.
 
@@ -212,6 +214,7 @@ src/
   types/                    Tipos compartidos
 public/
   recursos/                 Descargas CSV reales
+  institucional/            Escudo institucional de la escuela
   icons/ og-image.png       Iconos PWA e imagen social
   manifest.webmanifest sw.js
 docs/
@@ -232,6 +235,7 @@ La guía detallada está en **[docs/COMO-AGREGAR-CONTENIDO.md](docs/COMO-AGREGAR
 - **Diagnóstico:** `src/content/diagnostic.ts` y cálculo en `src/lib/diagnostic.ts`.
 - **Jornadas:** `src/content/jornadas.ts`; no agregar fechas, personas ni inscripciones sin verificación.
 - **Datos institucionales y avisos:** `src/content/site.ts`.
+- **Escudo institucional:** `public/institucional/escudo-escuela-normal-9.png`, integrado en el pie y en `/proyecto` mediante `src/components/ui/InstitutionalCrest.tsx`. Es identidad visual, no un sello de certificación ni un aval de terceros.
 
 Después de editar contenido:
 
