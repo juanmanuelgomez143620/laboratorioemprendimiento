@@ -1,0 +1,33 @@
+{
+  "name": "NORMAL 9 IMPULSA — Campus Emprendedor",
+  "short_name": "N9 IMPULSA",
+  "description": "Campus Emprendedor abierto de la Escuela Normal Superior N.º 9 de Wanda: cursos breves, herramientas y recursos para personas que quieren iniciar o mejorar un emprendimiento.",
+  "lang": "es-AR",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6fafc",
+  "theme_color": "#071f43",
+  "categories": ["education", "business"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

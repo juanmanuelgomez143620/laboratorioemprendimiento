@@ -1,0 +1,658 @@
+import type { Resource } from "@/types/resource";
+
+export const resources: Resource[] = [
+  {
+    id: "presupuesto-basico",
+    slug: "presupuesto-basico",
+    title: "Plantilla básica de presupuesto",
+    description:
+      "Una planilla imprimible y una versión CSV para estimar ingresos, costos fijos y variables de un mes.",
+    category: "costos",
+    type: "Plantilla",
+    tags: ["presupuesto", "flujo de caja", "costos fijos", "planificación mensual"],
+    useCase:
+      "Úsala antes de empezar un mes o una temporada para anticipar cuánto necesitás vender y qué gastos debés cubrir.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Un presupuesto es una estimación escrita de lo que esperás cobrar y gastar en un período. No sirve para adivinar el futuro: sirve para tomar decisiones con anticipación. Esta plantilla te ayuda a separar los ingresos de los costos, observar si el resultado proyectado alcanza y detectar qué partidas necesitás revisar.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        title: "Cómo usar la plantilla",
+        text: "Completá primero las columnas de los tres meses con datos propios. Si no tenés un dato, dejá el campo vacío y anotá cómo vas a obtenerlo. No improvises cifras solo para que el resultado sea positivo.",
+      },
+      {
+        type: "heading",
+        text: "Paso a paso",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Reuní facturas, tickets y registros de ventas de los últimos meses.",
+          "Separá los ingresos por tipo: ventas, servicios, adelantos y otros.",
+          "Listá los costos fijos que se pagan aunque no vendas.",
+          "Estimá los costos variables por unidad vendida y multiplicá por la cantidad esperada.",
+          "Calculá el resultado de cada mes: ingresos menos costos totales.",
+          "Compará el resultado con el dinero disponible y con tus objetivos.",
+          "Al terminar el mes, reemplazá las estimaciones por datos reales y anotá las diferencias.",
+        ],
+      },
+      {
+        type: "table",
+        caption: "Estructura del presupuesto mensual",
+        headers: ["Categoría", "Concepto", "Mes 1", "Mes 2", "Mes 3"],
+        rows: [
+          ["Ingresos", "Ventas de productos", "", "", ""],
+          ["Ingresos", "Servicios prestados", "", "", ""],
+          ["Ingresos", "Otros ingresos del emprendimiento", "", "", ""],
+          ["Costos variables", "Materias primas e insumos", "", "", ""],
+          ["Costos variables", "Envases y etiquetas", "", "", ""],
+          ["Costos variables", "Comisiones y entregas", "", "", ""],
+          ["Costos fijos", "Alquiler o uso del espacio", "", "", ""],
+          ["Costos fijos", "Servicios e internet", "", "", ""],
+          ["Costos fijos", "Suscripciones y herramientas", "", "", ""],
+          ["Resultado", "Total de ingresos − total de costos", "", "", ""],
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Un colchón para imprevistos",
+        text: "Agregá una línea de reserva para reparaciones, reposición de equipos o meses con menos ventas. Aunque no se use, ayuda a no comprometer todo el ingreso.",
+      },
+      {
+        type: "checklist",
+        title: "Antes de aprobar tu presupuesto",
+        items: [
+          "Todos los montos están en la misma moneda y con fecha de referencia.",
+          "Incluí los costos de entrega, comisiones y packaging.",
+          "Valoricé mi propio trabajo o dejé explícito que no está incluido.",
+          "Separé el dinero del emprendimiento del dinero personal.",
+          "Anoté qué supuestos usé y cuándo voy a revisarlos.",
+          "Evité proyectar ventas sin respaldo de meses anteriores o de una prueba concreta.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Alcance de esta plantilla",
+        text: "Es una herramienta educativa de planificación. No reemplaza asesoramiento contable ni el registro fiscal que corresponda a tu actividad. Las obligaciones e impuestos dependen de la situación de cada emprendimiento.",
+      },
+    ],
+    download: {
+      href: "/recursos/plantilla-presupuesto.csv",
+      label: "Descargar plantilla CSV",
+      fileType: "CSV",
+    },
+    relatedCourseSlugs: [
+      "mi-primer-emprendimiento",
+      "costos-y-precios",
+      "herramientas-digitales-para-mi-negocio",
+    ],
+  },
+  {
+    id: "ficha-de-costos",
+    slug: "ficha-de-costos",
+    title: "Ficha de costos",
+    description:
+      "Modelo para calcular el costo de una tanda o servicio, incluyendo mermas, mano de obra y costos indirectos.",
+    category: "costos",
+    type: "Ficha",
+    tags: ["costo unitario", "márgenes", "precio", "mermas"],
+    useCase:
+      "Completala cada vez que cambien tus insumos, tu rendimiento o el tiempo que dedicás a producir.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Esta ficha ordena los datos necesarios para saber cuánto cuesta una unidad vendible. No se trata solo de sumar ingredientes: también incluye el trabajo, los envases, los servicios usados y lo que se pierde durante el proceso. Completar la ficha con datos reales es el paso previo para definir un precio con margen.",
+      },
+      {
+        type: "heading",
+        text: "Fórmula de trabajo",
+        level: 2,
+      },
+      {
+        type: "quote",
+        text: "Costo unitario = (materiales + mano de obra + costos indirectos del proceso) ÷ unidades vendibles obtenidas",
+      },
+      {
+        type: "table",
+        caption: "Ejemplo ficticio: lote de 20 unidades vendibles",
+        headers: ["Concepto", "Cálculo", "Monto"],
+        rows: [
+          ["Materias primas", "Compras del lote", "$8.000"],
+          ["Envases y etiquetas", "20 unidades", "$1.000"],
+          ["Mano de obra", "4 horas × $1.000", "$4.000"],
+          ["Costos indirectos", "Gas y desgaste estimado", "$1.000"],
+          ["Costo total", "Suma de conceptos", "$14.000"],
+          ["Unidades vendibles", "Producción menos mermas", "20"],
+          ["Costo unitario", "$14.000 ÷ 20", "$700"],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "El ejemplo es ficticio y sirve solo para mostrar el procedimiento. Reemplazalo por tus propios datos. Si tenés 24 unidades producidas pero 4 no se pueden vender, el divisor es 20. Si la mano de obra se reparte con otra actividad, asigná solo la proporción correspondiente.",
+      },
+      {
+        type: "table",
+        caption: "Planilla de trabajo",
+        headers: ["Concepto", "Detalle", "Monto por lote", "Monto por unidad"],
+        rows: [
+          ["Materias primas", "", "", ""],
+          ["Envases y etiquetas", "", "", ""],
+          ["Mano de obra directa", "", "", ""],
+          ["Gas, energía u otros servicios", "", "", ""],
+          ["Alquiler o uso del espacio", "", "", ""],
+          ["Comisiones de venta", "", "", ""],
+          ["Otros costos", "", "", ""],
+          ["Costo total", "", "", ""],
+          ["Unidades vendibles", "", "", ""],
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Revisión antes de usar el costo",
+        items: [
+          "Usé precios actuales de los insumos.",
+          "Incluí mermas o unidades que no se venderán.",
+          "Valoricé mi tiempo de trabajo.",
+          "No cargué dos veces la misma compra.",
+          "Anoté la fecha y la cantidad producida.",
+          "Guardé los comprobantes que respaldan los montos.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Actualización",
+        text: "La ficha no es un documento que se completa una vez y queda archivado. Revisala cuando cambie un proveedor, aumente un insumo, se modifique el rendimiento o varíe el tiempo de producción.",
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Alcance educativo",
+        text: "La ficha no determina por sí sola el precio final ni reemplaza asesoramiento profesional. El precio también debe considerar el valor para el cliente, el mercado, los impuestos y las comisiones aplicables.",
+      },
+    ],
+    download: {
+      href: "/recursos/ficha-de-costos.csv",
+      label: "Descargar ficha CSV",
+      fileType: "CSV",
+    },
+    relatedCourseSlugs: ["costos-y-precios", "mi-primer-emprendimiento"],
+  },
+  {
+    id: "plan-de-negocios-simple",
+    slug: "plan-de-negocios-simple",
+    title: "Modelo sencillo de plan de negocios",
+    description:
+      "Un plan de una página para ordenar problema, clientes, propuesta, costos, objetivos y próximos pasos.",
+    category: "planificacion",
+    type: "Modelo",
+    tags: ["plan de negocios", "objetivos", "validación", "próximos pasos"],
+    useCase:
+      "Completalo al iniciar un emprendimiento o cuando necesites revisar el rumbo de uno que ya está en marcha.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Este modelo está pensado para una primera etapa. No busca producir un documento extenso ni reemplazar un plan formal solicitado por una entidad financiera. Su objetivo es que puedas explicar tu proyecto en una página y usarlo para decidir los próximos pasos.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        title: "Cómo completarlo",
+        text: "Escribí frases breves y concretas. Si no tenés evidencia para una sección, escribí la pregunta que necesitás responder. Es más honesto dejar un espacio en blanco que inventar un dato.",
+      },
+      {
+        type: "fields",
+        title: "1. Problema u oportunidad",
+        items: [
+          { label: "¿Qué necesidad concreta detecté?", lines: 3 },
+          { label: "¿Qué evidencia tengo? (conversaciones, preventas, observación)", lines: 3 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "2. Clientes iniciales",
+        items: [
+          { label: "¿A quiénes voy a servir primero?", lines: 2 },
+          { label: "¿Dónde están y cómo llego a ellos?", lines: 2 },
+          { label: "¿Qué necesitan y qué valoran?", lines: 3 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "3. Propuesta de valor y oferta",
+        items: [
+          { label: "Propuesta en una frase", lines: 3 },
+          { label: "Qué incluye mi primera versión", lines: 3 },
+          { label: "¿En qué me diferencio de las alternativas actuales?", lines: 2 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "4. Costos, precio y recursos",
+        items: [
+          { label: "Costo unitario estimado y cómo lo calculé", lines: 2 },
+          { label: "Precio tentativo y margen", lines: 2 },
+          { label: "Recursos que ya tengo", lines: 2 },
+          { label: "Inversión máxima que puedo asumir sin comprometer gastos básicos", lines: 2 },
+          { label: "Aliados o apoyos posibles", lines: 2 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "5. Objetivo y próximos pasos",
+        items: [
+          { label: "Objetivo medible a 90 días", lines: 2 },
+          { label: "Próximos tres pasos", lines: 4 },
+          { label: "Fecha de revisión semanal", lines: 1 },
+          { label: "¿Qué resultado me haría cambiar de rumbo?", lines: 2 },
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Control de calidad del plan",
+        items: [
+          "El problema está descrito con una situación concreta, no con una idea general.",
+          "El cliente inicial es un grupo específico y accesible.",
+          "La propuesta explica un beneficio, no solo una característica.",
+          "El precio parte de un costo calculado.",
+          "El objetivo se puede medir con un número o un hecho verificable.",
+          "Hay una fecha para revisar y ajustar.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Importante",
+        text: "Este modelo es una herramienta educativa. No es un trámite oficial, no garantiza financiamiento y no reemplaza asesoramiento contable, legal ni evaluación de una entidad crediticia.",
+      },
+    ],
+    relatedCourseSlugs: ["mi-primer-emprendimiento", "costos-y-precios"],
+  },
+  {
+    id: "checklist-identidad-comercial",
+    slug: "lista-verificacion-identidad-comercial",
+    title: "Lista de verificación para identidad comercial",
+    description:
+      "Una revisión práctica de nombre, logotipo, colores, fotos, catálogo y coherencia antes de publicar.",
+    category: "marketing",
+    type: "Lista de verificación",
+    tags: ["marca", "logo", "catálogo", "redes sociales", "accesibilidad"],
+    useCase:
+      "Usala antes de lanzar una marca, actualizar tus redes o imprimir materiales comerciales.",
+    content: [
+      {
+        type: "paragraph",
+        text: "La identidad comercial se construye con muchas decisiones pequeñas. Esta lista te ayuda a revisar que tu nombre, tus piezas y tu atención cuenten una historia coherente. No hace falta tener todo perfecto para empezar; sí conviene evitar errores que confundan al cliente.",
+      },
+      {
+        type: "checklist",
+        title: "Nombre y promesa",
+        items: [
+          "El nombre se pronuncia y se escribe con facilidad.",
+          "El nombre no promete algo que el emprendimiento no puede cumplir.",
+          "Verifiqué si el nombre está siendo usado por otra marca en mi zona o rubro.",
+          "Puedo explicar en una frase quién soy, qué ofrezco y a quién sirvo.",
+          "La promesa se corresponde con la experiencia real de compra.",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Logotipo y colores",
+        items: [
+          "El logotipo se lee en tamaño pequeño.",
+          "Funciona en blanco y negro y sobre fondos claros y oscuros.",
+          "La paleta tiene pocos colores y contraste suficiente para leer textos.",
+          "Tengo una versión horizontal, una cuadrada y una en blanco.",
+          "Guardé los archivos editables y una copia de respaldo.",
+          "No copié el logotipo ni la identidad visual de otra marca.",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Fotos y productos",
+        items: [
+          "Las fotos muestran el producto real, sin alterar color, tamaño o contenido.",
+          "Hay una imagen general, una de detalle y una referencia de escala cuando hace falta.",
+          "El fondo y la iluminación permiten ver con claridad.",
+          "Las imágenes están actualizadas y no mezclan versiones viejas del producto.",
+          "Si aparecen personas, cuento con su autorización para usar la imagen.",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Catálogo y canales",
+        items: [
+          "Cada producto incluye presentación, precio, disponibilidad y condiciones.",
+          "El catálogo tiene fecha de vigencia o un mecanismo claro de actualización.",
+          "El canal de pedido está activo y tiene un horario de respuesta real.",
+          "Los códigos QR fueron probados en al menos dos teléfonos.",
+          "El texto se lee bien en un celular: tamaño adecuado y párrafos cortos.",
+          "Los datos de contacto y enlaces están revisados.",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Experiencia y privacidad",
+        items: [
+          "La atención usa un tono coherente con la identidad.",
+          "Las respuestas frecuentes están preparadas.",
+          "Solo pido los datos necesarios para la venta y la entrega.",
+          "No publico conversaciones, teléfonos ni imágenes de clientes sin permiso.",
+          "Las condiciones de cambios, devoluciones y entrega son comprensibles.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Revisión semestral",
+        text: "Volvé a esta lista cada seis meses o cuando cambie tu propuesta. Marcá los puntos pendientes y elegí uno para resolver esta semana. La identidad se mejora con constancia, no con una renovación completa cada mes.",
+      },
+    ],
+    relatedCourseSlugs: ["mi-marca-y-mi-identidad-comercial", "herramientas-digitales-para-mi-negocio"],
+  },
+  {
+    id: "guia-fotografia-celular",
+    slug: "guia-fotografia-celular",
+    title: "Guía de fotografía de productos con celular",
+    description:
+      "Luz, fondo, encuadre, estabilidad y edición mínima para obtener fotos comerciales claras sin equipamiento profesional.",
+    category: "marketing",
+    type: "Guía",
+    tags: ["fotografía", "celular", "producto", "catálogo", "imagen"],
+    useCase:
+      "Consultala antes de una sesión de fotos para tu catálogo o tus redes sociales.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Una buena foto comercial no depende de una cámara costosa. Depende de mostrar el producto con claridad y honestidad. Esta guía resume un procedimiento reproducible con un teléfono, una ventana y elementos simples que probablemente ya tenés.",
+      },
+      {
+        type: "heading",
+        text: "1. Preparar el espacio",
+        level: 2,
+      },
+      {
+        type: "list",
+        items: [
+          "Limpiá el producto, la mesa y el fondo. Las manchas y objetos distraen.",
+          "Buscá una pared o tela de color neutro: blanco, gris claro o beige.",
+          "Ubicate cerca de una ventana con luz natural indirecta; evitá el sol directo.",
+          "Si la luz es muy fuerte, usá una hoja blanca o una tela fina como difusor.",
+          "Apagá el flash salvo que sepas controlarlo; suele generar brillos y sombras duras.",
+          "Limpiá la lente del teléfono con una tela suave.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "2. Encuadrar y enfocar",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Activá la cuadrícula de la cámara para alinear el producto.",
+          "Dejá un margen alrededor del producto; no lo recortes contra el borde.",
+          "Tocá la pantalla sobre el producto para enfocar.",
+          "Ajustá la exposición deslizando el control de brillo si la imagen queda oscura o quemada.",
+          "Apoyá el teléfono en un libro, una caja o un soporte para evitar movimiento.",
+          "Tomá varias versiones: frontal, lateral, cenital y de detalle.",
+        ],
+      },
+      {
+        type: "table",
+        caption: "Tomas recomendadas por tipo de producto",
+        headers: ["Tipo de producto", "Tomas mínimas", "Cuidado especial"],
+        rows: [
+          ["Alimentos", "General, corte o porción, empaque", "Mostrar la porción real y la fecha de elaboración."],
+          ["Indumentaria", "Prenda completa, textura, uso o medidas", "Indicar talla y composición; evitar pinzas que cambien la caída."],
+          ["Artesanías", "Pieza completa, detalle del trabajo, escala", "Mostrar variaciones naturales del material."],
+          ["Servicios", "Resultado, proceso y espacio de trabajo", "No mostrar clientes sin autorización."],
+          ["Cosméticos o cuidado personal", "Envase, textura, tamaño", "No inventar propiedades ni resultados."],
+        ],
+      },
+      {
+        type: "heading",
+        text: "3. Editar con moderación",
+        level: 2,
+      },
+      {
+        type: "paragraph",
+        text: "Ajustá brillo, contraste y balance de blancos. Recortá para centrar y mantener proporciones consistentes. No cambies el color del producto ni borres defectos relevantes. Si usás una aplicación, evitá filtros intensos que alteren la apariencia. Guardá el original por separado para poder volver a editar sin pérdida.",
+      },
+      {
+        type: "checklist",
+        title: "Antes de publicar",
+        items: [
+          "La foto representa el color, tamaño y textura reales.",
+          "El producto se distingue del fondo.",
+          "No hay elementos personales o desordenados en el encuadre.",
+          "La imagen se ve bien en la pantalla de un celular.",
+          "El archivo tiene un nombre que permite encontrarlo.",
+          "Cuento con autorización si aparece una persona, una marca o un espacio ajeno.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Imágenes generadas o editadas con IA",
+        text: "No presentes una imagen generada como si fuera la foto real del producto. Si usás una herramienta de edición que modifica la imagen de manera significativa, evaluá si sigue representando lo que el cliente recibirá.",
+      },
+    ],
+    relatedCourseSlugs: ["mi-marca-y-mi-identidad-comercial", "herramientas-digitales-para-mi-negocio"],
+  },
+  {
+    id: "guia-organizacion-administrativa",
+    slug: "guia-organizacion-administrativa",
+    title: "Guía de organización administrativa básica",
+    description:
+      "Un sistema simple para guardar comprobantes, registrar ventas y gastos, proteger datos y revisar el orden cada semana.",
+    category: "administracion",
+    type: "Guía",
+    tags: ["administración", "archivos", "comprobantes", "copias de seguridad", "rutina"],
+    useCase:
+      "Aplicala cuando la información del emprendimiento esté dispersa o necesites prepararte para ordenar la administración.",
+    content: [
+      {
+        type: "paragraph",
+        text: "La organización administrativa no consiste en tener una oficina impecable. Consiste en poder encontrar la información cuando la necesitás y en saber qué pasos siguen. Esta guía propone un sistema mínimo que podés sostener con un cuaderno, una carpeta digital o ambos.",
+      },
+      {
+        type: "heading",
+        text: "1. Definir un lugar para cada cosa",
+        level: 2,
+      },
+      {
+        type: "table",
+        caption: "Sistema de carpetas sugerido",
+        headers: ["Carpeta", "Contenido", "Frecuencia de revisión"],
+        rows: [
+          ["01_Administración", "Comprobantes, habilitaciones, contratos y trámites.", "Semanal"],
+          ["02_Ventas", "Registro de ventas, pedidos y cobros.", "Diaria o semanal"],
+          ["03_Compras_y_proveedores", "Facturas de compra, presupuestos y contactos.", "Semanal"],
+          ["04_Productos", "Fichas de costo, fotos y descripciones.", "Cuando cambie el producto"],
+          ["05_Marca", "Logotipo, colores, plantillas y catálogo vigente.", "Mensual"],
+          ["06_Respaldos", "Copias con fecha de la información importante.", "Mensual"],
+        ],
+      },
+      {
+        type: "heading",
+        text: "2. Registrar sin complicaciones",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Anotá cada venta el mismo día: fecha, producto, monto y forma de pago.",
+          "Guardá los comprobantes de compra en una carpeta física o digital.",
+          "Separá el dinero del emprendimiento del dinero personal.",
+          "Registrá los gastos fijos mensuales y las fechas de vencimiento.",
+          "Revisá semanalmente la diferencia entre lo cobrado y lo gastado.",
+          "Una vez al mes, contrastá el registro con la cuenta o el efectivo disponible.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Un cuaderno también sirve",
+        text: "Si preferís el papel, usá un cuaderno exclusivo para el emprendimiento y numerá las páginas. Pasá los totales a una planilla una vez por semana. La herramienta importa menos que la constancia.",
+      },
+      {
+        type: "heading",
+        text: "3. Proteger la información",
+        level: 2,
+      },
+      {
+        type: "checklist",
+        items: [
+          "Tengo al menos dos copias de los archivos importantes en lugares distintos.",
+          "Las copias tienen fecha y puedo identificar cuál es la más reciente.",
+          "No guardo datos de clientes que no necesito.",
+          "No comparto documentos de identidad ni datos bancarios por canales abiertos.",
+          "Uso contraseñas distintas para cuentas relevantes.",
+          "Cierro sesión en computadoras compartidas.",
+          "Reviso quién tiene acceso a mis carpetas y grupos.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "4. Rutina semanal de 20 minutos",
+        level: 2,
+      },
+      {
+        type: "table",
+        headers: ["Minutos", "Tarea"],
+        rows: [
+          ["5", "Guardar y ordenar comprobantes de la semana."],
+          ["5", "Actualizar el registro de ventas y gastos."],
+          ["5", "Revisar pendientes, entregas y vencimientos."],
+          ["5", "Hacer una copia de los archivos nuevos y anotar qué falta resolver."],
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Alcance",
+        text: "Esta guía ofrece una organización básica de trabajo y no reemplaza asesoramiento contable, impositivo o legal. Las obligaciones formales dependen de la actividad y la situación de cada emprendimiento.",
+      },
+    ],
+    relatedCourseSlugs: ["herramientas-digitales-para-mi-negocio", "mi-primer-emprendimiento"],
+  },
+  {
+    id: "guia-canales-digitales",
+    slug: "guia-canales-digitales",
+    title: "Guía para probar enlaces, códigos QR y canales de atención",
+    description:
+      "Una lista práctica para comprobar que tu catálogo, tus enlaces y tus canales de consulta funcionan antes de compartirlos.",
+    category: "herramientas",
+    type: "Guía",
+    tags: ["QR", "enlaces", "WhatsApp Business", "catálogo", "atención"],
+    useCase:
+      "Usala antes de publicar un catálogo, imprimir un código QR o sumar un canal de consultas nuevo.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Un enlace roto o un código QR que no funciona puede hacer que un cliente interesado abandone la compra. La buena noticia es que se puede evitar con una prueba simple. Esta guía propone revisar cada canal desde el lugar de la persona que lo va a usar, no desde la comodidad de quien lo creó.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        title: "Antes de empezar",
+        text: "Reuní el enlace del catálogo, el número de consultas, el código QR impreso o en pantalla y un teléfono distinto al tuyo. Si es posible, pedile a otra persona que haga la prueba sin darle explicaciones previas.",
+      },
+      {
+        type: "heading",
+        text: "1. Probar un enlace",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Abrí el enlace en una ventana privada o en otro teléfono, sin iniciar sesión con tu cuenta.",
+          "Verificá que la página cargue y que se entienda qué ofrece el emprendimiento.",
+          "Revisá que los precios, horarios y condiciones estén actualizados.",
+          "Probá el botón o enlace de contacto y confirmá que abre el canal correcto.",
+          "Revisá la versión móvil: textos, imágenes y botones deben verse sin ampliar la pantalla.",
+          "Anotá la fecha de la última revisión y quién la hizo.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "2. Probar un código QR",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Escaneá el código con la cámara de dos teléfonos diferentes.",
+          "Comprobá que el destino sea el enlace correcto y no una versión vieja del catálogo.",
+          "Medí el tamaño desde la distancia real de uso: mostrador, vidriera o volante.",
+          "Asegurate de que haya contraste suficiente y de que el código no esté torcido ni tapado.",
+          "Incluí una frase breve que explique qué encontrará la persona al escanear.",
+          "Guardá el archivo original para poder reimprimir sin perder calidad.",
+        ],
+      },
+      {
+        type: "table",
+        caption: "Qué revisar en cada canal",
+        headers: ["Canal", "Prueba mínima", "Información que no debería faltar"],
+        rows: [
+          ["Catálogo digital", "Abrir en un teléfono sin sesión iniciada", "Productos, precios vigentes, forma de pedido y zona de entrega."],
+          ["WhatsApp Business", "Enviar un mensaje desde otro número", "Horario de respuesta, condiciones y opciones de pago."],
+          ["Redes sociales", "Revisar el enlace de la biografía", "Contacto activo, ubicación y propuesta en una frase."],
+          ["Código QR", "Escanear con dos teléfonos", "Destino correcto, texto de contexto y fecha de actualización."],
+          ["Formulario de pedido", "Completarlo con datos ficticios", "Campos necesarios, confirmación y política de datos."],
+        ],
+      },
+      {
+        type: "heading",
+        text: "3. Cuidar los datos y la confianza",
+        level: 2,
+      },
+      {
+        type: "checklist",
+        title: "Revisión de privacidad y atención",
+        items: [
+          "Pido solo los datos necesarios para responder o entregar el pedido.",
+          "Explico para qué uso los datos y no los comparto con terceros sin autorización.",
+          "No publico conversaciones, teléfonos ni imágenes de clientes sin permiso.",
+          "El horario de atención publicado es realista y se puede sostener.",
+          "Las respuestas frecuentes están preparadas y son coherentes con las condiciones.",
+          "Si uso una herramienta externa, sé dónde se guardan los datos y cuáles son sus condiciones.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Una prueba con otra persona",
+        text: "Pedile a alguien que intente hacer un pedido o una consulta sin ayuda. Observá dónde duda, qué información busca y qué paso le resulta confuso. Ese recorrido vale más que una revisión hecha solo por quien diseñó el canal.",
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Alcance",
+        text: "Esta guía es educativa y no reemplaza las condiciones de uso, la normativa de protección de datos ni el asesoramiento legal aplicable a cada canal o actividad.",
+      },
+    ],
+    relatedCourseSlugs: [
+      "herramientas-digitales-para-mi-negocio",
+      "mi-marca-y-mi-identidad-comercial",
+    ],
+  },
+];
+
+export function getResourceBySlug(slug: string): Resource | undefined {
+  return resources.find((resource) => resource.slug === slug);
+}
+
+
