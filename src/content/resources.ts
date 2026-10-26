@@ -649,6 +649,227 @@ export const resources: Resource[] = [
       "mi-marca-y-mi-identidad-comercial",
     ],
   },
+  {
+    id: "flujo-de-caja-13-semanas",
+    slug: "flujo-de-caja-13-semanas",
+    title: "Flujo de caja de 13 semanas",
+    description:
+      "Una plantilla para anticipar cobros, pagos y brechas de caja durante un trimestre, con saldo mínimo y acciones de cobertura.",
+    category: "costos",
+    type: "Plantilla",
+    tags: ["flujo de caja", "capital de trabajo", "cobros", "pagos", "13 semanas"],
+    useCase:
+      "Usala antes de aceptar un pedido grande, comprar inventario o comprometer pagos que dependen de cobros futuros.",
+    content: [
+      {
+        type: "paragraph",
+        text: "El flujo de caja muestra cuándo entra y sale el dinero. No reemplaza el cálculo de rentabilidad: lo complementa. Un emprendimiento puede tener margen positivo y, al mismo tiempo, quedarse sin dinero para comprar la próxima tanda si los cobros llegan después que los pagos. Esta plantilla de 13 semanas ayuda a ver ese desfase con anticipación.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        title: "Cómo usar la plantilla",
+        text: "Completá una columna por semana. Usá fechas probables de cobro, no la fecha en que emitiste la factura. Separá los pagos que no podés postergar y definí un saldo mínimo que no querés perforar. Si el saldo proyectado cae por debajo de ese mínimo, marcá la brecha y elegí una acción.",
+      },
+      {
+        type: "heading",
+        text: "Paso a paso",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Anotá la caja inicial real: efectivo, cuenta y billeteras disponibles para el emprendimiento.",
+          "Proyectá los cobros por semana, según la fecha probable de acreditación.",
+          "Proyectá los pagos de insumos, servicios, deudas, impuestos y gastos del emprendimiento.",
+          "Calculá la caja final de cada semana: caja inicial + cobros − pagos.",
+          "Definí una caja mínima para operar y comparala con el saldo proyectado.",
+          "Marcá las semanas con brecha y elegí acciones: seña, plazo, lote más chico o reserva.",
+          "Actualizá la planilla cada semana con los movimientos reales.",
+        ],
+      },
+      {
+        type: "table",
+        caption: "Estructura de la planilla",
+        headers: ["Semana", "Caja inicial", "Cobros", "Pagos", "Caja final", "Caja mínima", "Brecha"],
+        rows: [
+          ["Semana 1", "", "", "", "", "", ""],
+          ["Semana 2", "", "", "", "", "", ""],
+          ["Semana 3", "", "", "", "", "", ""],
+          ["Semana 4", "", "", "", "", "", ""],
+          ["…", "", "", "", "", "", ""],
+          ["Semana 13", "", "", "", "", "", ""],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "La descarga en CSV agrega una fecha de inicio por semana y una columna de acción prevista para cada brecha.",
+      },
+      {
+        type: "table",
+        caption: "Ejemplo ficticio de cuatro semanas",
+        headers: ["Concepto", "Semana 1", "Semana 2", "Semana 3", "Semana 4"],
+        rows: [
+          ["Caja inicial", "$350.000", "$10.000", "−$15.000", "−$40.000"],
+          ["Cobros", "$0", "$0", "$0", "$0"],
+          ["Pagos", "$340.000", "$25.000", "$25.000", "$25.000"],
+          ["Caja final", "$10.000", "−$15.000", "−$40.000", "−$65.000"],
+          ["Caja mínima", "$50.000", "$50.000", "$50.000", "$50.000"],
+          ["Brecha", "−$40.000", "−$65.000", "−$90.000", "−$115.000"],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "El ejemplo es ficticio y sirve para mostrar el procedimiento. En este caso, la caja cae por debajo del mínimo antes de que llegue el cobro del pedido. La respuesta no es ignorar la brecha: es negociar una seña, reducir el lote, acordar un plazo con proveedores o reservar dinero antes de empezar. Reemplazá los valores por tus propios datos y anotá la fecha de actualización.",
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "No uses dinero de obligaciones",
+        text: "El dinero de impuestos, aportes, sueldos o señas de clientes no es capital de trabajo libre. Separá una reserva para esas salidas y revisá los vencimientos. Si la brecha es grande o recurrente, consultá a un profesional de contabilidad o finanzas.",
+      },
+      {
+        type: "checklist",
+        title: "Antes de aprobar el flujo",
+        items: [
+          "Todos los montos están en la misma moneda y con fecha de referencia.",
+          "Los cobros están proyectados por fecha probable de acreditación.",
+          "Incluí pagos de insumos, servicios, deudas, impuestos y gastos del emprendimiento.",
+          "Definí una caja mínima y marqué las semanas con brecha.",
+          "Elegí al menos una acción para cada brecha.",
+          "Separé el dinero de obligaciones y la reserva para imprevistos.",
+          "Anoté qué supuestos usé y cuándo los voy a revisar.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Alcance educativo",
+        text: "Esta plantilla es una herramienta de planificación. No reemplaza asesoramiento contable, impositivo o financiero ni el registro formal que corresponda a tu actividad.",
+      },
+    ],
+    download: {
+      href: "/recursos/flujo-de-caja-13-semanas.csv",
+      label: "Descargar planilla CSV",
+      fileType: "CSV",
+    },
+    relatedCourseSlugs: [
+      "costos-y-precios",
+      "mi-primer-emprendimiento",
+      "herramientas-digitales-para-mi-negocio",
+    ],
+  },
+  {
+    id: "calendario-contenidos-30-dias",
+    slug: "calendario-contenidos-30-dias",
+    title: "Calendario de contenidos de 30 días",
+    description:
+      "Una plantilla para planificar publicaciones con pilares, objetivos, llamados a la acción y métricas de revisión.",
+    category: "marketing",
+    type: "Plantilla",
+    tags: ["contenido", "calendario", "redes sociales", "marca", "métricas"],
+    useCase:
+      "Usala después de definir el posicionamiento y antes de empezar una campaña, un lanzamiento o una rutina de comunicación.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Publicar sin un plan suele terminar en semanas de silencio o en piezas improvisadas que no comunican lo mismo. Este calendario de 30 días no busca llenar todas las fechas: busca elegir pocos mensajes, sostener una frecuencia posible y aprender de lo que funciona. Es una guía editable, no una obligación de publicar todos los días.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        title: "Antes de completarlo",
+        text: "Definí la idea central de la marca, el cliente al que querés hablarle y el canal donde vas a publicar. Si todavía no tenés fotos, catálogo o condiciones claras, resolvelo primero: el calendario no compensa una oferta confusa.",
+      },
+      {
+        type: "heading",
+        text: "Elegí tres o cuatro pilares",
+        level: 2,
+      },
+      {
+        type: "table",
+        caption: "Pilares posibles",
+        headers: ["Pilar", "Qué comunica", "Ejemplo de pieza"],
+        rows: [
+          ["Confianza", "Quiénes son, cómo trabajan y qué cumplen.", "Proceso de elaboración, presentación del taller."],
+          ["Utilidad", "Cómo usar, cuidar o elegir el producto.", "Guía breve, comparación, error frecuente."],
+          ["Deseo", "Cómo se ve o se siente el resultado.", "Foto de producto en uso, video corto."],
+          ["Prueba", "Por qué creer: garantías, detalles, testimonios autorizados.", "Ficha técnica, reseña con permiso."],
+          ["Oferta", "Qué comprar, a qué precio y cómo pedir.", "Catálogo, combinación, condiciones."],
+        ],
+      },
+      {
+        type: "heading",
+        text: "Estructura del calendario",
+        level: 2,
+      },
+      {
+        type: "table",
+        caption: "Columnas de la plantilla",
+        headers: ["Día", "Pilar", "Objetivo", "Formato", "Mensaje o idea", "Llamado a la acción", "Estado"],
+        rows: [
+          ["1", "Confianza", "Presentar la marca.", "Foto o video.", "Quiénes somos y cómo trabajamos.", "Conocer el catálogo.", "Pendiente"],
+          ["3", "Utilidad", "Resolver una duda.", "Carrusel o texto.", "Cómo conservar el producto.", "Guardar la publicación.", "Pendiente"],
+          ["5", "Deseo", "Mostrar el producto.", "Foto.", "Producto en uso real.", "Ver opciones.", "Pendiente"],
+          ["7", "Prueba", "Reducir una objeción.", "Testimonio o detalle.", "Garantía o experiencia autorizada.", "Consultar.", "Pendiente"],
+          ["9", "Oferta", "Facilitar la compra.", "Catálogo o ficha.", "Qué incluye y cómo pedir.", "Hacer un pedido.", "Pendiente"],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "La descarga en CSV también incluye la semana, la fecha de publicación y la métrica que vas a revisar.",
+      },
+      {
+        type: "paragraph",
+        text: "Agrupá la producción: una sesión de fotos, un bloque de redacción y una revisión. Reutilizá una misma idea en formatos distintos, pero no repitas el mismo mensaje sin aportar algo nuevo. Dejá días libres y priorizá la calidad y la atención por encima de la cantidad.",
+      },
+      {
+        type: "heading",
+        text: "Qué mirar al final del mes",
+        level: 2,
+      },
+      {
+        type: "table",
+        headers: ["Señal", "Pregunta", "Ajuste posible"],
+        rows: [
+          ["Consultas", "¿Llegaron personas del perfil buscado?", "Cambiar el mensaje o el canal."],
+          ["Preguntas repetidas", "¿Qué información falta?", "Agregarla al catálogo o a las respuestas."],
+          ["Conversión", "¿Cuántas consultas terminaron en pedido?", "Revisar precio, oferta o atención."],
+          ["Repetición", "¿Volvieron a comprar?", "Revisar experiencia y posventa."],
+          ["Reclamos", "¿Qué promesa no se cumplió?", "Corregir el proceso antes de comunicar más."],
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Antes de publicar una pieza",
+        items: [
+          "La idea se entiende en los primeros segundos.",
+          "La información de precio, stock y condiciones está actualizada.",
+          "La imagen representa el producto real.",
+          "Cuento con autorización si aparece una persona o un espacio ajeno.",
+          "El llamado a la acción es claro y el canal funciona.",
+          "No uso urgencia, escasez ni testimonios falsos.",
+          "Anoté qué métrica voy a mirar para evaluar la pieza.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Alcance",
+        text: "Las plataformas, sus funciones y sus normas cambian. Esta plantilla es una guía educativa y no reemplaza las condiciones de cada servicio ni el asesoramiento sobre derechos de imagen, publicidad o protección de datos.",
+      },
+    ],
+    download: {
+      href: "/recursos/calendario-contenidos-30-dias.csv",
+      label: "Descargar calendario CSV",
+      fileType: "CSV",
+    },
+    relatedCourseSlugs: [
+      "mi-marca-y-mi-identidad-comercial",
+      "herramientas-digitales-para-mi-negocio",
+    ],
+  },
 ];
 
 export function getResourceBySlug(slug: string): Resource | undefined {

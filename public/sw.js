@@ -4,7 +4,7 @@
  * - Los recursos estáticos con nombre versionado se sirven desde caché.
  * - No se cachean datos personales: el progreso vive en localStorage, no en la red.
  */
-const CACHE_NAME = "normal9-impulsa-v2";
+const CACHE_NAME = "normal9-impulsa-v3";
 const PRECACHE_URLS = [
   "/",
   "/cursos",

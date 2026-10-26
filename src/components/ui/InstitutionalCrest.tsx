@@ -16,18 +16,14 @@ interface InstitutionalCrestProps {
 
 /**
  * Escudo institucional provisto por la escuela.
- * Se muestra enmarcado en blanco porque el archivo original tiene fondo claro.
+ * El archivo ahora tiene fondo transparente, por eso no lleva marco blanco.
  */
 export function InstitutionalCrest({ size = "md", className }: InstitutionalCrestProps) {
   const config = crestSizes[size];
 
   return (
     <span
-      className={cn(
-        "inline-flex shrink-0 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-brand-950/10",
-        config.box,
-        className,
-      )}
+      className={cn("inline-flex shrink-0 overflow-hidden", config.box, className)}
     >
       <Image
         src="/institucional/escudo-escuela-normal-9.png"
@@ -35,7 +31,7 @@ export function InstitutionalCrest({ size = "md", className }: InstitutionalCres
         width={471}
         height={570}
         sizes={config.sizes}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-contain"
       />
     </span>
   );

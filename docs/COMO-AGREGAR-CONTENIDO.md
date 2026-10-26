@@ -44,6 +44,7 @@ Copiá un curso existente como base, por ejemplo `src/content/courses/costos-y-p
 - `accent`: `"azul"`, `"verde"`, `"celeste"` o `"profundo"`.
 - `icon`: `"lightbulb"`, `"calculator"`, `"palette"` o `"laptop"`.
 - `objectives` y `audience` (al menos un elemento en cada uno).
+- `project`: título, descripción y entregables del trabajo final.
 - `modules`, `finalQuiz`, `resourceSlugs` y `toolIds`.
 
 ### 2.2 Estructura mínima
@@ -59,16 +60,21 @@ export const miNuevoCurso: Course = {
   subtitle: "Una frase que explique qué resuelve",
   description: "Descripción para tarjetas y metadatos.",
   longDescription: "Descripción más extensa para la portada del curso.",
-  durationMinutes: 90,
+  durationMinutes: 160,
   level: "Inicial",
   accent: "azul",
   icon: "lightbulb",
   objectives: ["Objetivo 1", "Objetivo 2", "Objetivo 3"],
   audience: ["A quién está dirigido"],
+  project: {
+    title: "Entregable final del curso",
+    description: "Qué documento o herramienta construye el estudiante.",
+    deliverables: ["Pieza 1", "Pieza 2", "Pieza 3"],
+  },
   modules: [
     {
       id: "modulo-1",
-      title: "Módulo 1 · Empezar",
+      title: "Empezar",
       description: "Qué se trabaja en este módulo.",
       lessons: [
         // Ver sección 3
@@ -77,7 +83,7 @@ export const miNuevoCurso: Course = {
   ],
   finalQuiz: {
     title: "Autoevaluación final",
-    description: "Seis preguntas para revisar lo aprendido.",
+    description: "Diez preguntas para revisar lo aprendido.",
     passingScore: 70,
     questions: [
       // Ver sección 4
@@ -175,7 +181,7 @@ Cada lección debe tener `id` y `slug` únicos dentro del curso. El `id` es la c
 | `fields` | `title` opcional, `items` con `label`, `hint`, `lines` |
 | `quote` | `text`, `source` opcional |
 
-Las pruebas exigen al menos **3 lecciones** por curso y **3 bloques** por lección. Para mantener la calidad editorial del campus se recomiendan 4 lecciones y entre 18 y 30 minutos por lección.
+Las pruebas exigen al menos **5 lecciones** por curso y **3 bloques** por lección. Para mantener la calidad editorial del campus se recomiendan 6 lecciones por curso, entre 24 y 32 minutos por lección, un cierre con ideas clave y un entregable final. Los módulos aplicados pueden vivir en `src/content/courses/modules/` e importarse desde el archivo del curso.
 
 ### Referencias
 
@@ -193,7 +199,7 @@ Cada curso tiene `finalQuiz`:
 ```ts
 finalQuiz: {
   title: "Autoevaluación final",
-  description: "Seis preguntas para revisar lo aprendido.",
+  description: "Diez preguntas para revisar lo aprendido.",
   passingScore: 70,
   questions: [
     {

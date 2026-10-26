@@ -1,4 +1,5 @@
 import type { Course } from "@/types/course";
+import { marcaAvanzado } from "./modules/marca-avanzado";
 
 const DISCLAIMER = "Ejemplo ficticio con fines educativos. No representa a un emprendimiento real.";
 
@@ -7,30 +8,45 @@ export const marcaIdentidad: Course = {
   slug: "mi-marca-y-mi-identidad-comercial",
   title: "Mi marca y mi identidad comercial",
   shortTitle: "Marca e identidad",
-  subtitle: "Hacé que tu propuesta se reconozca y se recuerde",
+  subtitle: "De una identidad reconocible a una reputación que sostiene ventas",
   description:
-    "Definí el nombre, la personalidad visual y la presentación de tu emprendimiento. Aprendé a fotografiar productos con el celular y armar un catálogo claro.",
+    "Definí el nombre, el posicionamiento, la personalidad visual y la presentación de tu emprendimiento. Aprendé a fotografiar productos, armar un catálogo claro y comunicar con pruebas reales.",
   longDescription:
-    "Una marca no es solo un logo: es la suma de lo que tu emprendimiento promete, cómo se comunica y cómo trata a sus clientes. Este curso te propone construir una identidad coherente con recursos accesibles, preparar fotos útiles con un teléfono y organizar un catálogo que facilite la compra.",
-  durationMinutes: 100,
+    "Una marca no es solo un logo: es la suma de lo que tu emprendimiento promete, cómo se diferencia, cómo se comunica y cómo trata a sus clientes. Este curso te propone construir una identidad coherente con recursos accesibles, definir un posicionamiento frente a alternativas reales, preparar fotos útiles con un teléfono, organizar un catálogo que facilite la compra y planificar contenido con métricas de confianza. Al final vas a reunir un manual de marca mínimo y un plan de comunicación de 30 días.",
+  durationMinutes: 162,
   level: "Inicial",
   accent: "celeste",
   icon: "palette",
   objectives: [
     "Definir la identidad, el nombre y la personalidad de tu emprendimiento.",
-    "Crear un logotipo simple y aplicar colores con criterios de legibilidad.",
+    "Elegir un posicionamiento y una promesa comprobable frente a otras opciones.",
+    "Crear un sistema visual simple y aplicar criterios de legibilidad y accesibilidad.",
     "Mejorar la presentación y la fotografía de productos usando un celular.",
-    "Armar un catálogo comercial claro, actualizado y fácil de recorrer.",
+    "Armar un catálogo comercial claro y una arquitectura de oferta que facilite la compra.",
+    "Planificar contenido, lanzamientos y reputación con pruebas reales y métricas.",
   ],
   audience: [
     "Emprendedores que ya venden pero no tienen una identidad consistente.",
-    "Personas que quieren lanzar una marca y no saben cómo presentarla.",
-    "Comercios que necesitan mejorar sus fotos, catálogos y mensajes.",
+    "Personas que quieren lanzar una marca y necesitan definir su lugar en el mercado.",
+    "Comercios que necesitan mejorar sus fotos, catálogos, mensajes y presencia digital.",
+    "Quienes reciben consultas pero no logran que el cliente entienda su diferencia.",
   ],
+  project: {
+    title: "Manual de marca mínimo y plan de comunicación de 30 días",
+    description:
+      "Un documento aplicable con posicionamiento, promesa, voz, sistema visual, fotos, estructura de catálogo y calendario de contenidos.",
+    deliverables: [
+      "Declaración de posicionamiento y promesa con pruebas.",
+      "Sistema visual mínimo y criterios de accesibilidad.",
+      "Set de fotos y fichas de producto.",
+      "Arquitectura de oferta y condiciones del catálogo.",
+      "Calendario de contenidos de 30 días con métricas de revisión.",
+    ],
+  },
   modules: [
     {
       id: "modulo-identidad",
-      title: "Módulo 1 · La identidad de tu emprendimiento",
+      title: "La identidad de tu emprendimiento",
       description: "Qué representa tu marca, cómo se llama y qué personalidad transmite.",
       lessons: [
         {
@@ -106,6 +122,33 @@ export const marcaIdentidad: Course = {
               ],
               closing:
                 "Elegí un nombre provisorio si todavía necesitás verificar disponibilidad. Lo importante es que puedas explicarlo.",
+            },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Probá el nombre antes de invertir",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Un nombre que te gusta puede ser difícil de dictar, confundirse con otra marca o no estar disponible en los canales que necesitás. Hacé una prueba simple con personas que no conozcan tu proyecto y verificá la disponibilidad antes de imprimir etiquetas o carteles.",
+            },
+            {
+              type: "table",
+              caption: "Prueba práctica de nombre",
+              headers: ["Prueba", "Cómo hacerla", "Señal de alerta"],
+              rows: [
+                ["Dictado", "Decí el nombre por teléfono y pedí que lo escriban.", "La persona necesita deletrearlo varias veces."],
+                ["Memoria", "Mostralo unos segundos y preguntá cómo se llamaba.", "Se olvida o se confunde con otra palabra."],
+                ["Búsqueda", "Revisá buscadores, redes y canales donde estarás.", "Uso muy similar en el mismo rubro o zona."],
+                ["Pronunciación", "Pedí a varias personas que lo lean en voz alta.", "Cada una lo pronuncia distinto."],
+                ["Promesa", "Preguntá qué esperarían de una marca con ese nombre.", "La expectativa contradice lo que ofrecés."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "La disponibilidad no se resuelve solo con una búsqueda",
+              text: "Que un nombre no aparezca en una red social no significa que esté libre para su uso comercial. Antes de una inversión importante, consultá los registros y requisitos que correspondan a tu actividad y jurisdicción.",
             },
           ],
           keyIdeas: [
@@ -200,6 +243,33 @@ export const marcaIdentidad: Course = {
               closing:
                 "Una guía de una página es suficiente para empezar. Revisala después de usar la identidad en cinco piezas reales.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Sistema visual, no piezas sueltas",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Un sistema visual permite que cualquier persona produzca una pieza reconocible sin improvisar. No necesitás un manual de cien páginas: necesitás decisiones documentadas y archivos ordenados. La prueba es simple: entregale la guía a otra persona y pedile que arme una publicación o una etiqueta.",
+            },
+            {
+              type: "table",
+              caption: "Componentes mínimos del sistema",
+              headers: ["Componente", "Qué definir", "Error frecuente"],
+              rows: [
+                ["Logotipo", "Versiones horizontal, cuadrada, blanca y negra.", "Usar una versión que no se lee en tamaño pequeño."],
+                ["Tipografías", "Una para títulos y una para textos, con tamaños.", "Mezclar cinco fuentes y perder legibilidad."],
+                ["Paleta", "Principal, secundario y neutros con códigos.", "Elegir colores por moda sin revisar contraste."],
+                ["Plantillas", "Publicación, etiqueta, presupuesto o catálogo.", "Armar cada pieza desde cero."],
+                ["Fotografía", "Fondo, luz, encuadre y edición permitida.", "Mezclar estilos que parecen de marcas distintas."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "tip",
+              title: "Contraste antes que combinación",
+              text: "Probá el texto sobre el fondo en un teléfono con brillo bajo. Si no se lee, el color no sirve para comunicar, por más lindo que sea. La accesibilidad también mejora la experiencia de todos.",
+            },
           ],
           keyIdeas: [
             "Un logotipo funcional se lee en pequeño, sin color y sobre distintos fondos.",
@@ -212,7 +282,7 @@ export const marcaIdentidad: Course = {
     },
     {
       id: "modulo-presentacion",
-      title: "Módulo 2 · Productos que se muestran bien",
+      title: "Productos que se muestran bien",
       description: "Fotografía comercial accesible y catálogos que ayudan a decidir la compra.",
       lessons: [
         {
@@ -289,6 +359,32 @@ export const marcaIdentidad: Course = {
               ],
               closing:
                 "Mostrá las fotos a una persona que no conozca el producto y preguntale qué tamaño y color percibe.",
+            },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Narrativa visual y video corto",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Una serie de fotos no es solo un catálogo: cuenta una historia. La primera imagen presenta, la segunda muestra un detalle, la tercera da escala o uso y la cuarta puede mostrar el proceso o a la persona detrás. Esa secuencia reduce dudas y construye confianza. El video corto sigue la misma lógica: una acción clara, buena luz, texto en pantalla y un final con el siguiente paso.",
+            },
+            {
+              type: "table",
+              caption: "Secuencia mínima para una publicación o ficha",
+              headers: ["Toma", "Qué muestra", "Pregunta que responde"],
+              rows: [
+                ["General", "Producto completo sobre fondo limpio.", "¿Qué es y cómo se ve?"],
+                ["Detalle", "Textura, terminación, ingrediente o material.", "¿Qué calidad tiene?"],
+                ["Escala o uso", "Producto en la mano, en una mesa o en contexto.", "¿Qué tamaño tiene y cómo se usa?"],
+                ["Proceso o persona", "Elaboración, taller o empaque.", "¿Quién lo hace y cómo?"],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "Video vertical, pero no improvisado",
+              text: "Grabá con el teléfono apoyado, en formato vertical y con buena luz. Evitá música o imágenes que no tengas derecho a usar. Si mostrás a una persona o un espacio ajeno, pedí autorización. Un video honesto y claro funciona mejor que uno espectacular que no representa el producto.",
             },
           ],
           keyIdeas: [
@@ -377,6 +473,35 @@ export const marcaIdentidad: Course = {
               closing:
                 "Registrá la fecha de vigencia en la portada. Actualizar es parte del trabajo, no una corrección excepcional.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Arquitectura de oferta",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Un catálogo no solo enumera productos: ayuda a elegir. Agrupar la oferta en pocas opciones comparables reduce la parálisis y facilita el pedido. Una estructura simple es **básica, recomendada y completa**. La opción intermedia puede facilitar la comparación, pero solo funciona si la diferencia entre opciones es clara y honesta.",
+            },
+            {
+              type: "table",
+              caption: "Ejemplo de oferta para un servicio de jardinería",
+              headers: ["Opción", "Qué incluye", "Para quién es", "Qué no incluye"],
+              rows: [
+                ["Básica", "Corte y limpieza general.", "Mantenimiento de un espacio pequeño.", "Poda de altura y retiro de ramas grandes."],
+                ["Recomendada", "Corte, limpieza y control de malezas.", "Jardines de uso familiar.", "Diseño de nuevas plantas."],
+                ["Completa", "Mantenimiento mensual y asesoramiento.", "Espacios que necesitan continuidad.", "Materiales ni obras de gran escala."],
+              ],
+            },
+            {
+              type: "paragraph",
+              text: "Las objeciones también se anticipan en el catálogo: precio, plazo, zona de entrega, conservación, cambios y forma de pago. Responderlas antes de la consulta ahorra mensajes y evita malentendidos. Si una objeción se repite, no la respondas solo en privado: incorpórala a la ficha.",
+            },
+            {
+              type: "callout",
+              variant: "tip",
+              title: "Menos opciones, mejores decisiones",
+              text: "Si el cliente debe comparar doce variantes para elegir una, probablemente abandone. Empezá con tres opciones bien explicadas y sumá complejidad solo cuando la demanda lo justifique.",
+            },
           ],
           keyIdeas: [
             "Un catálogo debe permitir elegir, consultar condiciones y saber cómo pedir.",
@@ -388,96 +513,150 @@ export const marcaIdentidad: Course = {
         },
       ],
     },
+    marcaAvanzado,
   ],
   finalQuiz: {
     title: "Autoevaluación final · Marca e identidad",
     description:
-      "Seis preguntas sobre identidad, diseño, fotografía y catálogos. La aprobación requiere al menos 70 % de respuestas correctas.",
+      "Diez preguntas sobre posicionamiento, identidad visual, fotografía, catálogo, reputación y comunicación. La aprobación requiere al menos 70 % de respuestas correctas.",
     passingScore: 70,
     questions: [
       {
         id: "p1",
-        prompt: "¿Qué es la identidad comercial de un emprendimiento?",
+        prompt: "¿Qué significa posicionar una marca?",
         options: [
-          { text: "Solamente el logotipo y los colores." },
-          { text: "La coherencia entre lo que promete, cómo se comunica y cómo trata a sus clientes." },
-          { text: "El precio más bajo del mercado." },
-          { text: "Una plantilla de redes sociales copiada de otra marca." },
+          { text: "Elegir el logo más colorido del rubro." },
+          { text: "Ocupar un lugar claro frente a las alternativas reales del cliente." },
+          { text: "Prometer que se es la mejor opción para todas las personas." },
+          { text: "Copiar el mensaje de un competidor exitoso." },
         ],
         correctIndex: 1,
         explanation:
-          "La identidad incluye el logo y la estética, pero también el tono, la experiencia, la atención y el cumplimiento de la promesa. Todo comunica.",
+          "El posicionamiento define para quién es la marca, qué beneficio ofrece y por qué la elegirían frente a otras opciones. No es una frase aislada ni una promesa para todos.",
       },
       {
         id: "p2",
-        prompt: "¿Cuál es un buen criterio para elegir el nombre?",
+        prompt: "¿Cuál de estas promesas está mejor respaldada?",
         options: [
-          { text: "Que sea largo y explique todos los productos." },
-          { text: "Que se pronuncie y se escriba con facilidad, y que no sea engañoso." },
-          { text: "Que imite el nombre de un competidor exitoso." },
-          { text: "Que incluya la palabra «premium» obligatoriamente." },
+          { text: "«Somos la mejor calidad del mercado»." },
+          { text: "«Tenemos atención personalizada»." },
+          { text: "«Pedidos confirmados antes de las 10 se entregan ese día en el centro; si no, avisamos antes de las 12»." },
+          { text: "«Hacemos todo lo que necesites»." },
         ],
-        correctIndex: 1,
+        correctIndex: 2,
         explanation:
-          "Un nombre debe ser fácil de recordar, pronunciar y escribir. También debe ser honesto y permitir crecimiento. Imitar a otra marca puede generar confusión y problemas.",
+          "La tercera promesa define una condición, un resultado y un límite. Las frases generales no permiten comprobar si se cumplen ni ayudan al cliente a decidir.",
       },
       {
         id: "p3",
-        prompt: "Antes de adoptar un logotipo conviene comprobar que…",
+        prompt: "En una jerarquía de mensajes, ¿qué debería aparecer primero?",
         options: [
-          { text: "tenga muchos colores y detalles." },
-          { text: "se lea en tamaño pequeño, en blanco y negro y sobre fondos distintos." },
-          { text: "solo funcione en pantallas grandes." },
-          { text: "incluya todas las fotos de productos." },
+          { text: "Una lista de todos los precios." },
+          { text: "La idea central que resume el lugar de la marca." },
+          { text: "Los datos personales del emprendedor." },
+          { text: "Un descuento por tiempo limitado." },
         ],
         correctIndex: 1,
         explanation:
-          "La legibilidad en distintos tamaños y soportes es esencial. Un logotipo sencillo y versátil funciona mejor que uno saturado de elementos.",
+          "La idea central ordena el resto: beneficios, pruebas, objeciones y llamado a la acción. Si todo aparece con la misma importancia, el cliente no recuerda nada.",
       },
       {
         id: "p4",
-        prompt: "Para fotografiar un producto con el celular, ¿qué práctica mejora más el resultado?",
+        prompt: "¿Qué práctica daña la reputación de una marca?",
         options: [
-          { text: "Usar flash directo sobre un producto brillante." },
-          { text: "Apoyar el teléfono, usar luz natural indirecta y limpiar el fondo." },
-          { text: "Aplicar filtros que cambien el color real." },
-          { text: "Fotografiar desde muy lejos y recortar todo." },
+          { text: "Publicar testimonios con permiso y sin alterar su sentido." },
+          { text: "Inventar reseñas o mostrar resultados que no ocurrieron." },
+          { text: "Explicar los límites de un producto antes de venderlo." },
+          { text: "Responder un reclamo con un plazo concreto." },
         ],
         correctIndex: 1,
         explanation:
-          "La estabilidad, la luz suave y un fondo limpio permiten mostrar el producto con claridad. Los filtros que alteran el color atentan contra la confianza.",
+          "La prueba social debe ser real y autorizada. Inventar reseñas, clientes o resultados puede generar una venta inmediata y destruir la confianza cuando se descubre.",
       },
       {
         id: "p5",
-        prompt: "¿Qué información no puede faltar en la ficha de un producto del catálogo?",
+        prompt: "¿Qué métrica se acerca más a la conversión comercial?",
         options: [
-          { text: "El nombre del competidor." },
-          { text: "Presentación, precio vigente, disponibilidad y condiciones de compra." },
-          { text: "La historia personal completa del emprendedor." },
-          { text: "Una lista de todos los clientes anteriores." },
+          { text: "Cantidad de visualizaciones." },
+          { text: "Cantidad de «me gusta»." },
+          { text: "Consultas calificadas que se convierten en pedidos." },
+          { text: "Cantidad de publicaciones realizadas." },
         ],
-        correctIndex: 1,
+        correctIndex: 2,
         explanation:
-          "La ficha debe permitir decidir y comprar: qué incluye, cuánto cuesta, si está disponible, cómo se paga y se entrega. Los datos personales de clientes no deben publicarse.",
+          "Las visualizaciones y los «me gusta» pueden indicar interés, pero no prueban una intención de compra. La conversión de consultas calificadas a pedidos está más cerca del resultado comercial.",
       },
       {
         id: "p6",
-        prompt: "Si un catálogo incluye un código QR, ¿qué verificación es necesaria?",
+        prompt: "Un cliente reclama por una entrega tardía. ¿Cuál es una respuesta coherente con una marca confiable?",
         options: [
-          { text: "Que abra el enlace correcto y que el contenido esté actualizado." },
-          { text: "Que sea del color favorito de la marca." },
-          { text: "Que dirija a cualquier página, aunque no tenga relación." },
-          { text: "Que no pueda probarse antes de imprimir." },
+          { text: "Ignorar el mensaje hasta que se calme." },
+          { text: "Reconocer el problema, explicar qué pasó, dar un plazo y ofrecer una solución concreta." },
+          { text: "Culpar al cliente por no haber avisado antes." },
+          { text: "Ofrecer un descuento sin reconocer el error." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La confianza se sostiene con respuestas claras y responsables. Reconocer, informar y resolver es más valioso que una disculpa vacía o un silencio.",
+      },
+      {
+        id: "p7",
+        prompt: "¿Qué decisión mejora la accesibilidad de una pieza visual?",
+        options: [
+          { text: "Usar texto claro sobre fondo con contraste suficiente." },
+          { text: "Transmitir información solo con colores parecidos." },
+          { text: "Usar la mayor cantidad de tipografías posible." },
+          { text: "Escribir textos extensos en letra pequeña." },
         ],
         correctIndex: 0,
         explanation:
-          "Un QR mal configurado puede llevar a un enlace roto o a otra página. Siempre hay que probarlo con distintos teléfonos y mantener actualizado su destino.",
+          "El contraste y el tamaño legible permiten que más personas lean el mensaje. La información no debe depender únicamente del color.",
+      },
+      {
+        id: "p8",
+        prompt: "¿Para qué sirve una arquitectura de oferta con opciones básica, recomendada y completa?",
+        options: [
+          { text: "Para confundir al cliente y que compre la más cara." },
+          { text: "Para facilitar la comparación y reducir el esfuerzo de elección." },
+          { text: "Para esconder los precios y las condiciones." },
+          { text: "Para eliminar la necesidad de explicar qué incluye cada opción." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "Una buena arquitectura de oferta ordena alternativas y ayuda a decidir. Las diferencias deben ser claras y honestas; no se trata de ocultar información.",
+      },
+      {
+        id: "p9",
+        prompt: "¿Qué conviene preparar antes de un lanzamiento?",
+        options: [
+          { text: "Solo las publicaciones de la primera semana." },
+          { text: "Catálogo, stock, precios, preguntas frecuentes, respuestas y canal de pedidos." },
+          { text: "Un descuento permanente para cualquier consulta." },
+          { text: "Testimonios inventados para generar confianza." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "El lanzamiento atrae consultas; si el catálogo, el stock y la atención no están listos, el interés se pierde. La preparación incluye también los límites y las condiciones.",
+      },
+      {
+        id: "p10",
+        prompt: "¿Qué sostiene una buena reputación en el tiempo?",
+        options: [
+          { text: "Publicar mucho contenido aunque la experiencia de compra falle." },
+          { text: "La coherencia entre la promesa, la experiencia y la comunicación." },
+          { text: "Bajar el precio en cada campaña." },
+          { text: "Tener el logo más grande de la competencia." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La reputación se construye en cada punto de contacto. Si la promesa no coincide con la entrega, la atención o las condiciones, el contenido por sí solo no alcanza.",
       },
     ],
   },
   resourceSlugs: [
     "lista-verificacion-identidad-comercial",
     "guia-fotografia-celular",
+    "calendario-contenidos-30-dias",
     "plan-de-negocios-simple",
   ],
   toolIds: ["diagnostico-emprendedor"],

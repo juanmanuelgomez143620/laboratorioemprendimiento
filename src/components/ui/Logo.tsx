@@ -37,6 +37,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
         />
       </span>
       <span className="min-w-0">
+        <span className="sr-only">Ir al inicio: </span>
         <span
           className={cn(
             "block text-[10px] font-extrabold uppercase leading-tight tracking-[0.19em]",
@@ -70,11 +71,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
   );
 
   return (
-    <Link
-      href={href}
-      className={cn("inline-flex items-center gap-3 rounded-lg", className)}
-      aria-label="NORMAL 9 IMPULSA, Campus Emprendedor de la Escuela Normal Superior N.º 9. Ir al inicio"
-    >
+    <Link href={href} className={cn("inline-flex items-center gap-3 rounded-lg", className)}>
       {content}
     </Link>
   );

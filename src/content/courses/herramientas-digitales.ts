@@ -1,4 +1,5 @@
 import type { Course } from "@/types/course";
+import { herramientasAvanzado } from "./modules/herramientas-avanzado";
 
 const DISCLAIMER = "Ejemplo ficticio con fines educativos. No representa a un emprendimiento real.";
 
@@ -7,30 +8,45 @@ export const herramientasDigitales: Course = {
   slug: "herramientas-digitales-para-mi-negocio",
   title: "Herramientas digitales para mi negocio",
   shortTitle: "Herramientas digitales",
-  subtitle: "Orden, comunicación y tecnología con criterio",
+  subtitle: "Del archivo ordenado al tablero que te ayuda a decidir",
   description:
-    "Organizá archivos, usá planillas básicas, creá códigos QR, aprovechá WhatsApp Business y aplicá inteligencia artificial de forma responsable.",
+    "Organizá archivos, usá planillas, creá códigos QR, aprovechá WhatsApp Business, diseñá tu recorrido de pedidos y aplicá inteligencia artificial de forma responsable.",
   longDescription:
-    "La tecnología puede ahorrar tiempo y reducir errores, pero solo si se usa con un propósito claro. Este curso propone un recorrido práctico por herramientas accesibles: carpetas y copias de seguridad, planillas de cálculo, catálogos con QR, WhatsApp Business y asistentes de inteligencia artificial. El foco está en la organización, la privacidad y la verificación de la información.",
-  durationMinutes: 110,
+    "La tecnología puede ahorrar tiempo y reducir errores, pero solo si se usa con un propósito claro. Este curso propone un recorrido aplicado por herramientas accesibles: carpetas y copias de seguridad, planillas de cálculo, catálogos con QR, WhatsApp Business, operación de pedidos y asistentes de inteligencia artificial. También vas a elegir pocos indicadores, construir un tablero simple y evaluar automatizaciones con criterios de riesgo. El foco está en la organización, la privacidad, la continuidad y la verificación de la información.",
+  durationMinutes: 172,
   level: "Inicial",
   accent: "profundo",
   icon: "laptop",
   objectives: [
     "Organizar la información del emprendimiento y proteger copias de archivos importantes.",
-    "Usar planillas básicas para registrar ventas, gastos y stock.",
+    "Usar planillas para registrar ventas, gastos, stock y pedidos con datos confiables.",
     "Crear un código QR y aprovechar funciones esenciales de WhatsApp Business.",
-    "Usar herramientas de inteligencia artificial de manera responsable y verificable.",
+    "Diseñar un recorrido de pedido con responsables, tiempos y métricas.",
+    "Elegir indicadores y construir un tablero de control simple.",
+    "Evaluar automatizaciones y usar inteligencia artificial de manera responsable y verificable.",
   ],
   audience: [
     "Emprendedores con conocimientos digitales básicos.",
     "Personas que administran su negocio con papeles sueltos o mensajes dispersos.",
     "Comercios que quieren ordenar su presencia digital sin gastar en servicios innecesarios.",
+    "Quienes reciben pedidos por WhatsApp y necesitan reducir errores y demoras.",
   ],
+  project: {
+    title: "Sistema operativo digital del emprendimiento",
+    description:
+      "Un conjunto documentado de carpetas, planillas, recorrido de pedidos, tablero de indicadores, automatización y protocolos de respaldo y privacidad.",
+    deliverables: [
+      "Mapa de carpetas y convención de nombres.",
+      "Planilla de ventas, gastos, pedidos y stock.",
+      "Recorrido del pedido con estados y responsables.",
+      "Tablero de cinco indicadores y plan de implementación.",
+      "Protocolo de copias, accesos, incidentes y uso responsable de IA.",
+    ],
+  },
   modules: [
     {
       id: "modulo-organizacion",
-      title: "Módulo 1 · Orden y registros",
+      title: "Orden y registros",
       description: "Una base digital sencilla para encontrar la información y no depender de la memoria.",
       lessons: [
         {
@@ -111,13 +127,40 @@ export const herramientasDigitales: Course = {
               steps: [
                 "Creá la carpeta principal con el nombre del emprendimiento.",
                 "Agregá las seis subcarpetas sugeridas o adaptalas a tu actividad.",
-                "Movés diez archivos a la carpeta que corresponde.",
+                "Mové diez archivos a la carpeta que corresponde.",
                 "Renombrá los archivos con fecha y contenido.",
                 "Eliminá duplicados obvios y guardá una copia de la carpeta en otro lugar.",
                 "Anotá en un papel dónde está la copia y cuándo pensás actualizarla.",
               ],
               closing:
                 "Repetí diez minutos de orden por semana. Es más sostenible que una limpieza gigante cada seis meses.",
+            },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Mapa de información y prueba de recuperación",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Ordenar no es solo guardar archivos: es saber qué información es crítica, dónde vive, quién puede verla y cómo se recupera si se pierde. Una copia que nunca probaste restaurar es una promesa, no una protección. Elegí tres documentos críticos y simulá que los perdiste.",
+            },
+            {
+              type: "table",
+              caption: "Inventario mínimo de información crítica",
+              headers: ["Información", "Dónde está", "Copia y acceso", "Cómo la recuperaría"],
+              rows: [
+                ["Ventas y gastos", "Planilla del emprendimiento.", "Copia mensual en otro dispositivo o nube.", "Abrir la última copia y verificar totales."],
+                ["Comprobantes y contratos", "Carpeta 01_Administración.", "Copia con fecha y acceso restringido.", "Buscar por año y nombre."],
+                ["Fotos y textos de productos", "Carpeta de productos o marca.", "Copia en almacenamiento externo.", "Restaurar la carpeta y revisar versiones."],
+                ["Contactos comerciales", "Agenda o planilla.", "Exportación periódica.", "Importar el archivo y verificar duplicados."],
+                ["Accesos y contraseñas", "Gestor de contraseñas.", "Respaldo seguro, nunca en un chat.", "Usar el mecanismo de recuperación."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "Una copia no sirve si no se puede abrir",
+              text: "Probá restaurar un archivo en otro dispositivo. Verificá que no esté corrupto, que tenga la versión correcta y que puedas leerlo sin depender de una cuenta que tal vez ya no tengas.",
             },
           ],
           keyIdeas: [
@@ -205,6 +248,33 @@ export const herramientasDigitales: Course = {
               closing:
                 "No incluyas datos sensibles de clientes. Si necesitás identificar una venta, usá un número de pedido.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Calidad de datos y fórmulas que se entienden",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Una planilla útil no es la que tiene más fórmulas, sino la que permite confiar en los datos. Antes de agregar cálculos, ordená la base: una fila por venta, una columna por dato, fechas con el mismo formato y montos en la misma moneda. Evitá celdas combinadas en la tabla de registros y no mezcles totales con filas de datos.",
+            },
+            {
+              type: "table",
+              caption: "Fórmulas básicas y para qué sirven",
+              headers: ["Fórmula", "Qué hace", "Ejemplo de uso"],
+              rows: [
+                ["=SUMA(E2:E31)", "Suma un rango.", "Total vendido en el mes."],
+                ["=SUMAR.SI(B2:B31;\"Vianda\";E2:E31)", "Suma solo las filas que cumplen un criterio.", "Ventas de un producto específico."],
+                ["=CONTAR.SI(C2:C31;\">0\")", "Cuenta filas que cumplen una condición.", "Cantidad de pedidos con venta."],
+                ["=SI(E2>0;\"Cobrado\";\"Pendiente\")", "Muestra un resultado según una condición.", "Estado simple de un pedido."],
+                ["=E2/C2", "Divide dos celdas.", "Precio promedio por unidad."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "tip",
+              title: "Documentá la fórmula en una nota",
+              text: "Escribí al lado qué calcula y con qué criterio. Si otra persona toma la planilla, o si volvés en tres meses, la fórmula no debería ser un misterio. Las separaciones de argumentos pueden variar según el programa y la configuración regional.",
+            },
           ],
           keyIdeas: [
             "Las planillas permiten registrar datos y obtener totales que se actualizan solos.",
@@ -217,7 +287,7 @@ export const herramientasDigitales: Course = {
     },
     {
       id: "modulo-comunicacion",
-      title: "Módulo 2 · Comunicación digital responsable",
+      title: "Comunicación digital responsable",
       description: "Códigos QR, WhatsApp Business e inteligencia artificial aplicada con criterio.",
       lessons: [
         {
@@ -308,6 +378,32 @@ export const herramientasDigitales: Course = {
               closing:
                 "No publiques el QR hasta haber probado el recorrido completo: escanear, leer, decidir y escribir.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Medir el canal, no solo publicarlo",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Un QR o un perfil no sirven por existir: sirven si las personas llegan, entienden y dan el paso siguiente. Definí una señal simple para cada canal y revisala después de la primera semana. No necesitás analítica avanzada: alcanza con registrar cuántas consultas llegaron, cuántas se respondieron y cuántas se convirtieron en pedido.",
+            },
+            {
+              type: "table",
+              caption: "Señales mínimas por canal",
+              headers: ["Canal", "Qué registrar", "Qué revisar"],
+              rows: [
+                ["QR impreso", "Cantidad de escaneos o consultas que lo mencionan.", "Si el destino carga y si el texto explica qué encontrar."],
+                ["Catálogo", "Consultas por producto y preguntas repetidas.", "Si faltan precios, stock o condiciones."],
+                ["WhatsApp Business", "Consultas recibidas, tiempo de primera respuesta y pedidos.", "Si el horario y las respuestas rápidas son realistas."],
+                ["Redes sociales", "Consultas desde el enlace de la biografía.", "Si la propuesta se entiende en el perfil."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "No confundas alcance con demanda",
+              text: "Muchas visualizaciones pueden no producir ninguna consulta. Revisá si el mensaje atrae al cliente correcto, si el precio y las condiciones están claros y si el canal de pedido funciona.",
+            },
           ],
           keyIdeas: [
             "Un QR solo es útil si su destino es claro, estable y fue probado.",
@@ -395,6 +491,32 @@ export const herramientasDigitales: Course = {
               closing:
                 "Si no tenés acceso a una herramienta de IA, realizá el ejercicio en papel: la planificación y la verificación son la parte más importante.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Una política de IA para el emprendimiento",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Una política breve evita decisiones improvisadas. No necesitás un documento legal: necesitás acordar qué tareas se pueden asistir, qué información no se puede ingresar y quién revisa el resultado antes de publicarlo o enviarlo. Si trabajás con otras personas, compartí la política y dejá un registro de las herramientas usadas.",
+            },
+            {
+              type: "table",
+              caption: "Niveles de riesgo y revisión",
+              headers: ["Uso", "Ejemplo", "Revisión requerida"],
+              rows: [
+                ["Bajo riesgo", "Lluvia de ideas, borrador de descripción, orden de tareas.", "Lectura y adaptación propia antes de publicar."],
+                ["Riesgo medio", "Traducción, resumen de un texto propio, propuesta de precios u ofertas.", "Verificar datos, tono, precios y condiciones con fuentes propias."],
+                ["Riesgo alto", "Información legal, fiscal, médica o financiera; imágenes de personas; datos de clientes.", "No usar sin revisión profesional y sin base verificable."],
+                ["Prohibido", "Contraseñas, documentos de identidad, datos bancarios, historias clínicas o listas de clientes.", "No ingresar en herramientas externas."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "La responsabilidad sigue siendo humana",
+              text: "Si un texto generado contiene un precio equivocado, una promesa imposible o un dato falso, la responsabilidad es de quien lo publica. Verificá, corregí y asumí el criterio final. Ser transparente sobre el uso de IA también es una buena práctica.",
+            },
           ],
           keyIdeas: [
             "La IA es una asistente de borradores y exploración, no una fuente automática de verdad.",
@@ -405,11 +527,12 @@ export const herramientasDigitales: Course = {
         },
       ],
     },
+    herramientasAvanzado,
   ],
   finalQuiz: {
     title: "Autoevaluación final · Herramientas digitales",
     description:
-      "Seis preguntas sobre organización, planillas, códigos QR, WhatsApp Business e inteligencia artificial responsable.",
+      "Diez preguntas sobre organización, planillas, QR, WhatsApp, operación de pedidos, tablero de control, automatización e inteligencia artificial responsable. La aprobación requiere al menos 70 % de respuestas correctas.",
     passingScore: 70,
     questions: [
       {
@@ -417,13 +540,13 @@ export const herramientasDigitales: Course = {
         prompt: "¿Cuál es una forma práctica de proteger archivos importantes del emprendimiento?",
         options: [
           { text: "Guardarlos únicamente en la galería del celular." },
-          { text: "Tener el original y al menos otra copia en un lugar distinto, revisada periódicamente." },
+          { text: "Tener el original, otra copia en un lugar distinto y probar que se puede restaurar." },
           { text: "Compartirlos en un grupo público para no perderlos." },
           { text: "Cambiarles el nombre cada vez que se abren." },
         ],
         correctIndex: 1,
         explanation:
-          "Una copia adicional en otro lugar reduce el riesgo de pérdida por robo, rotura o error. Las copias deben revisarse y no exponerse en canales públicos.",
+          "Una copia adicional reduce el riesgo de pérdida, pero debe revisarse y probarse. Una copia que nunca se restauró puede estar incompleta o corrupta.",
       },
       {
         id: "p2",
@@ -436,10 +559,23 @@ export const herramientasDigitales: Course = {
         ],
         correctIndex: 1,
         explanation:
-          "La fórmula realiza un cálculo con los valores de las celdas C2 y D2. Si los datos cambian, el resultado se actualiza automáticamente.",
+          "La fórmula realiza un cálculo con los valores de C2 y D2. Si los datos cambian, el resultado se actualiza; por eso es importante que las celdas contengan datos consistentes.",
       },
       {
         id: "p3",
+        prompt: "¿Qué práctica mejora la calidad de una planilla de ventas?",
+        options: [
+          { text: "Una fila por venta, una columna por dato y fechas con el mismo formato." },
+          { text: "Combinar celdas en toda la tabla de registros." },
+          { text: "Mezclar totales y ventas en la misma fila." },
+          { text: "Escribir los montos en distintas monedas sin aclararlo." },
+        ],
+        correctIndex: 0,
+        explanation:
+          "Una tabla ordenada permite filtrar, sumar y comparar. Las celdas combinadas, los totales mezclados y las fechas inconsistentes producen errores difíciles de detectar.",
+      },
+      {
+        id: "p4",
         prompt: "Antes de imprimir un código QR, ¿qué conviene hacer?",
         options: [
           { text: "Probarlo con varios teléfonos y confirmar que abre el destino correcto y actualizado." },
@@ -452,7 +588,7 @@ export const herramientasDigitales: Course = {
           "El QR impreso no se puede corregir fácilmente. Hay que verificar el destino, la legibilidad y que el contenido siga vigente antes de publicarlo.",
       },
       {
-        id: "p4",
+        id: "p5",
         prompt: "¿Qué información conviene pedir a un cliente por WhatsApp?",
         options: [
           { text: "Todos sus datos personales y una copia de su documento." },
@@ -465,8 +601,8 @@ export const herramientasDigitales: Course = {
           "Se debe pedir la información mínima necesaria y usarla solo para la finalidad acordada. No se deben solicitar contraseñas ni agregar contactos sin consentimiento.",
       },
       {
-        id: "p5",
-        prompt: "¿Cuál es un uso responsable de un asistente de inteligencia artificial en un emprendimiento?",
+        id: "p6",
+        prompt: "¿Cuál es un uso responsable de un asistente de inteligencia artificial?",
         options: [
           { text: "Publicar sin revisar todo lo que produce." },
           { text: "Cargar documentos de identidad de clientes para que redacte un catálogo." },
@@ -478,20 +614,63 @@ export const herramientasDigitales: Course = {
           "La IA puede asistir en borradores y organización de ideas, pero la verificación y la responsabilidad son humanas. No se deben ingresar datos sensibles.",
       },
       {
-        id: "p6",
-        prompt: "¿Qué práctica mejora la organización de la información digital?",
+        id: "p7",
+        prompt: "Un pedido está en estado «confirmado». ¿Cuál es la próxima acción más razonable?",
         options: [
-          { text: "Guardar todos los archivos en el escritorio con nombres genéricos." },
-          { text: "Usar carpetas por tema y nombres con fecha y contenido." },
-          { text: "Duplicar cada archivo sin registrar cuál es la versión final." },
-          { text: "No hacer copias para ahorrar espacio." },
+          { text: "Archivarlo y esperar que el cliente vuelva a escribir." },
+          { text: "Reservar stock, preparar el pedido y avisar el plazo acordado." },
+          { text: "Cambiar el precio sin consultar." },
+          { text: "Eliminar los datos del cliente para ahorrar espacio." },
         ],
         correctIndex: 1,
         explanation:
-          "Una estructura por temas y nombres descriptivos permite encontrar archivos y distinguir versiones. Las copias son necesarias para proteger la información.",
+          "El estado debe indicar qué sigue. Un pedido confirmado necesita reserva de stock, preparación y comunicación del plazo; así se evitan pérdidas de información y demoras.",
+      },
+      {
+        id: "p8",
+        prompt: "¿Qué indicador muestra mejor si las consultas se convierten en ventas?",
+        options: [
+          { text: "Cantidad de seguidores." },
+          { text: "Cantidad de publicaciones por semana." },
+          { text: "Pedidos confirmados divididos por consultas calificadas." },
+          { text: "Cantidad de «me gusta» en la última foto." },
+        ],
+        correctIndex: 2,
+        explanation:
+          "La conversión de consultas calificadas a pedidos conecta el interés con una decisión de compra. Los seguidores y «me gusta» pueden acompañar, pero no prueban conversión.",
+      },
+      {
+        id: "p9",
+        prompt: "Antes de automatizar una tarea, ¿qué conviene hacer?",
+        options: [
+          { text: "Automatizarla directamente y corregir los errores cuando aparezcan." },
+          { text: "Definir la regla, probarla manualmente, prever casos límite y dejar un respaldo." },
+          { text: "Eliminar la revisión humana para ahorrar tiempo." },
+          { text: "Conectar todas las herramientas disponibles al mismo tiempo." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La automatización debe partir de un proceso entendido y probado. Los casos límite y el respaldo manual evitan que un error se repita a escala.",
+      },
+      {
+        id: "p10",
+        prompt: "Si perdés el teléfono donde gestionás pedidos y cuentas, ¿qué conviene hacer primero?",
+        options: [
+          { text: "Esperar a que aparezca y no cambiar nada." },
+          { text: "Cambiar contraseñas, revocar sesiones y revisar accesos; después evaluar el impacto en pedidos y datos." },
+          { text: "Publicar los datos de los clientes para avisarles por redes." },
+          { text: "Comprar un teléfono nuevo y volver a usar las mismas contraseñas." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La respuesta a un incidente prioriza cortar el acceso no autorizado. Luego se revisan pedidos, datos y copias de seguridad. Reutilizar contraseñas aumenta el riesgo.",
       },
     ],
   },
-  resourceSlugs: ["guia-organizacion-administrativa", "presupuesto-basico"],
+  resourceSlugs: [
+    "guia-organizacion-administrativa",
+    "guia-canales-digitales",
+    "presupuesto-basico",
+  ],
   toolIds: ["diagnostico-emprendedor", "yo-emprendedor", "costoclaro"],
 };

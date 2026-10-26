@@ -84,6 +84,12 @@ export interface FinalQuiz {
   questions: QuizQuestion[];
 }
 
+export interface CourseProject {
+  title: string;
+  description: string;
+  deliverables: string[];
+}
+
 export interface Course {
   id: string;
   slug: string;
@@ -98,6 +104,7 @@ export interface Course {
   icon: CourseIcon;
   objectives: string[];
   audience: string[];
+  project: CourseProject;
   modules: CourseModule[];
   finalQuiz: FinalQuiz;
   resourceSlugs: string[];

@@ -1,4 +1,5 @@
 import type { Course } from "@/types/course";
+import { costosAvanzado } from "./modules/costos-avanzado";
 
 const DISCLAIMER = "Ejemplo ficticio con fines educativos. No representa a un emprendimiento real.";
 
@@ -7,30 +8,45 @@ export const costosYPrecios: Course = {
   slug: "costos-y-precios",
   title: "Costos y precios para emprender",
   shortTitle: "Costos y precios",
-  subtitle: "Sabé cuánto te cuesta y cuánto necesitás cobrar",
+  subtitle: "Sabé cuánto te cuesta, cuánto necesitás cobrar y cuándo te falta caja",
   description:
-    "Aprendé a ordenar costos, calcular el costo unitario, definir un precio de venta y detectar errores frecuentes antes de vender.",
+    "Aprendé a ordenar costos, calcular el costo unitario, definir precios con margen, analizar descuentos y anticipar el flujo de caja antes de vender.",
   longDescription:
-    "Vender mucho no siempre significa ganar dinero. Este curso propone un método simple para conocer los costos de tu producto o servicio, distinguir gastos fijos y variables, calcular el costo por unidad y construir un precio que cubra la operación y deje un margen. Incluye ejercicios con números y una invitación a usar CostoClaro para practicar.",
-  durationMinutes: 105,
+    "Vender mucho no siempre significa ganar dinero, y ganar en el papel no siempre significa tener caja para seguir operando. Este curso propone un método aplicado para conocer la estructura de costos, calcular el costo unitario, construir precios con margen, evaluar descuentos y canales, y proyectar un flujo de caja de 13 semanas. Incluye ejercicios con números, casos de decisión y una invitación a usar CostoClaro para practicar.",
+  durationMinutes: 167,
   level: "Inicial",
   accent: "verde",
   icon: "calculator",
   objectives: [
-    "Identificar y registrar los costos que intervienen en un producto o servicio.",
-    "Clasificar costos fijos, variables y calcular el costo unitario.",
-    "Definir un precio de venta con margen y estimar el punto de equilibrio.",
-    "Reconocer errores habituales que afectan la rentabilidad.",
+    "Identificar costos directos, indirectos, fijos, variables y ocultos.",
+    "Calcular el costo unitario real y el costo de una hora de trabajo.",
+    "Definir precios con margen, punto de equilibrio y margen de seguridad.",
+    "Evaluar descuentos, canales y mezcla de productos por contribución y capacidad.",
+    "Anticipar brechas de caja con un flujo semanal y decisiones de capital de trabajo.",
+    "Armar un tablero de rentabilidad y caja para revisar el rumbo.",
   ],
   audience: [
     "Emprendedores que venden productos o servicios y quieren ordenar sus números.",
     "Personas que fijan precios por intuición o copiando a la competencia.",
-    "Comercios pequeños que necesitan revisar la rentabilidad de lo que venden.",
+    "Comercios pequeños que necesitan revisar la rentabilidad y la caja de lo que venden.",
+    "Quienes reciben pedidos grandes o descuentos y necesitan decidir con criterio.",
   ],
+  project: {
+    title: "Tablero de rentabilidad y caja",
+    description:
+      "Una herramienta de trabajo con costos, precios, punto de equilibrio, flujo de caja y reglas para decidir qué vender, a qué precio y en qué canal.",
+    deliverables: [
+      "Ficha de costo unitario y contribución por producto.",
+      "Precio con margen y punto de equilibrio.",
+      "Flujo de caja de 13 semanas con caja mínima.",
+      "Comparación de productos y canales por contribución.",
+      "Tres reglas de decisión para descuentos, pedidos y compras.",
+    ],
+  },
   modules: [
     {
       id: "modulo-costos",
-      title: "Módulo 1 · Entender los costos",
+      title: "Entender los costos",
       description: "Qué es un costo, cuáles son sus componentes y por qué conviene registrarlos.",
       lessons: [
         {
@@ -101,6 +117,34 @@ export const costosYPrecios: Course = {
               ],
               closing:
                 "Si te falta un dato, escribí una pregunta concreta para resolverlo antes de fijar el precio. No completes con números inventados.",
+            },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Costo de reposición y costos ocultos",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "En un contexto de precios cambiantes, el costo histórico puede quedar viejo rápido. Para decidir el precio de la próxima venta, usá el **costo de reposición**: cuánto te costaría hoy reponer el insumo que consumiste. Si vendés con el precio de compra de hace tres meses, la ganancia puede desaparecer antes de que puedas volver a comprar.",
+            },
+            {
+              type: "table",
+              caption: "Costos que suelen quedar fuera de la primera lista",
+              headers: ["Costo oculto", "Cómo estimarlo", "Dónde aparece"],
+              rows: [
+                ["Tiempo propio", "Horas dedicadas × valor de tu hora.", "Producción, atención, administración y entregas."],
+                ["Comisiones y medios de pago", "Porcentaje sobre el monto cobrado.", "Cada venta con tarjeta, plataforma o billetera."],
+                ["Mermas y rechazos", "Unidades no vendibles, dañadas o devueltas.", "Producción, stock y devoluciones."],
+                ["Garantías y reposiciones", "Promedio de casos sobre ventas.", "Posventa y calidad."],
+                ["Uso de vehículo o herramientas", "Kilómetros, combustible, mantenimiento o desgaste.", "Entregas y producción."],
+                ["Financiamiento", "Intereses, comisiones o descuentos por cobrar tarde.", "Caja y crédito."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "Actualizá con una fecha visible",
+              text: "Anotá la fecha de cada costo y la fuente del dato. Un costo sin fecha puede parecer actual y estar muy lejos de lo que pagarías hoy. Revisá los insumos críticos antes de cada nueva lista de precios.",
             },
           ],
           keyIdeas: [
@@ -180,6 +224,32 @@ export const costosYPrecios: Course = {
               closing:
                 "Los dos totales serán la base para estimar el punto de equilibrio en la última lección.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Rango relevante y costos escalonados",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Decir que un costo es fijo no significa que sea fijo para siempre. El alquiler puede mantenerse hasta cierto nivel de producción y después exigir un espacio más grande. A ese salto se lo llama **costo escalonado**. El **rango relevante** es el intervalo de actividad en el que tus supuestos siguen siendo válidos. Si proyectás vender el triple sin ampliar capacidad, es probable que el cálculo deje de ser realista.",
+            },
+            {
+              type: "table",
+              caption: "Ejemplos de saltos de capacidad",
+              headers: ["Situación", "Costo que cambia", "Qué revisar antes de crecer"],
+              rows: [
+                ["Más pedidos que capacidad de horno", "Segundo turno, energía o equipo.", "Demanda sostenida y margen adicional."],
+                ["Más entregas en el mismo horario", "Movilidad, ayudante o tercerización.", "Costo por entrega y tiempo real."],
+                ["Más alumnos en un taller", "Sala más grande, sillas o segundo grupo.", "Precio, calidad y atención por persona."],
+                ["Más variedad de productos", "Stock inmovilizado y tiempo de gestión.", "Rotación y contribución de cada línea."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "tip",
+              title: "Calculá por escenarios, no por un solo número",
+              text: "Armá tres escenarios: bajo, esperado y alto. En cada uno, revisá si los costos fijos siguen siendo los mismos. Un punto de equilibrio calculado con una capacidad que no tenés puede dar una falsa sensación de seguridad.",
+            },
           ],
           keyIdeas: [
             "Los costos fijos se sostienen aunque las ventas bajen; los variables acompañan la actividad.",
@@ -191,7 +261,7 @@ export const costosYPrecios: Course = {
     },
     {
       id: "modulo-precio",
-      title: "Módulo 2 · Costo unitario y precio",
+      title: "Costo unitario y precio",
       description: "Del costo de una tanda al precio de venta y la rentabilidad del emprendimiento.",
       lessons: [
         {
@@ -269,6 +339,31 @@ export const costosYPrecios: Course = {
               ],
               closing:
                 "Usá CostoClaro al finalizar para comparar el resultado con la herramienta y revisar diferencias.",
+            },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Costo por hora y utilización",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "En los servicios, el costo unitario muchas veces se mide por hora. Pero no todas las horas disponibles se pueden cobrar: hay tiempo de preparación, traslado, administración y espera. Si dividís todos tus costos por las horas que efectivamente facturás, obtenés un costo por hora más realista.",
+            },
+            {
+              type: "quote",
+              text: "Costo por hora facturable = costos totales del período ÷ horas efectivamente facturables",
+            },
+            {
+              type: "example",
+              title: "Ejemplo: servicio de mantenimiento",
+              text: "Un servicio ficticio tiene costos mensuales de $240.000 entre herramientas, traslados, seguro y administración. La persona dispone de 120 horas al mes, pero solo 60 son facturables; el resto se usa en viajes, presupuestos y tareas administrativas. El costo por hora facturable no es $240.000 ÷ 120 = $2.000, sino $240.000 ÷ 60 = $4.000. Si cobra $3.500 por hora, puede estar trabajando a pérdida aunque parezca que tiene una tarifa alta.",
+              disclaimer: DISCLAIMER,
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "La capacidad no es solo horas",
+              text: "También hay capacidad de producción, de atención y de entrega. Si el cuello de botella es el horno, el vehículo o una sola persona, el costo por hora puede ocultar que ese recurso está saturado. Medí el recurso que limita el crecimiento.",
             },
           ],
           keyIdeas: [
@@ -366,6 +461,42 @@ export const costosYPrecios: Course = {
               closing:
                 "Un precio no es definitivo. Revisalo cuando cambien los costos, el volumen o la forma de venta.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Margen objetivo y margen de seguridad",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Si querés un margen expresado sobre el precio de venta, no multipliques el costo por el porcentaje: dividí por lo que queda después de ese margen. La fórmula es:",
+            },
+            {
+              type: "quote",
+              text: "Precio = costo unitario ÷ (1 − margen objetivo sobre la venta)",
+            },
+            {
+              type: "example",
+              title: "Ejemplo: precio con margen del 30 % sobre la venta",
+              text: "Un costo unitario de $1.000 con un margen objetivo del 30 % sobre la venta se calcula como $1.000 ÷ 0,70 = $1.428,57. Si en cambio aplicás un recargo del 30 % sobre el costo, el precio es $1.300. No son equivalentes: en el primer caso el margen representa el 30 % del precio; en el segundo, aproximadamente el 23 %. Elegí un método, escribilo y usalo siempre para comparar.",
+              disclaimer: DISCLAIMER,
+            },
+            {
+              type: "table",
+              caption: "Margen de seguridad: cuánto puede caer la venta",
+              headers: ["Ventas actuales", "Ventas de equilibrio", "Margen de seguridad"],
+              rows: [
+                ["200 unidades", "150 unidades", "25 %"],
+                ["200 unidades", "180 unidades", "10 %"],
+                ["200 unidades", "200 unidades", "0 %"],
+                ["200 unidades", "220 unidades", "Negativo: aún no cubre los fijos"],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "El precio no reemplaza la caja",
+              text: "Un margen saludable puede convivir con una caja ajustada si cobrás tarde o financiás a tus clientes. Revisá el flujo de caja antes de comprometer descuentos, plazos o compras grandes.",
+            },
           ],
           keyIdeas: [
             "El costo marca un piso; el valor para el cliente y el mercado ayudan a definir el precio.",
@@ -377,11 +508,12 @@ export const costosYPrecios: Course = {
         },
       ],
     },
+    costosAvanzado,
   ],
   finalQuiz: {
     title: "Autoevaluación final · Costos y precios",
     description:
-      "Siete preguntas con cálculos sencillos y conceptos clave. La aprobación requiere al menos 70 % de respuestas correctas.",
+      "Diez preguntas con cálculos y decisiones sobre costos, precios, descuentos, mezcla y caja. La aprobación requiere al menos 70 % de respuestas correctas.",
     passingScore: 70,
     questions: [
       {
@@ -395,90 +527,140 @@ export const costosYPrecios: Course = {
         ],
         correctIndex: 1,
         explanation:
-          "El alquiler se paga aunque las ventas bajen, por eso es fijo. La materia prima, los envases y las comisiones dependen de la actividad o de cada venta.",
+          "El alquiler se paga aunque las ventas bajen, por eso es fijo dentro del rango de capacidad acordado. La materia prima, los envases y las comisiones dependen de la actividad o de cada venta.",
       },
       {
         id: "p2",
-        prompt: "Si el costo fijo total no cambia y aumenta la cantidad producida y vendida, el costo fijo por unidad…",
+        prompt:
+          "Una tanda tiene $21.000 de costo total y se obtienen 15 unidades vendibles. ¿Cuál es el costo unitario?",
         options: [
-          { text: "Aumenta." },
-          { text: "Se mantiene exactamente igual." },
-          { text: "Disminuye." },
-          { text: "Desaparece." },
+          { text: "$1.050" },
+          { text: "$1.400" },
+          { text: "$1.500" },
+          { text: "$2.100" },
         ],
-        correctIndex: 2,
+        correctIndex: 1,
         explanation:
-          "El costo fijo total se reparte entre más unidades, por lo que el costo fijo asignado a cada una disminuye. El costo variable por unidad no necesariamente baja.",
+          "El costo unitario es $21.000 ÷ 15 = $1.400. El divisor son las unidades vendibles, no las producidas: las mermas también deben cubrirse con el precio.",
       },
       {
         id: "p3",
         prompt:
-          "Una tanda tiene $14.000 de costo total y se obtienen 20 unidades vendibles. ¿Cuál es el costo unitario?",
+          "El costo unitario es $1.000 y querés un margen del 30 % sobre el precio de venta. ¿Qué precio corresponde?",
         options: [
-          { text: "$500" },
+          { text: "$1.300" },
+          { text: "$1.428,57" },
+          { text: "$1.700" },
           { text: "$700" },
-          { text: "$1.400" },
-          { text: "$280" },
         ],
         correctIndex: 1,
         explanation:
-          "El costo unitario es $14.000 ÷ 20 = $700. Si algunas unidades no se pueden vender, el costo total debe dividirse entre menos unidades, por lo que el costo unitario sería mayor.",
+          "Para un margen sobre la venta se divide por 0,70: $1.000 ÷ 0,70 = $1.428,57. Aplicar $1.000 × 1,30 es un recargo del 30 % sobre el costo y deja un margen menor sobre la venta.",
       },
       {
         id: "p4",
-        prompt: "Si el costo unitario es $1.000 y aplicás un margen del 30 % sobre el costo, el precio es…",
+        prompt:
+          "Los costos fijos son $180.000, el precio es $3.000 y el costo variable unitario es $1.800. ¿Cuántas unidades cubren los costos fijos?",
         options: [
-          { text: "$700" },
-          { text: "$1.300" },
-          { text: "$1.430" },
-          { text: "$1.000" },
+          { text: "60 unidades" },
+          { text: "100 unidades" },
+          { text: "150 unidades" },
+          { text: "180 unidades" },
         ],
-        correctIndex: 1,
+        correctIndex: 2,
         explanation:
-          "El margen sobre el costo se calcula como $1.000 × 1,30 = $1.300. Recuerde que este margen no es igual a un margen del 30 % sobre el precio de venta.",
+          "La contribución unitaria es $3.000 − $1.800 = $1.200. El punto de equilibrio es $180.000 ÷ $1.200 = 150 unidades.",
       },
       {
         id: "p5",
         prompt:
-          "Los costos fijos son $120.000, el precio es $1.500 y el costo variable unitario es $900. ¿Cuántas unidades se necesitan para cubrir los costos fijos?",
+          "Con los mismos datos, ¿cuántas unidades se necesitan para cubrir $180.000 de costos fijos y obtener $60.000 de resultado antes de impuestos?",
         options: [
-          { text: "80 unidades" },
-          { text: "133 unidades" },
+          { text: "150 unidades" },
+          { text: "180 unidades" },
           { text: "200 unidades" },
-          { text: "300 unidades" },
+          { text: "240 unidades" },
         ],
         correctIndex: 2,
         explanation:
-          "El margen de contribución es $1.500 − $900 = $600. El punto de equilibrio es $120.000 ÷ $600 = 200 unidades.",
+          "Hay que cubrir fijos más el resultado objetivo: ($180.000 + $60.000) ÷ $1.200 = 200 unidades. El punto de equilibrio solo cubre los fijos; no incluye la ganancia buscada.",
       },
       {
         id: "p6",
-        prompt: "¿Qué debe incluirse al calcular el costo de una venta con entrega a domicilio?",
+        prompt:
+          "Un producto tiene precio $1.000, costo variable $600 y por lo tanto una contribución de $400. Si aplicás un descuento del 10 %, ¿cuánto volumen adicional necesitás para mantener la misma contribución total?",
         options: [
-          { text: "Solo los ingredientes o materiales." },
-          { text: "Los materiales, el packaging, la mano de obra, el envío y las comisiones aplicables." },
-          { text: "Únicamente el precio que cobra el competidor." },
-          { text: "Nada, porque el envío lo paga el cliente." },
-        ],
-        correctIndex: 1,
-        explanation:
-          "El costo de la venta incluye todos los recursos asociados: materiales, envases, trabajo, logística y comisiones. Aunque el cliente pague el envío por separado, ese servicio tiene un costo que debe estar previsto.",
-      },
-      {
-        id: "p7",
-        prompt: "¿Cuál es un error frecuente al fijar precios?",
-        options: [
-          { text: "Revisar los costos cuando cambian los insumos." },
-          { text: "Calcular el costo unitario antes de vender." },
-          { text: "Copiar el precio de un competidor sin conocer los costos propios." },
-          { text: "Separar la caja del emprendimiento de los gastos personales." },
+          { text: "10 % más" },
+          { text: "20 % más" },
+          { text: "33,3 % más" },
+          { text: "50 % más" },
         ],
         correctIndex: 2,
         explanation:
-          "Cada emprendimiento tiene costos distintos. Copiar un precio sin revisar la propia estructura puede hacer que se venda a pérdida. Las otras opciones son prácticas recomendables.",
+          "Con el descuento, el precio baja a $900 y la contribución a $300. Para mantener la misma contribución: $400 ÷ $300 − 1 = 33,3 % de volumen adicional. Un descuento del 10 % no se compensa vendiendo solo 10 % más.",
+      },
+      {
+        id: "p7",
+        prompt:
+          "Una venta es rentable, pero los insumos se pagan al contado y el cliente paga a 30 días. ¿Qué problema puede aparecer aunque el margen sea positivo?",
+        options: [
+          { text: "Una brecha de caja para financiar la producción." },
+          { text: "Una reducción automática de los costos fijos." },
+          { text: "Un aumento del margen por vender más." },
+          { text: "Ninguno: si hay margen, siempre hay dinero disponible." },
+        ],
+        correctIndex: 0,
+        explanation:
+          "La rentabilidad y la liquidez son distintas. Si los pagos salen antes que los cobros, necesitás capital de trabajo, señas o plazos más cortos para no quedar sin caja.",
+      },
+      {
+        id: "p8",
+        prompt:
+          "Un producto deja $1.200 de contribución y consume 2 horas; otro deja $800 y consume 30 minutos. Si la capacidad está llena y la demanda de ambos existe, ¿qué conviene priorizar?",
+        options: [
+          { text: "El de $800, porque se produce más rápido sin mirar la contribución." },
+          { text: "El de $1.200, porque tiene mayor contribución por unidad aunque consuma más horas." },
+          { text: "El segundo, porque deja $1.600 de contribución por hora." },
+          { text: "Ninguno: la contribución por hora no sirve para decidir." },
+        ],
+        correctIndex: 2,
+        explanation:
+          "El primer producto deja $600 por hora ($1.200 ÷ 2) y el segundo $1.600 por hora ($800 ÷ 0,5). Con capacidad limitada, la contribución por hora es el criterio relevante, siempre que la demanda permita venderlo.",
+      },
+      {
+        id: "p9",
+        prompt:
+          "Vendés un producto a $5.000 con $2.000 de costo variable. En una plataforma pagás 15 % de comisión y $300 de envío. ¿Cuál es la contribución aproximada por venta?",
+        options: [
+          { text: "$2.700" },
+          { text: "$1.950" },
+          { text: "$1.750" },
+          { text: "$5.000" },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La comisión es $750 y el envío $300. Contribución = $5.000 − $2.000 − $750 − $300 = $1.950. El precio de lista no es el ingreso neto del canal.",
+      },
+      {
+        id: "p10",
+        prompt:
+          "¿Cuál de estas acciones mejora la caja sin necesidad de vender más unidades este mes?",
+        options: [
+          { text: "Cobrar una seña al confirmar el pedido y acortar el plazo de cobro." },
+          { text: "Comprar más inventario para aprovechar un descuento." },
+          { text: "Aumentar el plazo de pago a los clientes." },
+          { text: "Usar el dinero de los impuestos para comprar insumos." },
+        ],
+        correctIndex: 0,
+        explanation:
+          "La seña y el plazo más corto adelantan el ingreso y reducen el capital de trabajo necesario. Comprar inventario de más, dar plazos largos o usar dinero de obligaciones aumenta el riesgo de caja.",
       },
     ],
   },
-  resourceSlugs: ["ficha-de-costos", "presupuesto-basico"],
+  resourceSlugs: [
+    "ficha-de-costos",
+    "presupuesto-basico",
+    "flujo-de-caja-13-semanas",
+  ],
   toolIds: ["costoclaro", "diagnostico-emprendedor"],
 };

@@ -188,13 +188,13 @@
   }
 
   .btn-sea {
-    background: var(--color-sea-600);
+    background: var(--color-sea-700);
     color: white;
     box-shadow: 0 10px 22px -12px rgba(11, 146, 127, 0.6);
   }
 
   .btn-sea:hover {
-    background: var(--color-sea-700);
+    background: var(--color-sea-800);
   }
 
   .btn-secondary {

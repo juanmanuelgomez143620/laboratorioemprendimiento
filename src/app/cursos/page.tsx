@@ -23,32 +23,32 @@ import { formatDuration } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Cursos",
   description:
-    "Cuatro cursos breves para iniciar o mejorar un emprendimiento: primer emprendimiento, costos y precios, marca e identidad, y herramientas digitales.",
+    "Cuatro cursos aplicados para iniciar o mejorar un emprendimiento: primer emprendimiento, costos y precios, marca e identidad, y herramientas digitales.",
 };
 
 const routeSteps = [
   {
     number: "01",
     title: "Mi primer emprendimiento",
-    description: "Ordená la idea, conocé a tus clientes y armá un plan de una página.",
+    description: "Validá la idea, conocé a tus clientes y armá un plan de 90 días.",
     href: "/cursos/mi-primer-emprendimiento",
   },
   {
     number: "02",
     title: "Costos y precios para emprender",
-    description: "Calculá cuánto cuesta producir y construí un precio con margen.",
+    description: "Calculá costos, definí precios y anticipá la caja.",
     href: "/cursos/costos-y-precios",
   },
   {
     number: "03",
     title: "Mi marca y mi identidad comercial",
-    description: "Definí nombre, identidad visual, fotos y catálogo.",
+    description: "Definí posicionamiento, identidad visual, fotos, catálogo y comunicación.",
     href: "/cursos/mi-marca-y-mi-identidad-comercial",
   },
   {
     number: "04",
     title: "Herramientas digitales para mi negocio",
-    description: "Organizá archivos, planillas, QR, WhatsApp Business e IA responsable.",
+    description: "Ordená archivos, planillas, pedidos, canales e IA responsable.",
     href: "/cursos/herramientas-digitales-para-mi-negocio",
   },
 ];
@@ -57,7 +57,7 @@ const howItWorks = [
   {
     icon: BookOpen,
     title: "Leé a tu ritmo",
-    body: "Cada curso tiene cuatro lecciones breves, ejemplos ficticios identificados y actividades para aplicar a tu propio proyecto.",
+    body: "Cada curso tiene seis lecciones, ejemplos ficticios identificados, actividades y un entregable final para aplicar a tu propio proyecto.",
   },
   {
     icon: Target,
@@ -78,7 +78,7 @@ export default function CoursesPage() {
         tone="dark"
         eyebrow="Aula virtual"
         title="Cursos para emprender, paso a paso"
-        description="Cuatro recorridos breves y conectados entre sí. No necesitás cuenta ni conocimientos previos: elegí un curso, leé las lecciones y comprobá lo aprendido con una autoevaluación."
+        description="Cuatro recorridos aplicados y conectados entre sí. No necesitás cuenta ni conocimientos previos: elegí un curso, leé las lecciones, usá las herramientas y comprobá lo aprendido con una autoevaluación."
         breadcrumbs={[{ label: "Inicio", href: "/" }, { label: "Cursos" }]}
         actions={
           <>

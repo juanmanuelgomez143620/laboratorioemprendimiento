@@ -3,9 +3,9 @@ export const site = {
   shortName: "N9 IMPULSA",
   tagline: "Aprender, crear y transformar.",
   description:
-    "Campus Emprendedor abierto de la Escuela Normal Superior N.º 9 de Wanda: cursos breves, herramientas y recursos para personas que quieren iniciar o mejorar un emprendimiento.",
+    "Campus Emprendedor abierto de la Escuela Normal Superior N.º 9 de Wanda: cursos aplicados, herramientas y recursos para personas que quieren iniciar o mejorar un emprendimiento.",
   institution: {
-    name: "Escuela Normal Superior N.º 9",
+    name: "Escuela Normal Superior N.º 9 \"Juan XXIII\"",
     shortName: "Escuela Normal N.º 9",
     locality: "Wanda",
     province: "Misiones",
@@ -13,6 +13,16 @@ export const site = {
     modality: "Técnico en Gestión y Administración de las Organizaciones (TGA)",
     classroom: "Aula-Taller de Simulación Empresarial N.º 17",
     department: "Departamento de Ciencias Económicas",
+    cue: "540073200",
+    address: "Avda. Juan XXIII N° 159, Wanda, Misiones, Argentina - CP: 3376",
+    phone: "(+54) 3757-677203",
+    email: "contacto@normal9wanda.edu.ar",
+    website: "https://www.normal9wanda.edu.ar",
+    supervision: "Dependiente del Consejo General de Educación de la Provincia de Misiones (CUIT: 30-65913433-7)",
+    supervisionUrl: "https://www.cgepm.gov.ar/",
+    privacyUrl: "https://www.normal9wanda.edu.ar/politica-de-privacidad",
+    exclusiveNotice:
+      "Este sistema es de uso exclusivo para familias y estudiantes. Los datos son confidenciales.",
   },
   statusNotice:
     "Versión inicial del campus. La articulación con organismos públicos es una propuesta en desarrollo: no existen convenios, avales ni financiamiento externo confirmados.",

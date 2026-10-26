@@ -73,7 +73,7 @@ export default function HomePage() {
                 Aprender, crear y transformar.
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-                Cursos breves, herramientas y recursos para dar tus primeros pasos con un
+                Cursos aplicados, herramientas y recursos para dar tus primeros pasos con un
                 emprendimiento. Una iniciativa educativa de la Escuela Normal Superior N.º 9 de
                 Wanda, abierta a toda la comunidad.
               </p>
@@ -197,7 +197,7 @@ export default function HomePage() {
             </span>
             <h2 className="mt-3 text-base font-extrabold text-brand-950">Aprendé a tu ritmo</h2>
             <p className="mt-1 text-sm leading-relaxed text-muted">
-              Cuatro cursos iniciales, lecciones breves y autoevaluaciones con explicaciones.
+              Cuatro cursos aplicados, 24 lecciones con entregables y autoevaluaciones con explicaciones.
             </p>
             <span className="link-arrow mt-3">
               Explorar cursos

@@ -153,6 +153,36 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 </div>
               </div>
 
+              <section
+                className="mt-5 rounded-2xl border border-sea-200 bg-sea-50/60 p-5"
+                aria-labelledby="course-project-title"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-sea-800 ring-1 ring-sea-200">
+                    <FileText className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-sea-800">
+                      Entregable final
+                    </p>
+                    <h3 id="course-project-title" className="mt-1 text-lg font-extrabold text-brand-950">
+                      {course.project.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-body">
+                      {course.project.description}
+                    </p>
+                  </div>
+                </div>
+                <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                  {course.project.deliverables.map((item) => (
+                    <li key={item} className="flex gap-2 text-sm leading-relaxed text-body">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sea-700" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
               <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl bg-brand-50/70 px-4 py-3 text-xs font-semibold text-brand-900">
                 <span className="inline-flex items-center gap-1.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-sea-700" aria-hidden="true" />

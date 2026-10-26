@@ -27,16 +27,19 @@ describe("contenido de cursos", () => {
     }
   });
 
-  it("cada curso tiene al menos tres lecciones completas con identificadores únicos", () => {
+  it("cada curso tiene al menos cinco lecciones completas con identificadores únicos", () => {
     for (const course of courses) {
       const lessons = course.modules.flatMap((module) => module.lessons);
 
-      expect(lessons.length, course.slug).toBeGreaterThanOrEqual(3);
+      expect(lessons.length, course.slug).toBeGreaterThanOrEqual(5);
       expect(new Set(lessons.map((lesson) => lesson.id)).size, course.slug).toBe(lessons.length);
       expect(new Set(lessons.map((lesson) => lesson.slug)).size, course.slug).toBe(lessons.length);
       expect(course.durationMinutes).toBeGreaterThan(0);
       expect(course.objectives.length).toBeGreaterThan(0);
       expect(course.audience.length).toBeGreaterThan(0);
+      expect(course.project.title.length, course.slug).toBeGreaterThan(0);
+      expect(course.project.description.length, course.slug).toBeGreaterThan(20);
+      expect(course.project.deliverables.length, course.slug).toBeGreaterThan(0);
 
       for (const lesson of lessons) {
         expect(lesson.title.length, `${course.slug}/${lesson.slug}`).toBeGreaterThan(0);
@@ -57,12 +60,12 @@ describe("contenido de cursos", () => {
     expect(new Set(allIds).size).toBe(allIds.length);
   });
 
-  it("cada evaluación tiene seis preguntas válidas y aprueba con 70%", () => {
+  it("cada evaluación tiene al menos ocho preguntas válidas y aprueba con 70%", () => {
     for (const course of courses) {
       const quiz = course.finalQuiz;
 
       expect(quiz.passingScore, course.slug).toBe(70);
-      expect(quiz.questions.length).toBeGreaterThanOrEqual(5);
+      expect(quiz.questions.length).toBeGreaterThanOrEqual(8);
       expect(new Set(quiz.questions.map((question) => question.id)).size, course.slug).toBe(
         quiz.questions.length,
       );

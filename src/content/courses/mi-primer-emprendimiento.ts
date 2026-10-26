@@ -1,4 +1,5 @@
 import type { Course } from "@/types/course";
+import { primerEmprendimientoAvanzado } from "./modules/primer-emprendimiento-avanzado";
 
 const DISCLAIMER = "Ejemplo ficticio con fines educativos. No representa a un emprendimiento real.";
 
@@ -7,30 +8,43 @@ export const miPrimerEmprendimiento: Course = {
   slug: "mi-primer-emprendimiento",
   title: "Mi primer emprendimiento",
   shortTitle: "Primer emprendimiento",
-  subtitle: "De la idea a un plan que puedas empezar",
+  subtitle: "De la idea validada a un plan de 90 días",
   description:
-    "Un recorrido inicial para convertir una idea en una propuesta concreta, conocer a tus clientes y organizar los primeros pasos.",
+    "Un recorrido aplicado para convertir una idea en una propuesta concreta, probar la demanda y organizar los primeros 90 días con decisiones basadas en evidencia.",
   longDescription:
-    "Este curso te ayuda a pasar de la intuición a una primera versión de tu proyecto. Vas a revisar qué problema resuelve tu propuesta, quién podría pagar por ella, qué recursos necesitás y cómo armar un plan simple que puedas revisar cada semana. No hace falta tener un negocio en marcha ni conocimientos administrativos previos.",
-  durationMinutes: 95,
+    "Este curso te ayuda a pasar de la intuición a un proyecto con criterios de decisión. Vas a revisar qué problema resuelve tu propuesta, quién podría pagar por ella, cómo probar la demanda antes de invertir y cómo estimar la economía de una venta. Al final vas a completar un expediente de validación y un plan de 90 días con hitos, riesgos y puertas de decisión. No hace falta tener un negocio en marcha ni conocimientos administrativos previos.",
+  durationMinutes: 157,
   level: "Inicial",
   accent: "azul",
   icon: "lightbulb",
   objectives: [
-    "Distinguir una idea entusiasta de una oportunidad que responde a una necesidad concreta.",
-    "Describir tu producto o servicio y su propuesta de valor con palabras claras.",
-    "Identificar clientes, recursos y aliados para una primera etapa.",
-    "Armar un plan de una página con objetivos, costos iniciales y próximos pasos.",
+    "Distinguir una idea entusiasta de una oportunidad con evidencia de demanda.",
+    "Diseñar una oferta mínima y una propuesta de valor comprobable.",
+    "Elegir un cliente inicial, revisar recursos y estimar la contribución de una venta.",
+    "Validar supuestos con entrevistas, preventas y experimentos de bajo costo.",
+    "Armar un plan de 90 días con indicadores, riesgos y decisiones de continuar, ajustar o detener.",
   ],
   audience: [
-    "Personas que quieren iniciar un emprendimiento y no saben por dónde empezar.",
-    "Comerciantes y trabajadores independientes que necesitan ordenar su propuesta.",
-    "Estudiantes y egresados que desean explorar una idea de negocio.",
+    "Personas que quieren iniciar un emprendimiento y necesitan un método para probar la idea.",
+    "Comerciantes y trabajadores independientes que quieren ordenar su propuesta y sus números.",
+    "Estudiantes y egresados que desean explorar una idea antes de invertir.",
   ],
+  project: {
+    title: "Expediente de validación y plan de 90 días",
+    description:
+      "Un documento de trabajo con el problema, la evidencia reunida, el cliente inicial, la oferta, la economía de una venta, los riesgos y los próximos experimentos.",
+    deliverables: [
+      "Problema y evidencia disponible.",
+      "Cliente inicial y propuesta de valor.",
+      "Costo variable y contribución estimada por venta.",
+      "Tres experimentos con criterios de éxito y corte.",
+      "Plan de 90 días con hitos y puertas de decisión.",
+    ],
+  },
   modules: [
     {
       id: "modulo-idea",
-      title: "Módulo 1 · La idea y su valor",
+      title: "La idea y su valor",
       description: "Cómo reconocer un problema real y convertir una idea en una propuesta comprensible.",
       lessons: [
         {
@@ -52,7 +66,7 @@ export const miPrimerEmprendimiento: Course = {
             },
             {
               type: "paragraph",
-              text: "Muchas personas esperan tener una idea «original» para empezar. En la práctica, la mayoría de los emprendimientos pequeños crecen resolviendo problemas cotidianos: conseguir un repuesto, organizar una compra, preparar una comida que ahorre tiempo, reparar algo, acompañar a otra persona en una tarea. Lo importante no es que nadie haya pensado algo parecido, sino que tu propuesta resuelva bien una necesidad para un grupo de personas al que puedas llegar.",
+              text: "Muchas personas esperan tener una idea «original» para empezar. En la práctica, muchos emprendimientos pequeños crecen resolviendo problemas cotidianos: conseguir un repuesto, organizar una compra, preparar una comida que ahorre tiempo, reparar algo, acompañar a otra persona en una tarea. Lo importante no es que nadie haya pensado algo parecido, sino que tu propuesta resuelva bien una necesidad para un grupo de personas al que puedas llegar.",
             },
             {
               type: "callout",
@@ -115,6 +129,32 @@ export const miPrimerEmprendimiento: Course = {
               ],
               closing:
                 "Guardá tus notas. En la siguiente lección vas a convertir ese problema en una propuesta de valor.",
+            },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Mapa de supuestos",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Toda idea descansa en supuestos. Algunos se refieren a lo que el cliente quiere; otros, a lo que vos podés producir, cobrar o sostener. Antes de invertir, separalos para saber qué estás comprando con cada prueba.",
+            },
+            {
+              type: "table",
+              caption: "Cuatro grupos de supuestos que conviene revisar",
+              headers: ["Tipo", "Pregunta clave", "Evidencia posible"],
+              rows: [
+                ["Deseabilidad", "¿El cliente tiene el problema y le importa lo suficiente?", "Entrevistas, observación, preventas."],
+                ["Factibilidad", "¿Podés entregar la solución con la calidad prometida?", "Prueba piloto, ficha de proceso, control de calidad."],
+                ["Viabilidad", "¿El precio cubre los costos y deja margen?", "Costo unitario, contribución, punto de equilibrio."],
+                ["Capacidad", "¿Tenés tiempo, espacio y energía para sostenerlo?", "Agenda real, lista de tareas, prueba de una semana."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "Identificá el supuesto que podría romper todo",
+              text: "Si un supuesto es falso, ¿el proyecto deja de tener sentido? Ese es tu riesgo fatal. Probablemente sea la primera prueba que debas hacer, aunque no sea la más cómoda.",
             },
           ],
           keyIdeas: [
@@ -204,6 +244,33 @@ export const miPrimerEmprendimiento: Course = {
               closing:
                 "Evitá usar palabras abstractas como «calidad», «excelencia» o «innovación» sin explicar qué significan para el cliente.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · El alcance también es parte de la propuesta",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Una propuesta clara no solo dice qué incluye: también dice qué no incluye y bajo qué condiciones se entrega. Los límites evitan promesas imposibles y reclamos por expectativas distintas. Completá este cuadro antes de publicar una oferta.",
+            },
+            {
+              type: "table",
+              caption: "Definición de una primera versión de la oferta",
+              headers: ["Elemento", "Pregunta para completar", "Ejemplo"],
+              rows: [
+                ["Incluye", "¿Qué recibe exactamente el cliente?", "Vianda, guarnición, cubiertos y entrega en el centro."],
+                ["No incluye", "¿Qué debe resolver el cliente por su cuenta?", "Bebida, postre y entrega fuera de la zona."],
+                ["Condición", "¿Qué tiene que pasar para cumplir la promesa?", "Pedido confirmado antes de las 9."],
+                ["Límite", "¿Cuándo no podés cumplir?", "Feriados, pedidos fuera de horario o más de 20 unidades."],
+                ["Prueba", "¿Cómo sabe el cliente que recibirá eso?", "Foto de la vianda, descripción y confirmación escrita."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "tip",
+              title: "Una buena oferta se puede explicar en un mensaje",
+              text: "Si necesitás tres audios para aclarar qué incluye, probablemente la oferta tenga demasiadas variantes. Reducila para la primera etapa y agregá opciones cuando la operación esté estable.",
+            },
           ],
           keyIdeas: [
             "El cliente compra un resultado o una mejora, no solamente un conjunto de características.",
@@ -216,7 +283,7 @@ export const miPrimerEmprendimiento: Course = {
     },
     {
       id: "modulo-clientes",
-      title: "Módulo 2 · Clientes y recursos",
+      title: "Clientes y recursos",
       description: "Quiénes podrían comprar, cómo llegar a ellos y qué hace falta para sostener la propuesta.",
       lessons: [
         {
@@ -300,6 +367,33 @@ export const miPrimerEmprendimiento: Course = {
               closing:
                 "La actividad se completa cuando podés nombrar el primer gasto, el límite y el aliado. No necesitás tener todo resuelto.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Priorizar clientes sin inventar datos",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Cuando aparecen varios grupos posibles, no elijas solo por simpatía. Comparalos con criterios que puedas observar o preguntar. Una matriz simple ayuda a ver trade-offs: el grupo más numeroso no siempre es el más accesible ni el que mejor paga.",
+            },
+            {
+              type: "table",
+              caption: "Criterios para elegir un cliente inicial",
+              headers: ["Criterio", "Pregunta", "Cómo obtener evidencia"],
+              rows: [
+                ["Dolor", "¿El problema es frecuente, urgente o costoso?", "Relatos de la última vez que ocurrió."],
+                ["Acceso", "¿Podés llegar a ese grupo con tus canales actuales?", "Prueba de mensaje, lista de contactos, referidos."],
+                ["Pago", "¿Ya gasta en una alternativa o tiene presupuesto?", "Precios de alternativas, compras previas."],
+                ["Capacidad", "¿Podés atenderlo con tu tiempo y recursos?", "Agenda, producción máxima, logística."],
+                ["Aprendizaje", "¿Te permite aprender algo útil para crecer?", "Variedad de casos y retroalimentación."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "warning",
+              title: "No sumes puntos que no podés sostener",
+              text: "Una matriz no reemplaza la conversación con clientes. Usala para ordenar la decisión y anotá de dónde salió cada puntaje. Si un dato es una suposición, marcalo como tal.",
+            },
           ],
           keyIdeas: [
             "Un cliente inicial concreto permite aprender y comunicar mejor.",
@@ -313,7 +407,7 @@ export const miPrimerEmprendimiento: Course = {
     },
     {
       id: "modulo-plan",
-      title: "Módulo 3 · Un plan simple para avanzar",
+      title: "Un plan simple para avanzar",
       description: "Cómo convertir tus decisiones en objetivos y próximos pasos medibles.",
       lessons: [
         {
@@ -400,6 +494,32 @@ export const miPrimerEmprendimiento: Course = {
               closing:
                 "Compartí el plan con una persona de confianza y pedile que señale la parte menos clara. Ese es tu próximo ajuste.",
             },
+            {
+              type: "heading",
+              text: "Nivel aplicado · Presupuesto de aprendizaje y agenda",
+              level: 2,
+            },
+            {
+              type: "paragraph",
+              text: "Validar también cuesta tiempo y dinero. Definí un **presupuesto de aprendizaje** separado de la inversión productiva: una suma máxima que estás dispuesto a gastar en pruebas que pueden fallar. Si el experimento no funciona, no habrás comprometido la operación ni los gastos esenciales.",
+            },
+            {
+              type: "table",
+              caption: "Ejemplo de presupuesto para cuatro semanas",
+              headers: ["Concepto", "Límite", "Qué se aprende"],
+              rows: [
+                ["Entrevistas y visitas", "Tiempo, sin gasto directo.", "Problema, alternativas y prioridad."],
+                ["Muestra o prototipo", "Costo de una tanda pequeña.", "Calidad, presentación y aceptación."],
+                ["Difusión para prueba", "Monto acotado y medible.", "Mensaje, canal y consultas."],
+                ["Reserva", "10 a 20 % del presupuesto.", "Imprevistos y ajustes."],
+              ],
+            },
+            {
+              type: "callout",
+              variant: "tip",
+              title: "Una hora fija vale más que una intención",
+              text: "Agendá la revisión semanal como si fuera una reunión con un cliente. Si no tiene día y horario, el plan queda en una hoja y la urgencia ocupa todo el tiempo.",
+            },
           ],
           keyIdeas: [
             "El plan es una herramienta para decidir, no un trámite para archivar.",
@@ -410,90 +530,148 @@ export const miPrimerEmprendimiento: Course = {
         },
       ],
     },
+    primerEmprendimientoAvanzado,
   ],
   finalQuiz: {
     title: "Autoevaluación final · Mi primer emprendimiento",
     description:
-      "Seis preguntas para revisar las ideas centrales del curso. Podés repetir la evaluación y consultar la explicación de cada respuesta.",
+      "Diez preguntas aplicadas sobre validación, priorización de clientes, economía de una venta y planificación. La aprobación requiere al menos 70 % de respuestas correctas.",
     passingScore: 70,
     questions: [
       {
         id: "p1",
-        prompt: "¿Cuál es una buena primera acción antes de invertir en una idea de emprendimiento?",
+        prompt:
+          "¿Cuál de estas señales es la más fuerte para concluir que existe demanda por una vianda?",
         options: [
-          { text: "Comprar todo el equipamiento para mostrar compromiso." },
-          { text: "Conversar con posibles clientes y probar una versión pequeña." },
-          { text: "Registrar el nombre antes de saber si existe demanda." },
-          { text: "Esperar a tener una idea que nadie haya tenido antes." },
+          { text: "Diez personas dicen que la idea les parece excelente." },
+          { text: "Cinco personas dejan una seña para recibir la primera tanda." },
+          { text: "Un familiar asegura que compraría todas las semanas." },
+          { text: "La publicación tuvo muchas visualizaciones." },
         ],
         correctIndex: 1,
         explanation:
-          "Validar con clientes y probar algo pequeño reduce el riesgo. Comprar equipamiento o registrar marcas antes de conocer la demanda puede generar gastos difíciles de recuperar.",
+          "La seña es una señal de pago y compromiso. Las opiniones, la intención declarada y las visualizaciones pueden indicar interés, pero no prueban que la persona vaya a pagar.",
       },
       {
         id: "p2",
-        prompt: "¿Qué debe comunicar una propuesta de valor?",
+        prompt: "Antes de lanzar un experimento, ¿qué conviene definir?",
         options: [
-          { text: "Que el producto es el más barato del mercado." },
-          { text: "Una lista completa de todas las características técnicas." },
-          { text: "Qué beneficio concreto obtiene un grupo de clientes y por qué elegir la propuesta." },
-          { text: "El nombre y el logo del emprendimiento." },
+          { text: "Solo el presupuesto disponible." },
+          { text: "La métrica, el umbral de éxito, el plazo y la decisión que se tomará." },
+          { text: "La mayor cantidad posible de preguntas para no olvidar nada." },
+          { text: "El resultado que se quiere obtener, para comunicarlo como un hecho." },
         ],
-        correctIndex: 2,
+        correctIndex: 1,
         explanation:
-          "La propuesta de valor conecta una necesidad con un beneficio y una diferencia relevante para el cliente. Las características ayudan, pero por sí solas no explican el valor.",
+          "Un experimento se interpreta con criterios definidos de antemano. Sin métrica, umbral, plazo y decisión, cualquier resultado puede parecer un éxito o una anécdota.",
       },
       {
         id: "p3",
-        prompt: "Un cliente inicial bien definido se caracteriza por…",
+        prompt: "¿Cuál es la mejor pregunta para una entrevista de validación?",
         options: [
-          { text: "Incluir a toda la población posible." },
-          { text: "Compartir necesidades o hábitos que permiten comunicar y aprender." },
-          { text: "Ser siempre una persona conocida del barrio." },
-          { text: "No necesitar información porque el producto es universal." },
+          { text: "¿Comprarías mi producto si estuviera disponible?" },
+          { text: "¿Te gusta la idea que te estoy mostrando?" },
+          { text: "Contame cómo resolviste esta necesidad la última vez." },
+          { text: "¿Cuánto creés que debería cobrar?" },
         ],
-        correctIndex: 1,
+        correctIndex: 2,
         explanation:
-          "Un grupo inicial con características comunes permite enfocar el mensaje, la entrega y el aprendizaje. «Todos» es demasiado amplio para una primera etapa.",
+          "Preguntar por un hecho pasado reduce la cortesía y la imaginación. Permite conocer alternativas, costos, esfuerzos y decisiones reales del cliente.",
       },
       {
         id: "p4",
-        prompt: "¿Qué recurso conviene comprar antes de empezar?",
+        prompt:
+          "Un emprendimiento recibe muchas consultas, pero entrega tarde y acumula reclamos. ¿Cuál es la primera decisión más razonable?",
         options: [
-          { text: "Todos los recursos deseables, aunque no sean necesarios." },
-          { text: "Solo lo indispensable para entregar una primera versión y cumplir una prueba." },
-          { text: "Un local propio, para transmitir confianza." },
-          { text: "El equipo de mayor tamaño disponible, para no quedarse corto." },
+          { text: "Aumentar la publicidad para compensar los reclamos." },
+          { text: "Reducir variedad o cupos y ordenar la capacidad antes de promocionar más." },
+          { text: "Bajar el precio para que los clientes toleren la demora." },
+          { text: "Contratar un local más grande sin revisar el proceso." },
         ],
         correctIndex: 1,
         explanation:
-          "La primera inversión debe ser la mínima necesaria para aprender. Los recursos deseables pueden incorporarse cuando hay ventas o evidencia de demanda.",
+          "Más demanda sobre un proceso que ya falla aumenta el problema. Primero hay que ajustar capacidad, promesa y operación; después se puede volver a crecer.",
       },
       {
         id: "p5",
-        prompt: "¿Qué es el capital de trabajo?",
+        prompt:
+          "Una vianda se vende a $3.500 y sus costos variables son $2.100. ¿Cuál es su margen de contribución?",
         options: [
-          { text: "El dinero que se destina únicamente a publicidad." },
-          { text: "El dinero que queda en movimiento para insumos, entregas y gastos antes de cobrar." },
-          { text: "El total de ventas del último año." },
-          { text: "El préstamo que se solicita para comprar un local." },
+          { text: "$1.400" },
+          { text: "$2.100" },
+          { text: "$3.500" },
+          { text: "$5.600" },
         ],
-        correctIndex: 1,
+        correctIndex: 0,
         explanation:
-          "El capital de trabajo sostiene la operación: comprar insumos, producir, entregar y cubrir gastos mientras llegan los cobros. No equivale a la inversión inicial en equipamiento.",
+          "El margen de contribución es precio menos costos variables: $3.500 − $2.100 = $1.400. Ese monto aporta primero a cubrir los costos fijos.",
       },
       {
         id: "p6",
-        prompt: "¿Qué hace útil a un plan de una página?",
+        prompt:
+          "Si los costos fijos son $140.000 y la contribución por vianda es $1.400, ¿cuántas viandas se necesitan para cubrir los costos fijos?",
         options: [
-          { text: "Que tenga la mayor cantidad de páginas y detalles posible." },
-          { text: "Que incluya objetivos medibles, próximos pasos y una rutina de revisión." },
-          { text: "Que no cambie nunca, para mantener el rumbo." },
-          { text: "Que lo escriba otra persona para que sea objetivo." },
+          { text: "70 viandas" },
+          { text: "100 viandas" },
+          { text: "140 viandas" },
+          { text: "196 viandas" },
         ],
         correctIndex: 1,
         explanation:
-          "El plan sirve cuando orienta decisiones y se revisa con datos. Un objetivo concreto, pasos acotados y revisión periódica permiten corregir el rumbo.",
+          "El punto de equilibrio es $140.000 ÷ $1.400 = 100 viandas. Vender menos implica que la contribución no alcanza a cubrir todos los costos fijos.",
+      },
+      {
+        id: "p7",
+        prompt:
+          "Una venta es rentable, pero el cliente paga a 30 días y los insumos se compran al contado. ¿Qué riesgo aparece?",
+        options: [
+          { text: "Ninguno, porque la venta ya está confirmada." },
+          { text: "Una brecha de caja: hay que financiar la producción mientras llega el cobro." },
+          { text: "Un aumento automático del margen de contribución." },
+          { text: "Una reducción del costo fijo mensual." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La rentabilidad no garantiza liquidez. Si los pagos salen antes que los cobros, el emprendimiento necesita capital de trabajo o mejores condiciones de cobro.",
+      },
+      {
+        id: "p8",
+        prompt: "¿Qué es una puerta de decisión en un plan de 90 días?",
+        options: [
+          { text: "Una reunión para celebrar los resultados." },
+          { text: "Un momento definido con evidencia para decidir si continuar, ajustar o detener." },
+          { text: "Una lista de tareas sin fecha." },
+          { text: "Un objetivo que se cambia todas las semanas." },
+        ],
+        correctIndex: 1,
+        explanation:
+          "La puerta de decisión evita seguir invirtiendo por inercia. Se define antes con qué evidencia se evaluará y qué se hará según el resultado.",
+      },
+      {
+        id: "p9",
+        prompt: "¿Para qué sirve hacer un pre-mortem antes de empezar?",
+        options: [
+          { text: "Para imaginar que el proyecto fracasa y detectar causas que se pueden prevenir." },
+          { text: "Para demostrar que el proyecto no puede fallar." },
+          { text: "Para reemplazar las conversaciones con clientes." },
+          { text: "Para fijar un precio más alto sin revisar costos." },
+        ],
+        correctIndex: 0,
+        explanation:
+          "El pre-mortem supone que el proyecto ya falló y ayuda a identificar riesgos, dependencias y señales tempranas. Permite diseñar mitigaciones antes de que el problema ocurra.",
+      },
+      {
+        id: "p10",
+        prompt: "¿Cuál es una señal de validación débil o engañosa?",
+        options: [
+          { text: "Clientes que pagan una seña y reciben la primera versión." },
+          { text: "Personas que ya gastan en una alternativa para resolver el problema." },
+          { text: "Solo familiares y amigos dicen que comprarían, sin compromiso ni pago." },
+          { text: "Una prueba piloto con clientes que no conocen al emprendedor." },
+        ],
+        correctIndex: 2,
+        explanation:
+          "El apoyo de personas cercanas puede ser valioso, pero no equivale a demanda. La validación gana fuerza con clientes del segmento, comportamiento real y compromiso o pago.",
       },
     ],
   },
