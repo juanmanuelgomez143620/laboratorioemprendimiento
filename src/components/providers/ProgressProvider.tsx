@@ -29,6 +29,7 @@ interface ProgressContextValue {
   storageAvailable: boolean | null;
   setLessonCompleted: (courseId: string, lessonId: string, completed: boolean) => void;
   recordAttempt: (courseId: string, result: QuizResult) => void;
+  importProgress: (progress: CampusProgress) => void;
   resetCourse: (courseId: string) => void;
   resetAll: () => void;
 }
@@ -87,6 +88,10 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setProgress((current) => recordQuizAttempt(current, courseId, result));
   }, []);
 
+  const importProgress = useCallback((next: CampusProgress) => {
+    setProgress(next);
+  }, []);
+
   const resetCourse = useCallback((courseId: string) => {
     setProgress((current) => resetCourseProgress(current, courseId));
   }, []);
@@ -103,10 +108,20 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       storageAvailable,
       setLessonCompleted,
       recordAttempt,
+      importProgress,
       resetCourse,
       resetAll,
     }),
-    [progress, hydrated, storageAvailable, setLessonCompleted, recordAttempt, resetCourse, resetAll],
+    [
+      progress,
+      hydrated,
+      storageAvailable,
+      setLessonCompleted,
+      recordAttempt,
+      importProgress,
+      resetCourse,
+      resetAll,
+    ],
   );
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

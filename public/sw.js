@@ -4,21 +4,38 @@
  * - Los recursos estáticos con nombre versionado se sirven desde caché.
  * - No se cachean datos personales: el progreso vive en localStorage, no en la red.
  */
-const CACHE_NAME = "normal9-impulsa-v3";
+const CACHE_NAME = "normal9-impulsa-v4";
 const PRECACHE_URLS = [
   "/",
   "/cursos",
   "/biblioteca",
+  "/glosario",
+  "/preguntas-frecuentes",
   "/herramientas",
   "/herramientas/diagnostico",
   "/jornadas",
   "/proyecto",
   "/aula-taller",
   "/privacidad",
+  "/mi-progreso",
   "/manifest.webmanifest",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
   "/icons/apple-touch-icon.png",
+  "/institucional/escudo-escuela-normal-9.png",
+  // Portada y primera lección de cada curso: permiten empezar a leer sin conexión.
+  "/cursos/mi-primer-emprendimiento",
+  "/cursos/mi-primer-emprendimiento/lecciones/de-la-idea-al-emprendimiento",
+  "/cursos/mi-primer-emprendimiento/evaluacion",
+  "/cursos/costos-y-precios",
+  "/cursos/costos-y-precios/lecciones/que-es-un-costo",
+  "/cursos/costos-y-precios/evaluacion",
+  "/cursos/mi-marca-y-mi-identidad-comercial",
+  "/cursos/mi-marca-y-mi-identidad-comercial/lecciones/identidad-y-nombre",
+  "/cursos/mi-marca-y-mi-identidad-comercial/evaluacion",
+  "/cursos/herramientas-digitales-para-mi-negocio",
+  "/cursos/herramientas-digitales-para-mi-negocio/lecciones/organizacion-digital",
+  "/cursos/herramientas-digitales-para-mi-negocio/evaluacion",
 ];
 
 self.addEventListener("install", (event) => {

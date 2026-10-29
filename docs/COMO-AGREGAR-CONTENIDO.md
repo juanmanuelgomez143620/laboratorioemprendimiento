@@ -21,6 +21,8 @@ Si una referencia, una evaluación o una descarga queda inválida, las pruebas d
 | Registro y orden de los cursos | `src/content/courses/index.ts` |
 | Biblioteca | `src/content/resources.ts` |
 | Categorías de la biblioteca | `src/content/resource-categories.ts` |
+| Glosario emprendedor | `src/content/glossary.ts` |
+| Preguntas frecuentes | `src/app/preguntas-frecuentes/page.tsx` |
 | Herramientas | `src/content/tools.ts` |
 | Diagnóstico | `src/content/diagnostic.ts` |
 | Jornadas | `src/content/jornadas.ts` |
@@ -397,6 +399,19 @@ El escudo incorporado para esta versión está en `public/institucional/escudo-e
 
 Si la escuela entrega una versión autorizada en mejor resolución, reemplazá el archivo conservando el mismo nombre o actualizá la ruta y las dimensiones en el componente. El escudo es una referencia de identidad institucional: no debe presentarse como sello de certificación, aval o convenio.
 
+### Glosario y preguntas frecuentes
+
+El glosario vive en `src/content/glossary.ts`. Cada término necesita:
+
+- `id` único, en minúsculas y con guiones;
+- `term`, `category` y `definition` (más de 20 caracteres);
+- `example` opcional, siempre ilustrativo y sin datos reales;
+- `relatedCourseSlugs` opcional, con slugs de cursos existentes.
+
+Las pruebas de contenido verifican que las categorías y los términos no se repitan y que las referencias a cursos existan. Si agregás una categoría, actualizá `glossaryCategories` y el texto de la página `/glosario`.
+
+Las preguntas frecuentes están en `src/app/preguntas-frecuentes/page.tsx`. Mantené las respuestas alineadas con los avisos de `src/content/site.ts` y con el comportamiento real del campus. No agregues promesas de certificación oficial, plazos, avales ni datos de contacto que no estén verificados.
+
 ---
 
 ## 10. Estilo y accesibilidad del contenido
@@ -428,6 +443,8 @@ Luego verificá en **http://localhost:3100**:
 - [ ] Los recursos relacionados abren y las descargas funcionan.
 - [ ] Las herramientas externas abren en pestaña nueva y están rotuladas.
 - [ ] El diagnóstico sigue completo y no guarda respuestas.
+- [ ] Exportar e importar la copia del progreso funciona y pide confirmación antes de reemplazar.
+- [ ] El glosario y las preguntas frecuentes no contradicen los avisos institucionales.
 - [ ] No hay enlaces rotos ni botones sin acción.
 - [ ] El contenido se lee bien en celular y en proyector.
 - [ ] No se agregaron avales, fechas, estadísticas ni socios sin verificar.

@@ -4,12 +4,14 @@ import {
   createEmptyProgress,
   getCourseStatusFromReference,
   normalizeProgress,
+  parseImportedProgress,
   parseStoredProgress,
   PROGRESS_STORAGE_KEY,
   readProgressFromStorage,
   recordQuizAttempt,
   resetAllProgress,
   resetCourseProgress,
+  serializeProgressBackup,
   setLessonCompletion,
   writeProgressToStorage,
 } from "@/lib/progress";
@@ -140,6 +142,66 @@ describe("parseStoredProgress", () => {
     });
 
     expect(parseStoredProgress(raw).courses.curso.completedLessons).toEqual(["l1"]);
+  });
+});
+
+describe("copia de seguridad del progreso", () => {
+  it("serializa y vuelve a leer un respaldo completo", () => {
+    const progress = setLessonCompletion(createEmptyProgress(), "curso", "l1", true, NOW);
+    const parsed = parseImportedProgress(serializeProgressBackup(progress, NOW));
+
+    expect(parsed.ok).toBe(true);
+    if (!parsed.ok) return;
+    expect(parsed.progress).toEqual(progress);
+    expect(parsed.exportedAt).toBe(NOW);
+  });
+
+  it("acepta un progreso guardado sin el envoltorio de respaldo", () => {
+    const raw = JSON.stringify({
+      version: 1,
+      courses: { curso: { completedLessons: ["l1", "l2"], attempts: [] } },
+      updatedAt: NOW,
+    });
+    const parsed = parseImportedProgress(raw);
+
+    expect(parsed.ok).toBe(true);
+    if (!parsed.ok) return;
+    expect(parsed.progress.courses.curso.completedLessons).toEqual(["l1", "l2"]);
+    expect(parsed.exportedAt).toBeNull();
+  });
+
+  it("rechaza archivos con JSON inválido o formato desconocido", () => {
+    for (const raw of ["", "{no es json", "[]", "42", "null"]) {
+      const parsed = parseImportedProgress(raw);
+      expect(parsed.ok).toBe(false);
+    }
+  });
+
+  it("rechaza respaldos de otra aplicación o de otra versión", () => {
+    const anotherApp = JSON.stringify({
+      app: "otro-campus",
+      backupVersion: 1,
+      progress: createEmptyProgress(),
+    });
+    const anotherVersion = JSON.stringify({
+      app: "normal9-impulsa",
+      backupVersion: 2,
+      progress: createEmptyProgress(),
+    });
+
+    expect(parseImportedProgress(anotherApp).ok).toBe(false);
+    expect(parseImportedProgress(anotherVersion).ok).toBe(false);
+  });
+
+  it("rechaza un progreso sin estructura reconocible", () => {
+    for (const raw of [
+      JSON.stringify({ app: "normal9-impulsa", backupVersion: 1 }),
+      JSON.stringify({ version: 2, courses: {} }),
+      JSON.stringify({ version: 1, courses: "no-es-un-objeto" }),
+      JSON.stringify({ version: 1, courses: { curso: "no-es-un-curso" } }),
+    ]) {
+      expect(parseImportedProgress(raw).ok).toBe(false);
+    }
   });
 });
 

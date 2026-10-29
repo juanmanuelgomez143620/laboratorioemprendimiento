@@ -10,6 +10,7 @@ import {
   ExternalLink,
   FileText,
   GraduationCap,
+  HelpCircle,
   Laptop,
   LibraryBig,
   MapPin,
@@ -525,6 +526,16 @@ export default function HomePage() {
             <div className="mt-5 flex items-center gap-2 text-xs font-semibold text-muted">
               <FileText className="h-4 w-4 text-sea-700" aria-hidden="true" />
               {resources.length} materiales iniciales · abiertos, sin registro
+            </div>
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+              <Link href="/glosario" className="link-arrow text-sm">
+                <FileText className="h-4 w-4" aria-hidden="true" />
+                Consultar el glosario
+              </Link>
+              <Link href="/preguntas-frecuentes" className="link-arrow text-sm">
+                <HelpCircle className="h-4 w-4" aria-hidden="true" />
+                Preguntas frecuentes
+              </Link>
             </div>
           </div>
 

@@ -7,6 +7,7 @@ import {
   ArrowRight,
   Award,
   Clock,
+  History,
   RotateCcw,
   Trash2,
 } from "lucide-react";
@@ -15,9 +16,19 @@ import type { CourseFlowData } from "@/lib/presentation";
 import { getCourseStatusFromReference } from "@/lib/progress";
 import { useProgress } from "@/components/providers/ProgressProvider";
 import { getCourseDestination } from "@/components/courses/CourseActions";
+import { ProgressBackup } from "@/components/progress/ProgressBackup";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { accentStyles } from "@/components/courses/courseVisuals";
 import { cn, formatDuration } from "@/lib/utils";
+
+function formatAttemptDate(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Fecha no disponible";
+  return new Intl.DateTimeFormat("es-AR", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
+}
 
 export interface ProgressCourseData extends CourseFlowData {
   title: string;
@@ -124,6 +135,7 @@ export function ProgressDashboard({ courses }: { courses: ProgressCourseData[] }
           );
           const startedCourse = status.completedLessons > 0 || status.bestPercentage !== null;
           const accent = accentStyles[course.accent];
+          const attempts = progress.courses[course.id]?.attempts ?? [];
 
           return (
             <article key={course.id} className="rounded-2xl border border-line bg-white p-5 shadow-card sm:p-6">
@@ -171,6 +183,37 @@ export function ProgressDashboard({ courses }: { courses: ProgressCourseData[] }
                     tone="sea"
                     size="md"
                   />
+
+                  {attempts.length > 0 && (
+                    <details className="mt-3 max-w-xl rounded-xl border border-line bg-slate-50/80 px-3 py-2">
+                      <summary className="flex cursor-pointer list-none items-center gap-1.5 text-xs font-extrabold text-brand-900">
+                        <History className="h-3.5 w-3.5 text-sea-700" aria-hidden="true" />
+                        Historial de evaluaciones ({attempts.length})
+                      </summary>
+                      <ul className="mt-2 space-y-1.5 border-t border-line pt-2">
+                        {attempts
+                          .slice()
+                          .reverse()
+                          .map((attempt, attemptIndex) => (
+                            <li
+                              key={`${attempt.completedAt}-${attemptIndex}`}
+                              className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs text-muted"
+                            >
+                              <span>{formatAttemptDate(attempt.completedAt)}</span>
+                              <span
+                                className={cn(
+                                  "font-bold",
+                                  attempt.passed ? "text-sea-800" : "text-slate-600",
+                                )}
+                              >
+                                {attempt.score}/{attempt.total} · {attempt.percentage} % ·{" "}
+                                {attempt.passed ? "Aprobado" : "No aprobado"}
+                              </span>
+                            </li>
+                          ))}
+                      </ul>
+                    </details>
+                  )}
                 </div>
 
                 <div className="flex shrink-0 flex-wrap items-center gap-2.5">
@@ -226,6 +269,8 @@ export function ProgressDashboard({ courses }: { courses: ProgressCourseData[] }
           );
         })}
       </div>
+
+      <ProgressBackup courses={courses} />
 
       <section className="mt-8 rounded-2xl border border-line bg-white p-5 shadow-card sm:p-6" aria-labelledby="reset-all-title">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

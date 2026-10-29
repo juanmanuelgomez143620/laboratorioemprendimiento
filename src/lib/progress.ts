@@ -8,6 +8,8 @@ import type {
 import type { QuizResult } from "@/lib/quiz";
 
 export const PROGRESS_STORAGE_KEY = "normal9-impulsa:progress:v1";
+export const PROGRESS_BACKUP_APP = "normal9-impulsa";
+export const PROGRESS_BACKUP_VERSION = 1;
 const MAX_ATTEMPTS_PER_COURSE = 25;
 
 type ReadableStorage = Pick<Storage, "getItem">;
@@ -102,6 +104,86 @@ export function parseStoredProgress(raw: string | null): CampusProgress {
   } catch {
     return createEmptyProgress();
   }
+}
+
+export interface ProgressBackup {
+  app: typeof PROGRESS_BACKUP_APP;
+  backupVersion: typeof PROGRESS_BACKUP_VERSION;
+  exportedAt: string;
+  progress: CampusProgress;
+}
+
+export type ParsedProgressBackup =
+  | { ok: true; progress: CampusProgress; exportedAt: string | null }
+  | { ok: false; error: string };
+
+export function createProgressBackup(
+  progress: CampusProgress,
+  exportedAt: string = new Date().toISOString(),
+): ProgressBackup {
+  return {
+    app: PROGRESS_BACKUP_APP,
+    backupVersion: PROGRESS_BACKUP_VERSION,
+    exportedAt,
+    progress,
+  };
+}
+
+export function serializeProgressBackup(
+  progress: CampusProgress,
+  exportedAt?: string,
+): string {
+  return JSON.stringify(createProgressBackup(progress, exportedAt), null, 2);
+}
+
+/**
+ * Lee un archivo de copia de seguridad sin confiar en su contenido.
+ * Acepta tanto el respaldo del campus como un progreso guardado sin envoltorio.
+ */
+export function parseImportedProgress(raw: string): ParsedProgressBackup {
+  let parsed: unknown;
+
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return { ok: false, error: "El archivo no contiene un JSON válido." };
+  }
+
+  if (!isRecord(parsed)) {
+    return { ok: false, error: "El archivo no tiene el formato esperado." };
+  }
+
+  let candidate: unknown = parsed;
+  let exportedAt: string | null = null;
+
+  if ("app" in parsed || "backupVersion" in parsed || "progress" in parsed) {
+    if (parsed.app !== PROGRESS_BACKUP_APP) {
+      return { ok: false, error: "El archivo no pertenece a NORMAL 9 IMPULSA." };
+    }
+
+    if (parsed.backupVersion !== PROGRESS_BACKUP_VERSION) {
+      return { ok: false, error: "La versión del archivo no es compatible con este campus." };
+    }
+
+    if (typeof parsed.exportedAt === "string" && !Number.isNaN(Date.parse(parsed.exportedAt))) {
+      exportedAt = parsed.exportedAt;
+    }
+
+    candidate = parsed.progress;
+  }
+
+  if (!isRecord(candidate) || candidate.version !== 1 || !isRecord(candidate.courses)) {
+    return { ok: false, error: "El archivo no contiene un progreso del campus reconocible." };
+  }
+
+  if (
+    Object.keys(candidate.courses).length > 0 &&
+    !Object.values(candidate.courses).some((course) => isRecord(course))
+  ) {
+    return { ok: false, error: "El archivo no contiene cursos válidos." };
+  }
+
+  return { ok: true, progress: normalizeProgress(candidate), exportedAt };
 }
 
 export function readProgressFromStorage(storage?: ReadableStorage): CampusProgress {

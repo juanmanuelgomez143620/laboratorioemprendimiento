@@ -1,6 +1,6 @@
 # NORMAL 9 IMPULSA — Campus Emprendedor
 
-Campus educativo abierto de la **Escuela Normal Superior N.º 9 de Wanda, Misiones**, pensado para acompañar los primeros pasos de un emprendimiento. Reúne cuatro cursos aplicados con 24 lecciones, autoevaluaciones, una biblioteca de recursos y plantillas, herramientas externas claramente identificadas, un diagnóstico inicial y páginas institucionales.
+Campus educativo abierto de la **Escuela Normal Superior N.º 9 de Wanda, Misiones**, pensado para acompañar los primeros pasos de un emprendimiento. Reúne cuatro cursos aplicados con 24 lecciones, autoevaluaciones, una biblioteca de recursos y plantillas, un glosario, preguntas frecuentes, herramientas externas claramente identificadas, un diagnóstico inicial y páginas institucionales.
 
 ![Vista previa institucional del campus](public/og-image.png)
 
@@ -16,16 +16,18 @@ Campus educativo abierto de la **Escuela Normal Superior N.º 9 de Wanda, Mision
   3. Mi marca y mi identidad comercial — manual de marca mínimo y plan de comunicación.
   4. Herramientas digitales para mi negocio — sistema operativo digital.
 - **Autoevaluación final por curso** con 10 preguntas, corrección automática, explicación de cada respuesta y aprobación desde el **70 % exacto**.
-- **Progreso local**: lecciones completadas, intentos y mejor resultado, guardados solo en el navegador. Incluye reinicio por curso y reinicio total.
+- **Progreso local**: lecciones completadas, historial de intentos y mejor resultado, guardados solo en el navegador. Incluye exportación e importación de una copia de seguridad en JSON, reinicio por curso y reinicio total.
 - **Constancia de actividad educativa de demostración**, habilitada al completar todas las lecciones y aprobar la evaluación. Se puede personalizar con un nombre opcional e imprimir o guardar como PDF. No es una certificación oficial.
 - **Biblioteca** con 9 recursos en 5 categorías, búsqueda, filtro por tipo, contenido completo y 4 descargas reales en CSV.
+- **Glosario emprendedor** con 30 términos en 4 categorías, búsqueda, filtros y enlaces a los cursos.
+- **Preguntas frecuentes** sobre el recorrido, las evaluaciones, la constancia de demostración, la privacidad y el uso del campus.
 - **Herramientas**:
   - **CostoClaro** y **Yo Emprendedor**, como enlaces externos claramente rotulados.
   - **Diagnóstico inicial de mi emprendimiento**, herramienta propia de 10 preguntas, con resultado orientativo, recomendaciones e impresión.
   - Proyectos futuros marcados como **«Proyecto previsto»**, sin enlaces falsos.
 - **Jornadas**: una jornada modelo explícitamente identificada como demostración, sin fechas, disertantes ni inscripciones inventadas.
 - **Páginas institucionales**: Sobre el proyecto y Conocé el potencial del Aula-Taller.
-- **PWA opcional** (service worker en producción), diseño responsive, navegación accesible, estilos de impresión y modo de movimiento reducido.
+- **PWA opcional** (service worker en producción) con páginas principales, portadas de cursos y primeras lecciones disponibles sin conexión; aviso de estado sin conexión, diseño responsive, navegación accesible, estilos de impresión y modo de movimiento reducido.
 
 ---
 
@@ -113,21 +115,26 @@ NEXT_PUBLIC_SITE_URL=https://tu-dominio.example
 
 ## 6. Verificación realizada
 
-Resultados obtenidos en este entorno el **25/10/2026**:
+Resultados obtenidos en este entorno el **28/10/2026**:
 
 | Verificación | Resultado |
 | --- | --- |
-| `npm run test` | **60 pruebas aprobadas** en 4 archivos |
+| `npm run test` | **68 pruebas aprobadas** en 4 archivos |
 | `npm run typecheck` | **0 errores** |
 | `npm run lint` | **0 errores y 0 advertencias** |
-| `npm run build` | **Compilación exitosa**, 59 páginas estáticas generadas |
-| Rutas HTTP probadas | **21 rutas principales y descargas con respuesta 200**; **404 correcto** para un curso y un recurso inexistentes |
+| `npm run build` | **Compilación exitosa**, 61 páginas estáticas generadas |
+| Rutas HTTP probadas | **Rutas principales, glosario, preguntas frecuentes, mi progreso y descargas con respuesta 200**; **404 correcto** para un curso y un recurso inexistentes |
 | Enlaces internos | Navegación principal y enlaces de cursos, lecciones, evaluación, biblioteca, herramientas y páginas institucionales revisados en navegador |
 | Navegación en navegador | Inicio, cursos, lecciones nuevas, evaluación, constancia, biblioteca, herramientas, diagnóstico, jornadas y páginas institucionales |
 | Evaluación final | 10/10 respuestas correctas → **100 %**, intento guardado y constancia aún bloqueada sin lecciones |
 | Lecciones | 6/6 marcadas desde la interfaz, progreso persistente tras recargar |
 | Constancia | Se habilita con 6 lecciones + evaluación aprobada; nombre visible, no persistido; avisos de demostración presentes |
 | Reinicio | Confirmación en dos pasos, almacenamiento vaciado y cursos en 0 % |
+| Copia de seguridad | Descarga JSON real, validación de archivos ajenos o incompatibles, confirmación y restauración del progreso |
+| Historial de evaluaciones | Fecha, puntaje, porcentaje y estado de cada intento visible en **Mi progreso** |
+| Glosario | 30 términos en 4 categorías, búsqueda sin acentos, filtros, estado vacío y enlaces a cursos |
+| Preguntas frecuentes | 18 respuestas agrupadas en 4 secciones, con enlaces internos y correo institucional |
+| PWA y modo sin conexión | Service worker `normal9-impulsa-v4` activo con 39 URLs en caché, incluidas portadas, primeras lecciones y evaluación de cada curso |
 | Diagnóstico | 10/10 respuestas, resultado **100 % · Avanzado**, recomendaciones y enlaces; respuestas no guardadas |
 | Biblioteca | Búsqueda, filtro por categoría, estado vacío, 9 recursos y 4 descargas CSV reales |
 | Plantillas nuevas | Flujo de caja de 13 semanas y calendario de contenidos de 30 días: páginas y archivos CSV con respuesta 200 |
@@ -140,8 +147,10 @@ Las pruebas cubren, entre otros casos:
 
 - aprobación exacta en el 70 %, redondeo que no debe aprobar (2/3 = 67 %), respuestas sin contestar y fuera de rango;
 - normalización de datos corruptos o incompletos en `localStorage`, límite de 25 intentos, reinicio y elegibilidad de constancia;
+- exportación e importación de la copia de seguridad: JSON inválido, archivo de otra aplicación, versión incompatible y estructura desconocida;
 - puntajes del diagnóstico, límites de nivel, respuestas incompletas y recomendaciones;
 - integridad del contenido: 4 cursos con al menos 5 lecciones, 24 lecciones, 40 preguntas de evaluación, 5 categorías con recursos, referencias existentes y descargas que apuntan a archivos reales;
+- glosario: 30 términos con identificadores únicos, definiciones, categorías válidas y referencias a cursos existentes;
 - presencia y validez del archivo PNG del escudo institucional.
 
 > Este entorno no realizó ningún despliegue. No se declara una URL pública de producción.

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, BookOpen, Menu, X } from "lucide-react";
 import { site } from "@/content/site";
+import { ConnectionStatus } from "@/components/ui/ConnectionStatus";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
@@ -56,6 +57,7 @@ export function SiteHeader() {
             Campus público · sin registro
           </p>
           <div className="ml-auto flex items-center gap-4">
+            <ConnectionStatus />
             <Link
               href="/mi-progreso"
               className="inline-flex items-center gap-1.5 rounded font-bold text-white transition hover:text-sea-200"

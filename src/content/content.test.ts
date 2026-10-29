@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { courses } from "@/content/courses";
+import { glossaryCategories, glossaryTerms } from "@/content/glossary";
 import { resourceCategories } from "@/content/resource-categories";
 import { resources } from "@/content/resources";
 import { tools } from "@/content/tools";
@@ -10,6 +11,7 @@ const courseSlugs = new Set(courses.map((course) => course.slug));
 const resourceSlugs = new Set(resources.map((resource) => resource.slug));
 const toolIdSet = new Set(tools.map((tool) => tool.id));
 const categoryIds = new Set(resourceCategories.map((category) => category.id));
+const glossaryCategoryIds = new Set(glossaryCategories.map((category) => category.id));
 
 describe("contenido de cursos", () => {
   it("incluye al menos los cuatro cursos fundacionales con identificadores únicos", () => {
@@ -135,6 +137,34 @@ describe("biblioteca de recursos", () => {
     for (const resource of resources) {
       for (const slug of resource.relatedCourseSlugs ?? []) {
         expect(courseSlugs.has(slug), `${resource.slug} → ${slug}`).toBe(true);
+      }
+    }
+  });
+});
+
+describe("glosario emprendedor", () => {
+  it("tiene categorías y términos con identificadores únicos", () => {
+    expect(glossaryCategories.length).toBeGreaterThanOrEqual(3);
+    expect(new Set(glossaryCategories.map((category) => category.id)).size).toBe(
+      glossaryCategories.length,
+    );
+    expect(glossaryTerms.length).toBeGreaterThanOrEqual(20);
+    expect(new Set(glossaryTerms.map((term) => term.id)).size).toBe(glossaryTerms.length);
+    expect(new Set(glossaryTerms.map((term) => term.term)).size).toBe(glossaryTerms.length);
+  });
+
+  it("cada término tiene definición y una categoría existente", () => {
+    for (const term of glossaryTerms) {
+      expect(glossaryCategoryIds.has(term.category), term.id).toBe(true);
+      expect(term.term.length, term.id).toBeGreaterThan(0);
+      expect(term.definition.length, term.id).toBeGreaterThan(20);
+    }
+  });
+
+  it("las referencias a cursos del glosario existen", () => {
+    for (const term of glossaryTerms) {
+      for (const slug of term.relatedCourseSlugs ?? []) {
+        expect(courseSlugs.has(slug), `${term.id} → ${slug}`).toBe(true);
       }
     }
   });

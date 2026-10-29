@@ -7,9 +7,11 @@ import { Logo } from "@/components/ui/Logo";
 const campusLinks = [
   { href: "/cursos", label: "Cursos del campus" },
   { href: "/biblioteca", label: "Biblioteca emprendedora" },
+  { href: "/glosario", label: "Glosario emprendedor" },
   { href: "/herramientas", label: "Herramientas digitales" },
   { href: "/herramientas/diagnostico", label: "Diagnóstico inicial" },
   { href: "/mi-progreso", label: "Mi progreso" },
+  { href: "/preguntas-frecuentes", label: "Preguntas frecuentes" },
 ];
 
 const institutionalLinks = [
