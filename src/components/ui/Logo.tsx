@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -15,25 +15,18 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
       <span
         aria-hidden="true"
         className={cn(
-          "relative grid shrink-0 place-items-center overflow-hidden rounded-[14px] shadow-sm",
+          "relative grid shrink-0 place-items-center overflow-hidden rounded-[14px] shadow-sm ring-1",
           compact ? "h-10 w-10" : "h-12 w-12",
-          inverted
-            ? "bg-white text-brand-950 ring-1 ring-white/20"
-            : "bg-brand-900 text-white ring-1 ring-brand-950/10",
+          inverted ? "bg-white/10 ring-white/20" : "bg-white ring-brand-950/10",
         )}
       >
-        <span className="relative z-10 text-[14px] font-extrabold tracking-tight">N9</span>
-        <span
-          className={cn(
-            "absolute -right-3 -top-3 h-7 w-7 rounded-full",
-            inverted ? "bg-sea-200" : "bg-sea-400/80",
-          )}
-        />
-        <span
-          className={cn(
-            "absolute inset-x-2 bottom-[7px] h-[3px] rounded-full",
-            inverted ? "bg-sea-500" : "bg-sea-300",
-          )}
+        <Image
+          src="/logo.svg"
+          alt=""
+          width={compact ? 40 : 48}
+          height={compact ? 40 : 48}
+          className="h-full w-full"
+          priority
         />
       </span>
       <span className="min-w-0">
@@ -53,7 +46,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
             inverted ? "text-white" : "text-brand-950",
           )}
         >
-          NORMAL 9 <span className={inverted ? "text-sea-300" : "text-sea-700"}>IMPULSA</span>
+          Impulsa
         </span>
         {!compact && (
           <span
@@ -62,8 +55,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
               inverted ? "text-white/60" : "text-muted",
             )}
           >
-            <GraduationCap className="h-3 w-3" aria-hidden="true" />
-            Escuela Normal Superior N.º 9 · Wanda
+            Iniciativa educativa abierta
           </span>
         )}
       </span>

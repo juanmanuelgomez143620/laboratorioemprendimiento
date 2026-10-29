@@ -68,9 +68,9 @@ export default function HomePage() {
             <div className="fade-rise">
               <p className="inline-flex flex-wrap items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.17em] text-sea-200">
                 <span className="h-1.5 w-1.5 rounded-full bg-sea-300" aria-hidden="true" />
-                NORMAL 9 IMPULSA · Campus Emprendedor
+                Campus Emprendedor
               </p>
-              <h1 className="mt-6 max-w-2xl text-[clamp(2.7rem,7vw,5.3rem)] font-extrabold leading-[1.02] tracking-[-0.055em] text-white">
+              <h1 className="mt-6 max-w-2xl text-[clamp(2.7rem,7vw,5.3rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white">
                 Aprender, crear y transformar.
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
@@ -309,7 +309,7 @@ export default function HomePage() {
                 </a>
               </div>
               <p className="mt-3 border-t border-line pt-3 text-[11px] leading-relaxed text-muted">
-                Se abre en calculodecosto.vercel.app, fuera de este campus. NORMAL 9 IMPULSA no
+                Se abre en calculodecosto.vercel.app, fuera de este campus. Campus Emprendedor no
                 modifica su código ni gestiona sus datos.
               </p>
             </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
               Innovación educativa al servicio de nuestra comunidad
             </h2>
             <p className="mt-3 text-base leading-relaxed text-body">
-              NORMAL 9 IMPULSA no es solo un sitio de cursos: es una forma de poner en valor lo que
+              Campus Emprendedor no es solo un sitio de cursos: es una forma de poner en valor lo que
               la escuela ya sabe hacer y de abrir ese conocimiento a quienes emprenden.
             </p>
           </div>
@@ -578,7 +578,7 @@ export default function HomePage() {
                 <blockquote className="mt-3 max-w-3xl text-xl font-bold leading-relaxed tracking-tight text-brand-950 sm:text-2xl">
                   «La Escuela Normal Superior N.º 9 cuenta con infraestructura tecnológica,
                   capacidades pedagógicas y experiencias concretas de innovación para contribuir al
-                  desarrollo emprendedor de su comunidad. NORMAL 9 IMPULSA transforma esas
+                  desarrollo emprendedor de su comunidad. Campus Emprendedor transforma esas
                   capacidades en herramientas y oportunidades de aprendizaje.»
                 </blockquote>
                 <p className="mt-5 max-w-2xl text-sm leading-relaxed text-body">

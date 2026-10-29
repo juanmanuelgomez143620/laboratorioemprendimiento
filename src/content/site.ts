@@ -1,6 +1,6 @@
 export const site = {
-  name: "NORMAL 9 IMPULSA",
-  shortName: "N9 IMPULSA",
+  name: "Campus Emprendedor",
+  shortName: "Campus Emprendedor",
   tagline: "Aprender, crear y transformar.",
   description:
     "Campus Emprendedor abierto de la Escuela Normal Superior N.º 9 de Wanda: cursos aplicados, herramientas y recursos para personas que quieren iniciar o mejorar un emprendimiento.",

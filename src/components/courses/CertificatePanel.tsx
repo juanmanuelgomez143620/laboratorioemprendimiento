@@ -192,7 +192,7 @@ export function CertificatePanel({ course }: { course: CourseFlowData }) {
                   Campus Emprendedor
                 </p>
                 <p className="text-lg font-extrabold leading-tight tracking-tight text-brand-950">
-                  NORMAL 9 IMPULSA
+                  Campus Emprendedor
                 </p>
                 <p className="mt-0.5 text-[11px] font-semibold text-muted">
                   {site.institution.name} · {site.institution.locality}, {site.institution.province}
@@ -220,7 +220,7 @@ export function CertificatePanel({ course }: { course: CourseFlowData }) {
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-body">
               completó la actividad educativa <strong className="font-extrabold text-brand-950">«{course.title}»</strong>{" "}
-              del Campus Emprendedor NORMAL 9 IMPULSA, con una calificación de{" "}
+              del Campus Emprendedor, con una calificación de{" "}
               <strong className="font-extrabold text-brand-950">{status.bestPercentage} %</strong> en la
               autoevaluación final.
             </p>
@@ -260,7 +260,7 @@ export function CertificatePanel({ course }: { course: CourseFlowData }) {
               Documento generado localmente en el navegador de la persona participante. No cuenta con
               validación en línea.
             </p>
-            <p className="font-bold">NORMAL 9 IMPULSA · Aprender, crear y transformar.</p>
+            <p className="font-bold">Campus Emprendedor · Aprender, crear y transformar.</p>
           </div>
         </article>
       </div>

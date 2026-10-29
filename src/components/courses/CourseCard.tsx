@@ -35,7 +35,7 @@ export function CourseCard({ course, index = 0, featured = false }: CourseCardPr
     <article className="h-full">
       <Link
         href={`/cursos/${course.slug}`}
-        className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-line bg-white shadow-card transition duration-200 hover:-translate-y-[3px] hover:border-brand-200 hover:shadow-lift"
+        className="group flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-line bg-white shadow-card transition duration-200 hover:-translate-y-[2px] hover:border-brand-200 hover:shadow-lift"
         aria-label={`Ver curso ${course.title}`}
       >
         <div className={cn("relative overflow-hidden px-5 pb-5 pt-5 text-white sm:px-6", accent.banner)}>

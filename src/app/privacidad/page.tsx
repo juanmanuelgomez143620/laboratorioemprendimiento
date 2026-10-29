@@ -25,7 +25,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Privacidad y accesibilidad",
   description:
-    "Cómo trata NORMAL 9 IMPULSA los datos locales, qué guarda el navegador y qué criterios de accesibilidad se aplican en el campus.",
+    "Cómo trata Campus Emprendedor los datos locales, qué guarda el navegador y qué criterios de accesibilidad se aplican en el campus.",
 };
 
 const storedFields = [

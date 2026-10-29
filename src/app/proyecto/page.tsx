@@ -24,7 +24,7 @@ import { site, feasibilityNotes } from "@/content/site";
 export const metadata: Metadata = {
   title: "Sobre el proyecto",
   description:
-    "NORMAL 9 IMPULSA es una iniciativa educativa de la Escuela Normal Superior N.º 9 de Wanda. Conocé su enfoque, su estado actual y los límites de la propuesta.",
+    "Campus Emprendedor es una iniciativa educativa de la Escuela Normal Superior N.º 9 de Wanda. Conocé su enfoque, su estado actual y los límites de la propuesta.",
 };
 
 const principles = [
@@ -81,7 +81,7 @@ export default function ProjectPage() {
         tone="dark"
         eyebrow="Sobre el proyecto"
         title="Una escuela que abre sus capacidades a la comunidad"
-        description="NORMAL 9 IMPULSA es una iniciativa educativa de la Escuela Normal Superior N.º 9 de Wanda. Reúne cursos, recursos y herramientas para acompañar a quienes emprenden, desde una propuesta pública, abierta y transparente sobre su estado actual."
+        description="Campus Emprendedor es una iniciativa educativa de la Escuela Normal Superior N.º 9 de Wanda. Reúne cursos, recursos y herramientas para acompañar a quienes emprenden, desde una propuesta pública, abierta y transparente sobre su estado actual."
         breadcrumbs={[{ label: "Inicio", href: "/" }, { label: "Proyecto" }]}
         actions={
           <>
@@ -146,7 +146,7 @@ export default function ProjectPage() {
             <div className="mt-4 space-y-4 text-base leading-relaxed text-body">
               <p>
                 La Escuela Normal Superior N.º 9 cuenta con infraestructura tecnológica, capacidades
-                pedagógicas y experiencias concretas de innovación. NORMAL 9 IMPULSA busca transformar
+                pedagógicas y experiencias concretas de innovación. Campus Emprendedor busca transformar
                 esas capacidades en herramientas y oportunidades de aprendizaje para la comunidad.
               </p>
               <p>
@@ -329,7 +329,7 @@ export default function ProjectPage() {
         </section>
 
         <p className="mt-8 text-center text-xs leading-relaxed text-muted">
-          NORMAL 9 IMPULSA · {site.institution.name} · {site.institution.locality}, {site.institution.province}
+          Campus Emprendedor · {site.institution.name} · {site.institution.locality}, {site.institution.province}
           <br />
           Iniciativa educativa. Las constancias son documentos de actividad educativa de
           demostración y no constituyen certificación oficial.

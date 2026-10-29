@@ -130,7 +130,7 @@ export default function ToolsPage() {
               Aplicaciones que pertenecen a otros
             </h2>
             <p className="mt-3 text-base leading-relaxed text-body">
-              Estos enlaces abren sitios externos en una pestaña nueva. NORMAL 9 IMPULSA no
+              Estos enlaces abren sitios externos en una pestaña nueva. Campus Emprendedor no
               administra esas aplicaciones, no modifica su código y no gestiona los datos que se
               carguen en ellas.
             </p>

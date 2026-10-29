@@ -204,7 +204,7 @@ export function SiteFooter() {
               oficial.
             </p>
             <div className="mt-6 flex flex-col gap-2 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-              <p>© {year} NORMAL 9 IMPULSA · Campus Emprendedor. Uso educativo.</p>
+              <p>© {year} Campus Emprendedor. Uso educativo.</p>
               <p>Hecho para aprender, crear y transformar.</p>
             </div>
           </div>

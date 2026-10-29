@@ -28,7 +28,7 @@ export const tools: Tool[] = [
     href: "/herramientas/diagnostico",
     linkLabel: "Hacer el diagnóstico",
     ownerNote:
-      "Herramienta educativa desarrollada para NORMAL 9 IMPULSA. El resultado es orientativo y no se guarda ni se envía a ningún servidor.",
+      "Herramienta educativa desarrollada para Campus Emprendedor. El resultado es orientativo y no se guarda ni se envía a ningún servidor.",
     tags: ["diagnóstico", "organización", "costos", "promoción", "herramientas digitales"],
     icon: "compass",
   },

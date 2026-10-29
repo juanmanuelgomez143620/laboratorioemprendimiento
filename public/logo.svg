@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Campus Emprendedor">
+  <defs>
+    <linearGradient id="campus-bg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1963d6" />
+      <stop offset="1" stop-color="#0f4fb8" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#campus-bg)" />
+  <path
+    d="M17 43 C24 39 31 39 32 43 C33 39 40 39 47 43 V47 C40 43 33 43 32 47 C31 43 24 43 17 47 Z"
+    fill="#ffffff"
+    opacity="0.92"
+  />
+  <path d="M32 35 V17" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+  <path d="M26 23 L32 17 L38 23" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M39 28 C45 28 47 34 41 36 C35 36 35 30 39 28 Z" fill="#14b49b" />
+</svg>

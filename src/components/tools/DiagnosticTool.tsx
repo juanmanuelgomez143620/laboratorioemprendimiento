@@ -258,7 +258,7 @@ function DiagnosticResultView({
   return (
     <div>
       <div className="print-only mb-6 border-b border-slate-300 pb-3">
-        <p className="text-xs font-bold uppercase tracking-wide">NORMAL 9 IMPULSA · Campus Emprendedor</p>
+        <p className="text-xs font-bold uppercase tracking-wide">Campus Emprendedor</p>
         <p className="text-[10px]">
           {site.institution.name} · {site.institution.locality}, {site.institution.province}
         </p>

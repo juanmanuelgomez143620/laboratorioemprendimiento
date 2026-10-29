@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
     title: resource.title,
     description: resource.description,
     openGraph: {
-      title: `${resource.title} · Biblioteca NORMAL 9 IMPULSA`,
+      title: `${resource.title} · Biblioteca Campus Emprendedor`,
       description: resource.description,
       type: "article",
     },
@@ -113,7 +113,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
           <article className="card-surface p-5 print:border-0 print:p-0 print:shadow-none sm:p-8" aria-labelledby="resource-content-title">
             <div className="print-only mb-6 border-b border-slate-300 pb-3">
-              <p className="text-xs font-bold uppercase tracking-wide">NORMAL 9 IMPULSA · Biblioteca emprendedora</p>
+              <p className="text-xs font-bold uppercase tracking-wide">Campus Emprendedor · Biblioteca emprendedora</p>
               <p className="text-[10px]">
                 {site.institution.name} · {site.institution.locality}, {site.institution.province}
               </p>
@@ -142,7 +142,7 @@ export default async function ResourcePage({ params }: ResourcePageProps) {
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Volver a la biblioteca
               </Link>
-              <p className="text-xs text-muted">Recurso educativo abierto · NORMAL 9 IMPULSA</p>
+              <p className="text-xs text-muted">Recurso educativo abierto · Campus Emprendedor</p>
             </div>
           </article>
 

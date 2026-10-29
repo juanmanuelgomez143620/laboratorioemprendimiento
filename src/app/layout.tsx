@@ -11,11 +11,11 @@ import { siteUrl } from "@/lib/site-url";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "NORMAL 9 IMPULSA — Campus Emprendedor",
-    template: "%s · NORMAL 9 IMPULSA",
+    default: "Campus Emprendedor — Aprender, crear y transformar.",
+    template: "%s · Campus Emprendedor",
   },
   description: site.description,
-  applicationName: "NORMAL 9 IMPULSA",
+  applicationName: "Campus Emprendedor",
   manifest: "/manifest.webmanifest",
   category: "education",
   keywords: [
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    title: "NORMAL 9 IMPULSA — Campus Emprendedor",
+    title: "Campus Emprendedor — Aprender, crear y transformar.",
     description: site.description,
-    siteName: "NORMAL 9 IMPULSA",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "NORMAL 9 IMPULSA — Aprender, crear y transformar." }],
+    siteName: "Campus Emprendedor",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Campus Emprendedor — Aprender, crear y transformar." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NORMAL 9 IMPULSA — Campus Emprendedor",
+    title: "Campus Emprendedor — Aprender, crear y transformar.",
     description: site.description,
     images: ["/og-image.png"],
   },

@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     title: course.title,
     description: course.description,
     openGraph: {
-      title: `${course.title} · NORMAL 9 IMPULSA`,
+      title: `${course.title} · Campus Emprendedor`,
       description: course.description,
       type: "article",
     },

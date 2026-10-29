@@ -158,7 +158,7 @@ export function parseImportedProgress(raw: string): ParsedProgressBackup {
 
   if ("app" in parsed || "backupVersion" in parsed || "progress" in parsed) {
     if (parsed.app !== PROGRESS_BACKUP_APP) {
-      return { ok: false, error: "El archivo no pertenece a NORMAL 9 IMPULSA." };
+      return { ok: false, error: "El archivo no pertenece a Campus Emprendedor." };
     }
 
     if (parsed.backupVersion !== PROGRESS_BACKUP_VERSION) {

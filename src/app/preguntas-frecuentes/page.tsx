@@ -19,7 +19,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Preguntas frecuentes",
   description:
-    "Respuestas sobre los cursos, las evaluaciones, la constancia de demostración, la privacidad y el uso del campus NORMAL 9 IMPULSA.",
+    "Respuestas sobre los cursos, las evaluaciones, la constancia de demostración, la privacidad y el uso del campus Campus Emprendedor.",
 };
 
 const faqGroups = [
