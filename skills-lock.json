@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "skills": {
+    "open-design": {
+      "source": "feimacode/open-design-agent-kit",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": "packages/claude-plugin/skills/open-design/SKILL.md",
+      "computedHash": "416bae78d2f4c3b4d1d0ded84d3aa10b291b1e69d7d269ebf8ecc0c0f8422d1b"
+    }
+  }
+}

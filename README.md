@@ -45,6 +45,14 @@ Campus educativo abierto de la **Escuela Normal Superior N.º 9 de Wanda, Mision
 
 No usa base de datos, autenticación, APIs pagas, claves secretas ni servicios de analítica.
 
+### Open Design para agentes
+
+El repo incluye el skill `open-design` en `.agents/skills/open-design/` y el servidor MCP `open-design` configurado en `opencode.json`. Es una herramienta de desarrollo para agentes: no se ejecuta en el sitio publicado, no requiere cuenta ni API key y no agrega datos al campus.
+
+OpenCode inicia el servidor por stdio cuando se lo necesita. La orden incluye `ajv` de forma explícita porque el paquete `@feimacode/open-design-agent-kit-mcp` 0.3.0 no la declara y, sin ella, el servidor falla al arrancar. `skills-lock.json` fija el skill instalado.
+
+Si las herramientas no aparecen en una sesión ya abierta, reiniciá OpenCode. Para pedir una exploración visual: «Usá Open Design para proponer una versión más clara de la portada, sin cambiar el contenido, la identidad institucional ni el alcance del campus».
+
 ---
 
 ## 3. Requisitos
