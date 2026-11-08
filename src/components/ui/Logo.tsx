@@ -37,7 +37,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
             inverted ? "text-sea-300" : "text-sea-700",
           )}
         >
-          Campus Emprendedor
+          Escuela Normal N.º 9 · Wanda
         </span>
         <span
           className={cn(
@@ -46,7 +46,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
             inverted ? "text-white" : "text-brand-950",
           )}
         >
-          Impulsa
+          Campus Emprendedor
         </span>
         {!compact && (
           <span
@@ -55,7 +55,7 @@ export function Logo({ inverted = false, compact = false, href = "/", className 
               inverted ? "text-white/60" : "text-muted",
             )}
           >
-            Iniciativa educativa abierta
+            Formación abierta a la comunidad
           </span>
         )}
       </span>

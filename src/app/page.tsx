@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
+  Briefcase,
   BookOpen,
   Calculator,
   CheckCircle2,
@@ -24,6 +26,7 @@ import { site, feasibilityNotes } from "@/content/site";
 import { courses, totalLearningMinutes, totalLessons } from "@/content/courses";
 import { resources } from "@/content/resources";
 import { CourseCard } from "@/components/courses/CourseCard";
+import { CourseFinderCard } from "@/components/courses/CourseFinderCard";
 import { toCourseCardData } from "@/lib/presentation";
 import { formatDuration } from "@/lib/utils";
 
@@ -37,6 +40,7 @@ const heroSteps = [
   { number: "02", title: "Costos y precios claros", detail: "Costos y precios para emprender", href: "/cursos/costos-y-precios" },
   { number: "03", title: "Marca y presentación", detail: "Mi marca y mi identidad comercial", href: "/cursos/mi-marca-y-mi-identidad-comercial" },
   { number: "04", title: "Herramientas para avanzar", detail: "Herramientas digitales para mi negocio", href: "/cursos/herramientas-digitales-para-mi-negocio" },
+  { number: "05", title: "CV y entrevista laboral", detail: "Búsqueda de empleo y preparación de CV", href: "/cursos/busqueda-de-empleo-y-cv" },
 ];
 
 const communityPillars = [
@@ -63,6 +67,18 @@ export default function HomePage() {
   return (
     <>
       <section className="hero-shell text-white">
+        <Image
+          src={site.coverImage.src}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-10 object-cover opacity-45"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-950 via-brand-950/80 to-brand-950/30"
+        />
         <div className="container-page relative">
           <div className="grid items-center gap-12 py-14 sm:py-18 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:py-20">
             <div className="fade-rise">
@@ -74,9 +90,8 @@ export default function HomePage() {
                 Aprender, crear y transformar.
               </h1>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-                Cursos aplicados, herramientas y recursos para dar tus primeros pasos con un
-                emprendimiento. Una iniciativa educativa de la Escuela Normal Superior N.º 9 de
-                Wanda, abierta a toda la comunidad.
+                Cursos breves, guías y herramientas para emprender o buscar empleo. Gratis, sin
+                registro, creado por la Escuela Normal Superior N.º 9 de Wanda.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -198,7 +213,7 @@ export default function HomePage() {
             </span>
             <h2 className="mt-3 text-base font-extrabold text-brand-950">Aprendé a tu ritmo</h2>
             <p className="mt-1 text-sm leading-relaxed text-muted">
-              Cuatro cursos aplicados, 24 lecciones con entregables y autoevaluaciones con explicaciones.
+              {courses.length} cursos aplicados, {totalLessons} lecciones con entregables y autoevaluaciones con explicaciones.
             </p>
             <span className="link-arrow mt-3">
               Explorar cursos
@@ -249,20 +264,21 @@ export default function HomePage() {
                 Cursos breves para decisiones reales
               </h2>
               <p className="mt-3 text-base leading-relaxed text-body">
-                Contenidos pensados para adultos que quieren empezar o mejorar un emprendimiento,
-                con ejemplos de la vida cotidiana y actividades para aplicar.
+                Contenidos pensados para adultos que quieren emprender, mejorar un negocio o buscar
+                empleo, con ejemplos de la vida cotidiana y actividades para aplicar.
               </p>
             </div>
             <Link href="/cursos" className="link-arrow shrink-0">
-              Ver los cuatro cursos
+              Ver todos los cursos
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {courses.map((course, index) => (
               <CourseCard key={course.id} course={toCourseCardData(course)} index={index} />
             ))}
+            <CourseFinderCard />
           </div>
         </div>
       </section>
@@ -566,6 +582,56 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="section-soft py-16 sm:py-20" aria-labelledby="employment-home-title">
+        <div className="container-page grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p className="eyebrow">Oficina de Empleo de Wanda</p>
+            <h2 id="employment-home-title" className="mt-2 text-3xl font-extrabold text-brand-950 sm:text-4xl">
+              Capacitación, orientación y programas de empleo
+            </h2>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-body">
+              La escuela propone que la Dirección de Oficina de Empleo y Proyectos de la
+              Municipalidad de Wanda use el campus como recurso educativo en sus programas. Para eso
+              organizamos rutas formativas por programa: búsqueda de empleo, entrenamiento, empleo
+              independiente, unidades productivas, intercosecha y oficios.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/oficina-de-empleo" className="btn btn-primary">
+                <Briefcase className="h-4 w-4" aria-hidden="true" />
+                Ver oficina de empleo
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link href="/oficina-de-empleo/rutas" className="btn btn-secondary">
+                Rutas por programa
+              </Link>
+              <Link href="/propuesta" className="btn btn-ghost">
+                Leer la propuesta
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+          <div className="grid gap-3">
+            {site.employmentPrograms.slice(0, 4).map((program) => (
+              <a
+                key={program.name}
+                href={program.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-white p-4 shadow-card transition hover:border-brand-200 hover:shadow-lift"
+              >
+                <span className="min-w-0">
+                  <span className="block text-sm font-extrabold text-brand-950 group-hover:text-brand-800">
+                    {program.name}
+                  </span>
+                  <span className="mt-0.5 line-clamp-1 block text-xs text-muted">{program.description}</span>
+                </span>
+                <ExternalLink className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:text-brand-800" aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

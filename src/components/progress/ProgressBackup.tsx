@@ -102,7 +102,7 @@ export function ProgressBackup({ courses }: ProgressBackupProps) {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `normal9-impulsa-progreso-${new Date().toISOString().slice(0, 10)}.json`;
+      link.download = `campus-emprendedor-progreso-${new Date().toISOString().slice(0, 10)}.json`;
       document.body.appendChild(link);
       link.click();
       link.remove();

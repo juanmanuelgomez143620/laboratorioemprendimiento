@@ -16,6 +16,7 @@ import {
 import { PageHeader } from "@/components/ui/PageHeader";
 import { LocalDataNotice } from "@/components/ui/LocalDataNotice";
 import { CourseCard } from "@/components/courses/CourseCard";
+import { CourseFinderCard } from "@/components/courses/CourseFinderCard";
 import { courses, totalLearningMinutes, totalLessons } from "@/content/courses";
 import { toCourseCardData } from "@/lib/presentation";
 import { formatDuration } from "@/lib/utils";
@@ -23,7 +24,7 @@ import { formatDuration } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Cursos",
   description:
-    "Cuatro cursos aplicados para iniciar o mejorar un emprendimiento: primer emprendimiento, costos y precios, marca e identidad, y herramientas digitales.",
+    `${courses.length} cursos aplicados para emprender y buscar empleo: primer emprendimiento, costos y precios, marca e identidad, herramientas digitales, y búsqueda de empleo y CV.`,
 };
 
 const routeSteps = [
@@ -57,7 +58,7 @@ const howItWorks = [
   {
     icon: BookOpen,
     title: "Leé a tu ritmo",
-    body: "Cada curso tiene seis lecciones, ejemplos ficticios identificados, actividades y un entregable final para aplicar a tu propio proyecto.",
+    body: "Cada curso tiene entre cinco y seis lecciones, ejemplos ficticios identificados, actividades y un entregable final para aplicar a tu propio proyecto.",
   },
   {
     icon: Target,
@@ -78,7 +79,7 @@ export default function CoursesPage() {
         tone="dark"
         eyebrow="Aula virtual"
         title="Cursos para emprender, paso a paso"
-        description="Cuatro recorridos aplicados y conectados entre sí. No necesitás cuenta ni conocimientos previos: elegí un curso, leé las lecciones, usá las herramientas y comprobá lo aprendido con una autoevaluación."
+        description="Recorridos aplicados y conectados entre sí, para emprender o para buscar empleo. No necesitás cuenta ni conocimientos previos: elegí un curso, leé las lecciones, usá las herramientas y comprobá lo aprendido con una autoevaluación."
         breadcrumbs={[{ label: "Inicio", href: "/" }, { label: "Cursos" }]}
         actions={
           <>
@@ -120,7 +121,7 @@ export default function CoursesPage() {
             <div className="max-w-2xl">
               <p className="eyebrow">Elegí tu punto de partida</p>
               <h2 id="courses-list-title" className="mt-2 text-3xl font-extrabold text-brand-950 sm:text-4xl">
-                Cuatro cursos, una ruta posible
+                {courses.length} cursos, dos rutas posibles
               </h2>
               <p className="mt-3 text-base leading-relaxed text-body">
                 Podés hacerlos en orden o entrar directamente al que necesitás. Cada uno se sostiene
@@ -133,10 +134,11 @@ export default function CoursesPage() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {courses.map((course, index) => (
               <CourseCard key={course.id} course={toCourseCardData(course)} index={index} />
             ))}
+            <CourseFinderCard />
           </div>
         </div>
       </section>

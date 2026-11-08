@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Briefcase,
   Calculator,
   ClipboardList,
   Download,
@@ -20,6 +21,7 @@ const categoryIcons: Record<ResourceCategoryId, LucideIcon> = {
   marketing: Palette,
   herramientas: Laptop,
   planificacion: ClipboardList,
+  empleo: Briefcase,
 };
 
 const categoryTints: Record<ResourceCategoryId, string> = {
@@ -28,6 +30,7 @@ const categoryTints: Record<ResourceCategoryId, string> = {
   marketing: "bg-cyan-50 text-cyan-900 ring-cyan-100",
   herramientas: "bg-slate-100 text-slate-800 ring-slate-200",
   planificacion: "bg-brand-100/70 text-brand-900 ring-brand-200",
+  empleo: "bg-sea-50 text-sea-800 ring-sea-100",
 };
 
 export function ResourceCard({ resource }: { resource: ResourceSummary }) {

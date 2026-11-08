@@ -15,10 +15,14 @@ const campusLinks = [
 ];
 
 const institutionalLinks = [
+  { href: "/oficina-de-empleo", label: "Oficina de Empleo" },
+  { href: "/oficina-de-empleo/rutas", label: "Rutas por programa de empleo" },
+  { href: "/propuesta", label: "Propuesta a la Municipalidad" },
   { href: "/proyecto", label: "Sobre el proyecto" },
   { href: "/aula-taller", label: "Potencial del Aula-Taller" },
   { href: "/jornadas", label: "Jornadas de formación" },
   { href: "/privacidad", label: "Privacidad y accesibilidad" },
+  { href: "/creditos", label: "Créditos y autoría" },
 ];
 
 export function SiteFooter() {
@@ -65,6 +69,23 @@ export function SiteFooter() {
                   {inst.website}
                 </a>
               </p>
+              <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.04] p-3.5">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-sea-300">
+                  Oficina de Empleo · Wanda
+                </p>
+                <p className="mt-1.5 text-xs leading-relaxed text-white/60">
+                  {site.employmentOffice.address}
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-white/60">
+                  Tel. {site.employmentOffice.phone} · {site.employmentOffice.hours}
+                </p>
+                <Link
+                  href="/oficina-de-empleo"
+                  className="mt-2 inline-flex text-xs font-bold text-sea-300 underline underline-offset-4 hover:text-white"
+                >
+                  Ver servicios y programas
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -100,9 +121,6 @@ export function SiteFooter() {
               >
                 Política de privacidad y términos de uso
               </a>
-            </p>
-            <p className="mt-4 text-xs leading-relaxed text-white/60">
-              {inst.exclusiveNotice}
             </p>
           </div>
         </div>
@@ -204,8 +222,18 @@ export function SiteFooter() {
               oficial.
             </p>
             <div className="mt-6 flex flex-col gap-2 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-              <p>© {year} Campus Emprendedor. Uso educativo.</p>
-              <p>Hecho para aprender, crear y transformar.</p>
+              <p>
+                © {year} Campus Emprendedor · {inst.shortName} de Wanda. Autoría:{" "}
+                <Link href="/creditos" className="font-bold text-white/75 underline-offset-4 hover:text-white hover:underline">
+                  {site.author.name}
+                </Link>
+                .
+              </p>
+              <p>
+                <Link href="/creditos" className="hover:text-white hover:underline">
+                  Créditos
+                </Link>
+              </p>
             </div>
           </div>
         </div>

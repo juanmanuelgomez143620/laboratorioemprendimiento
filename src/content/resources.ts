@@ -870,6 +870,273 @@ export const resources: Resource[] = [
       "herramientas-digitales-para-mi-negocio",
     ],
   },
+  {
+    id: "guia-cv-laboral",
+    slug: "guia-cv-laboral",
+    title: "Guía para armar un CV claro",
+    description:
+      "Una guía paso a paso para construir un currículum legible, honesto y adaptado a la oferta, sin exagerar ni omitir datos relevantes.",
+    category: "empleo",
+    type: "Guía",
+    tags: ["CV", "currículum", "postulación", "empleo", "perfil profesional"],
+    useCase:
+      "Consultala antes de enviar tu primera postulación o cuando necesites actualizar tu CV para una nueva búsqueda.",
+    content: [
+      {
+        type: "paragraph",
+        text: "El CV es un documento de trabajo: su objetivo es que una persona decida, en pocos segundos, si vale la pena entrevistarte. No es tu autobiografía ni una lista de todo lo que sabés hacer. Es una selección ordenada de la información que ayuda a entender tu perfil y tu adecuación a un puesto.",
+      },
+      {
+        type: "callout",
+        variant: "info",
+        title: "Antes de empezar",
+        text: "Reuní las fechas de tus experiencias, los nombres de las organizaciones, las funciones principales y los datos de contacto de referencias. Si no recordás una fecha exacta, usá mes y año y marcá que es aproximado.",
+      },
+      {
+        type: "heading",
+        text: "Estructura recomendada",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Datos de contacto: nombre, teléfono, correo y ciudad.",
+          "Perfil breve: dos o tres líneas sobre quién sos y qué buscás.",
+          "Experiencia laboral: de la más reciente a la más antigua.",
+          "Formación: estudios formales y cursos relevantes.",
+          "Habilidades: herramientas, idiomas y competencias verificables.",
+          "Otros datos: disponibilidad, movilidad, referencias (solo si se piden).",
+        ],
+      },
+      {
+        type: "table",
+        caption: "Bloques de un CV claro",
+        headers: ["Bloque", "Qué incluir", "Qué evitar"],
+        rows: [
+          ["Perfil", "Dos o tres líneas con tu objetivo profesional.", "Frases genéricas como «trabajador responsable»."],
+          ["Experiencia", "Puesto, organización, fechas y tareas principales.", "Listas interminables sin orden."],
+          ["Formación", "Título, institución y año de egreso o en curso.", "Cursos irrelevantes o sin fecha."],
+          ["Habilidades", "Herramientas, idiomas y competencias con nivel.", "Atributos no verificables."],
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Revisión antes de enviar",
+        items: [
+          "No hay errores de ortografía ni datos contradictorios.",
+          "Las fechas son consistentes y están en el mismo formato.",
+          "El correo es profesional y está activo.",
+          "El CV tiene entre una y dos páginas.",
+          "La información se adapta al puesto al que te postulás.",
+          "No incluye datos sensibles que no se pidan (DNI, domicilio completo, salud).",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Honestidad y verificación",
+        text: "No inventes títulos, fechas o responsabilidades. Muchas organizaciones verifican la información. Un CV honesto y claro vale más que uno inflado que no se puede sostener en una entrevista.",
+      },
+    ],
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "plantilla-cv-simple",
+    slug: "plantilla-cv-simple",
+    title: "Plantilla simple de CV",
+    description:
+      "Un modelo de CV en texto para completar con tus datos, ordenar tu experiencia y preparar una versión adaptable a distintas postulaciones.",
+    category: "empleo",
+    type: "Plantilla",
+    tags: ["CV", "plantilla", "postulación", "formato"],
+    useCase:
+      "Usala como base para tu primer CV o para reordenar uno que ya tenés.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Esta plantilla es un punto de partida. Completala con datos reales y guardá una versión maestra. Para cada postulación, hacé una copia y ajustá el perfil y las habilidades al puesto.",
+      },
+      {
+        type: "fields",
+        title: "Datos de contacto",
+        items: [
+          { label: "Nombre y apellido", lines: 1 },
+          { label: "Teléfono", lines: 1 },
+          { label: "Correo electrónico", lines: 1 },
+          { label: "Ciudad y provincia", lines: 1 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "Perfil profesional",
+        items: [
+          { label: "Dos o tres líneas sobre tu perfil y objetivo", lines: 3 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "Experiencia laboral (de la más reciente a la más antigua)",
+        items: [
+          { label: "Puesto — Organización — Fechas", lines: 1 },
+          { label: "Tareas principales", lines: 3 },
+          { label: "Logro o aprendizaje concreto", lines: 2 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "Formación",
+        items: [
+          { label: "Título — Institución — Año", lines: 1 },
+          { label: "Cursos o capacitaciones relevantes", lines: 2 },
+        ],
+      },
+      {
+        type: "fields",
+        title: "Habilidades",
+        items: [
+          { label: "Herramientas, idiomas y competencias con nivel", lines: 3 },
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Una versión por postulación",
+        text: "No envíes el mismo CV a todos los puestos. Ajustá el perfil, el orden de la experiencia y las habilidades destacadas según cada oferta. Guardá cada versión con un nombre que identifique la empresa y la fecha.",
+      },
+    ],
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "guia-entrevista-laboral",
+    slug: "guia-entrevista-laboral",
+    title: "Guía para preparar una entrevista laboral",
+    description:
+      "Cómo investigar el puesto, anticipar preguntas, preparar ejemplos y manejar la entrevista con calma y honestidad.",
+    category: "empleo",
+    type: "Guía",
+    tags: ["entrevista", "empleo", "postulación", "comunicación"],
+    useCase:
+      "Consultala los días previos a una entrevista y usá la checklist para prepararte.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Una entrevista laboral es una conversación para verificar si tu perfil y el puesto encajan. No es un examen para atraparte: es un intercambio. La preparación reduce la ansiedad y mejora la claridad de tus respuestas.",
+      },
+      {
+        type: "heading",
+        text: "Antes de la entrevista",
+        level: 2,
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: [
+          "Leé la oferta y anotá las tareas principales y los requisitos.",
+          "Investigá la organización: qué hace, a quiénes sirve y cómo se presenta.",
+          "Prepará dos o tres ejemplos concretos de tu experiencia (problema, acción, resultado).",
+          "Definí qué querés saber vos: horario, tareas, equipo, capacitación.",
+          "Confirmá fecha, hora, lugar o enlace y cómo llegar.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Preguntas frecuentes",
+        level: 2,
+      },
+      {
+        type: "table",
+        caption: "Preguntas y cómo responderlas",
+        headers: ["Pregunta", "Qué evalúa", "Cómo responder"],
+        rows: [
+          ["Contame sobre vos.", "Claridad y foco.", "Resumen breve de tu perfil y por qué te interesa el puesto."],
+          ["¿Por qué querés este trabajo?", "Motivación.", "Conectá tus habilidades con las necesidades del puesto."],
+          ["¿Cuál es tu principal debilidad?", "Autoconocimiento.", "Nombrá algo real y cómo lo estás mejorando."],
+          ["¿Dónde te ves en unos años?", "Proyección.", "Objetivos realistas vinculados al crecimiento."],
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Checklist del día",
+        items: [
+          "Llegué o me conecté con tiempo.",
+          "Tengo una copia del CV y los datos de la oferta.",
+          "Vestimenta adecuada al rubro y la organización.",
+          "Teléfono en silencio.",
+          "Escuché antes de responder y pedí aclaraciones si no entendí.",
+          "Al final, pregunté los próximos pasos y los tiempos.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Después de la entrevista",
+        text: "Anotá lo que te preguntaron y cómo respondiste. Eso te ayuda a mejorar para la próxima. Si no te seleccionan, pedí (con respeto) una devolución: muchas organizaciones la dan.",
+      },
+    ],
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "checklist-documentacion-empleo",
+    slug: "checklist-documentacion-empleo",
+    title: "Checklist de documentación para buscar empleo",
+    description:
+      "Una lista de verificación para reunir documentos, datos y referencias antes de postularte o ingresar a un trabajo.",
+    category: "empleo",
+    type: "Lista de verificación",
+    tags: ["documentación", "empleo", "postulación", "ingreso"],
+    useCase:
+      "Usala al empezar una búsqueda laboral o antes de firmar un ingreso.",
+    content: [
+      {
+        type: "paragraph",
+        text: "Tener la documentación ordenada reduce demoras y evita perder oportunidades. No todas las organizaciones piden lo mismo, pero esta lista cubre lo más frecuente. Guardá copias en un mismo lugar y no compartas datos sensibles por canales abiertos.",
+      },
+      {
+        type: "checklist",
+        title: "Documentos personales",
+        items: [
+          "DNI (original y copia).",
+          "Constancia de CUIL/CUIT.",
+          "Certificado de domicilio actualizado.",
+          "Foto tipo carnet (si se solicita).",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Formación y experiencia",
+        items: [
+          "Título o certificado de estudios (original y copia).",
+          "Certificados de cursos o capacitaciones relevantes.",
+          "Constancias de trabajo o referencias laborales.",
+          "CV actualizado en formato PDF.",
+        ],
+      },
+      {
+        type: "checklist",
+        title: "Datos para el ingreso",
+        items: [
+          "Datos bancarios para depósito de haberes (si se piden).",
+          "Obra social o sistema de salud (según corresponda).",
+          "Contacto de emergencia.",
+          "Disponibilidad horaria y de movilidad.",
+        ],
+      },
+      {
+        type: "callout",
+        variant: "warning",
+        title: "Privacidad y seguridad",
+        text: "No envíes fotos de tu DNI ni datos bancarios por redes sociales abiertas. Verificá el canal oficial de la organización y preguntá cómo prefieren recibir la documentación.",
+      },
+      {
+        type: "callout",
+        variant: "tip",
+        title: "Un solo lugar",
+        text: "Creá una carpeta digital con subcarpetas para personales, formación y laboral. Renombrá los archivos con fecha y contenido. Así podés responder rápido cuando te lo pidan.",
+      },
+    ],
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
 ];
 
 export function getResourceBySlug(slug: string): Resource | undefined {

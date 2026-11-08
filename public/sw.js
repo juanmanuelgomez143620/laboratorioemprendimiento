@@ -1,10 +1,10 @@
 /**
- * Service worker mínimo para NORMAL 9 IMPULSA.
+ * Service worker mínimo para Campus Emprendedor.
  * - Las páginas se piden primero a la red y, si falla, se usa la copia en caché.
  * - Los recursos estáticos con nombre versionado se sirven desde caché.
  * - No se cachean datos personales: el progreso vive en localStorage, no en la red.
  */
-const CACHE_NAME = "normal9-impulsa-v4";
+const CACHE_NAME = "campus-emprendedor-v7";
 const PRECACHE_URLS = [
   "/",
   "/cursos",
@@ -13,6 +13,10 @@ const PRECACHE_URLS = [
   "/preguntas-frecuentes",
   "/herramientas",
   "/herramientas/diagnostico",
+  "/oficina-de-empleo",
+  "/oficina-de-empleo/rutas",
+  "/propuesta",
+  "/creditos",
   "/jornadas",
   "/proyecto",
   "/aula-taller",
@@ -36,6 +40,9 @@ const PRECACHE_URLS = [
   "/cursos/herramientas-digitales-para-mi-negocio",
   "/cursos/herramientas-digitales-para-mi-negocio/lecciones/organizacion-digital",
   "/cursos/herramientas-digitales-para-mi-negocio/evaluacion",
+  "/cursos/busqueda-de-empleo-y-cv",
+  "/cursos/busqueda-de-empleo-y-cv/lecciones/mercado-laboral-perfil",
+  "/cursos/busqueda-de-empleo-y-cv/evaluacion",
 ];
 
 self.addEventListener("install", (event) => {
@@ -70,7 +77,7 @@ function isStaticAsset(url) {
 
 function offlineFallback() {
   return new Response(
-    `<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sin conexión · NORMAL 9 IMPULSA</title><style>body{font-family:system-ui,sans-serif;background:#f6fafc;color:#071f43;margin:0;display:grid;min-height:100vh;place-items:center;padding:24px}main{max-width:34rem;background:#fff;border:1px solid #dbe6ef;border-radius:20px;padding:32px;box-shadow:0 24px 48px -28px rgba(7,31,67,.32)}h1{font-size:1.7rem;line-height:1.15;margin:0 0 12px}p{line-height:1.7;color:#3f5870}a{display:inline-block;margin-top:16px;background:#0c3168;color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px}</style></head><body><main><h1>Sin conexión</h1><p>No pudimos cargar esta página en este momento. El campus necesita conexión para las páginas que todavía no están guardadas en tu navegador.</p><p>Tu progreso local no se pierde. Cuando vuelvas a tener conexión, podés retomar el curso donde lo dejaste.</p><a href="/">Volver al inicio</a></main></body></html>`,
+    `<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sin conexión · Campus Emprendedor</title><style>body{font-family:system-ui,sans-serif;background:#f6fafc;color:#071f43;margin:0;display:grid;min-height:100vh;place-items:center;padding:24px}main{max-width:34rem;background:#fff;border:1px solid #dbe6ef;border-radius:20px;padding:32px;box-shadow:0 24px 48px -28px rgba(7,31,67,.32)}h1{font-size:1.7rem;line-height:1.15;margin:0 0 12px}p{line-height:1.7;color:#3f5870}a{display:inline-block;margin-top:16px;background:#0c3168;color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px}</style></head><body><main><h1>Sin conexión</h1><p>No pudimos cargar esta página en este momento. El campus necesita conexión para las páginas que todavía no están guardadas en tu navegador.</p><p>Tu progreso local no se pierde. Cuando vuelvas a tener conexión, podés retomar el curso donde lo dejaste.</p><a href="/">Volver al inicio</a></main></body></html>`,
     { headers: { "Content-Type": "text/html; charset=utf-8" } },
   );
 }

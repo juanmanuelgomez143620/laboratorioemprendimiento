@@ -26,6 +26,11 @@ export const resourceCategories: ResourceCategory[] = [
     label: "Planificación de emprendimientos",
     description: "Modelos simples para convertir una idea en pasos concretos.",
   },
+  {
+    id: "empleo",
+    label: "Empleo y carrera",
+    description: "Recursos para buscar trabajo, preparar un CV y afrontar entrevistas.",
+  },
 ];
 
 export function getResourceCategory(id: ResourceCategory["id"]): ResourceCategory {

@@ -3,12 +3,14 @@ import { miPrimerEmprendimiento } from "./mi-primer-emprendimiento";
 import { costosYPrecios } from "./costos-y-precios";
 import { marcaIdentidad } from "./marca-identidad";
 import { herramientasDigitales } from "./herramientas-digitales";
+import { busquedaDeEmpleo } from "./busqueda-de-empleo";
 
 export const courses: Course[] = [
   miPrimerEmprendimiento,
   costosYPrecios,
   marcaIdentidad,
   herramientasDigitales,
+  busquedaDeEmpleo,
 ];
 
 export function getCourseBySlug(slug: string): Course | undefined {

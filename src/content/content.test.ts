@@ -223,3 +223,21 @@ describe("identidad institucional", () => {
     );
   });
 });
+
+describe("rutas para la Oficina de Empleo", () => {
+  it("tienen identificadores únicos y todas sus referencias existen", async () => {
+    const { employmentRoutes } = await import("@/content/employment-routes");
+    const { resolveRouteStep } = await import("@/lib/employment-routes");
+
+    expect(employmentRoutes.length).toBeGreaterThanOrEqual(4);
+    expect(new Set(employmentRoutes.map((route) => route.id)).size).toBe(employmentRoutes.length);
+
+    for (const route of employmentRoutes) {
+      expect(route.programs.length, route.id).toBeGreaterThan(0);
+      expect(route.steps.length, route.id).toBeGreaterThanOrEqual(3);
+      for (const step of route.steps) {
+        expect(resolveRouteStep(step), `${route.id}: ${JSON.stringify(step)}`).not.toBeNull();
+      }
+    }
+  });
+});

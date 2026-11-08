@@ -11,9 +11,10 @@ export interface BreadcrumbItem {
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
   className?: string;
+  dark?: boolean;
 }
 
-export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className, dark = false }: BreadcrumbsProps) {
   return (
     <nav aria-label="Migas de pan" className={cn("text-sm text-muted", className)}>
       <ol className="flex flex-wrap items-center gap-1.5">
@@ -25,11 +26,11 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
                 <ChevronRight className="h-3.5 w-3.5 shrink-0 text-slate-400" aria-hidden="true" />
               )}
               {item.href && !isLast ? (
-                <Link className="rounded font-medium hover:text-brand-800 hover:underline" href={item.href}>
+                <Link className={cn("rounded font-medium hover:underline", dark ? "hover:text-white" : "hover:text-brand-800")} href={item.href}>
                   {item.label}
                 </Link>
               ) : (
-                <span className={isLast ? "font-semibold text-brand-950" : undefined} aria-current={isLast ? "page" : undefined}>
+                <span className={isLast ? cn("font-semibold", dark ? "text-white" : "text-brand-950") : undefined} aria-current={isLast ? "page" : undefined}>
                   {item.label}
                 </span>
               )}
@@ -67,7 +68,7 @@ export function PageHeader({
       className={cn(
         "relative overflow-hidden border-b",
         dark
-          ? "border-white/10 bg-brand-950 text-white"
+          ? "print-invert border-white/10 bg-brand-950 text-white"
           : "border-line bg-white",
       )}
     >
@@ -83,7 +84,7 @@ export function PageHeader({
         />
       )}
       <div className="container-page relative py-8 sm:py-10 lg:py-12">
-        {breadcrumbs && <Breadcrumbs items={breadcrumbs} className={cn("mb-6", dark && "text-white/65")} />}
+        {breadcrumbs && <Breadcrumbs items={breadcrumbs} className={cn("mb-6", dark && "text-white/65")} dark={dark} />}
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-3xl">
             <p className={cn("eyebrow", dark && "eyebrow-on-dark")}>{eyebrow}</p>

@@ -190,8 +190,8 @@ export default function PrivacyPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-body">
                 El campus enlaza a CostoClaro y a Yo Emprendedor. Al abrirlos, salís de este sitio y
-                se aplican las condiciones y políticas de privacidad de cada plataforma. NORMAL 9
-                IMPULSA no administra esas aplicaciones ni recibe los datos que cargues en ellas.
+                se aplican las condiciones y políticas de privacidad de cada plataforma. Campus
+                Emprendedor no administra esas aplicaciones ni recibe los datos que cargues en ellas.
               </p>
               <div className="mt-4 flex flex-col gap-2 text-sm">
                 <a

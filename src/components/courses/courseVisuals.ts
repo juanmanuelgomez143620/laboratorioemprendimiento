@@ -1,4 +1,4 @@
-import { Calculator, Laptop, Lightbulb, Palette, type LucideIcon } from "lucide-react";
+import { Briefcase, Calculator, Laptop, Lightbulb, Palette, type LucideIcon } from "lucide-react";
 import type { CourseAccent, CourseIcon } from "@/types/course";
 
 export const courseIconMap: Record<CourseIcon, LucideIcon> = {
@@ -6,6 +6,7 @@ export const courseIconMap: Record<CourseIcon, LucideIcon> = {
   calculator: Calculator,
   palette: Palette,
   laptop: Laptop,
+  briefcase: Briefcase,
 };
 
 export const accentStyles: Record<

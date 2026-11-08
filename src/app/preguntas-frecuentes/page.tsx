@@ -274,6 +274,52 @@ const faqGroups = [
       },
     ],
   },
+  {
+    id: "empleo",
+    title: "Empleo y oficina de empleo",
+    description: "Cómo se conecta el campus con la Oficina de Empleo de Wanda y los programas nacionales.",
+    items: [
+      {
+        id: "que-es-oficina-empleo",
+        question: "¿Qué es la Oficina de Empleo de Wanda?",
+        answer: (
+          <p>
+            Es la Dirección de Oficina de Empleo y Proyectos de la Municipalidad de Wanda. Lleva
+            adelante programas de empleo nacionales y proyectos comunitarios. Podés ver su página en{" "}
+            <Link href="/oficina-de-empleo" className="link-inline">
+              Oficina de Empleo
+            </Link>
+            .
+          </p>
+        ),
+      },
+      {
+        id: "campus-y-oficina",
+        question: "¿El campus garantiza un empleo o una vacante?",
+        answer: (
+          <p>
+            No. El campus ofrece formación y herramientas; la oficina gestiona programas y orientación.
+            La vinculación entre ambas es una propuesta en desarrollo y no implica convenios ni
+            financiamiento confirmados.
+          </p>
+        ),
+      },
+      {
+        id: "programas-nacionales",
+        question: "¿Dónde consulto los programas nacionales (Fomentar Empleo, PIL, etc.)?",
+        answer: (
+          <p>
+            En la página{" "}
+            <Link href="/oficina-de-empleo" className="link-inline">
+              Oficina de Empleo
+            </Link>{" "}
+            encontrarás los enlaces oficiales a cada programa. El campus no administra esos programas ni
+            sus datos.
+          </p>
+        ),
+      },
+    ],
+  },
 ] as const;
 
 export default function FrequentlyAskedQuestionsPage() {

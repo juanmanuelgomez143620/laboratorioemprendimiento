@@ -43,7 +43,7 @@ export type ContentBlock =
   | { type: "quote"; text: string; source?: string };
 
 export type CourseAccent = "azul" | "verde" | "celeste" | "profundo";
-export type CourseIcon = "lightbulb" | "calculator" | "palette" | "laptop";
+export type CourseIcon = "lightbulb" | "calculator" | "palette" | "laptop" | "briefcase";
 
 export interface Lesson {
   id: string;

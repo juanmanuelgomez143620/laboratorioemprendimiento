@@ -135,7 +135,7 @@ export default function GlossaryPage() {
                 </Link>
                 <Link href="/cursos" className="link-arrow text-sm">
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  Los cuatro cursos
+                  Todos los cursos
                 </Link>
               </div>
             </section>

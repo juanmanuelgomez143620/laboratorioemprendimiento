@@ -2,6 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const crestSizes = {
+  xs: { box: "h-12 w-10", sizes: "40px" },
   sm: { box: "h-20 w-[66px]", sizes: "66px" },
   md: { box: "h-28 w-[93px]", sizes: "93px" },
   lg: { box: "h-44 w-[145px]", sizes: "145px" },

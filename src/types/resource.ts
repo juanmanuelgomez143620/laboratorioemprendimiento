@@ -5,7 +5,8 @@ export type ResourceCategoryId =
   | "costos"
   | "marketing"
   | "herramientas"
-  | "planificacion";
+  | "planificacion"
+  | "empleo";
 
 export interface ResourceCategory {
   id: ResourceCategoryId;

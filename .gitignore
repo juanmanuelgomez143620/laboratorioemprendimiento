@@ -33,3 +33,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# imagenes de trabajo sueltas (la version usada vive en public/institucional)
+/Captura de pantalla*.png
+/escudo_de_la_escuela-removebg-preview.png
+/Laboratorio de inform*.png

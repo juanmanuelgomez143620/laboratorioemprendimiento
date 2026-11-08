@@ -38,6 +38,12 @@ export const glossaryCategories: GlossaryCategory[] = [
     description:
       "Términos para organizar canales, medir resultados y usar tecnología con criterios claros.",
   },
+  {
+    id: "empleo-carrera",
+    title: "Empleo y carrera",
+    description:
+      "Palabras frecuentes en la búsqueda de trabajo, la postulación y la relación laboral.",
+  },
 ];
 
 export const glossaryTerms: GlossaryTerm[] = [
@@ -292,6 +298,78 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "Criterio de trabajo que consiste en pedir solo los datos necesarios, protegerlos y permitir que la persona los elimine cuando quiera.",
     relatedCourseSlugs: ["herramientas-digitales-para-mi-negocio"],
+  },
+  {
+    id: "cv",
+    term: "CV (currículum vitae)",
+    category: "empleo-carrera",
+    definition:
+      "Documento que resume tu perfil, experiencia y formación para una postulación laboral.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "carta-de-presentacion",
+    term: "Carta de presentación",
+    category: "empleo-carrera",
+    definition:
+      "Texto breve que acompaña al CV y explica por qué te interesa el puesto y qué aportás.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "postulacion",
+    term: "Postulación",
+    category: "empleo-carrera",
+    definition:
+      "Acción de presentar tu candidatura a un puesto, incluyendo CV, carta y documentación solicitada.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "entrevista-laboral",
+    term: "Entrevista laboral",
+    category: "empleo-carrera",
+    definition:
+      "Conversación entre candidato y empleador para verificar el encaje entre el perfil y el puesto.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "habilidades-blandas",
+    term: "Habilidades blandas",
+    category: "empleo-carrera",
+    definition:
+      "Competencias interpersonales y de comportamiento, como comunicación, trabajo en equipo y puntualidad.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "habilidades-tecnicas",
+    term: "Habilidades técnicas",
+    category: "empleo-carrera",
+    definition:
+      "Conocimientos y destrezas específicas de un oficio o profesión, demostrables con experiencia o certificados.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "relacion-de-dependencia",
+    term: "Relación de dependencia",
+    category: "empleo-carrera",
+    definition:
+      "Vínculo laboral en el que una persona trabaja bajo la dirección y control de un empleador.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "referencia-laboral",
+    term: "Referencia laboral",
+    category: "empleo-carrera",
+    definition:
+      "Persona o institución que puede dar cuenta de tu desempeño y experiencia en un trabajo anterior.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
+  },
+  {
+    id: "orientacion-laboral",
+    term: "Orientación laboral",
+    category: "empleo-carrera",
+    definition:
+      "Acompañamiento para ordenar la búsqueda de empleo, identificar habilidades y definir próximos pasos.",
+    relatedCourseSlugs: ["busqueda-de-empleo-y-cv"],
   },
 ];
 

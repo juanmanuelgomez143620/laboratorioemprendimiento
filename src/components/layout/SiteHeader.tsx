@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, BookOpen, Menu, X } from "lucide-react";
 import { site } from "@/content/site";
 import { ConnectionStatus } from "@/components/ui/ConnectionStatus";
+import { InstitutionalCrest } from "@/components/ui/InstitutionalCrest";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
@@ -59,6 +60,12 @@ export function SiteHeader() {
           <div className="ml-auto flex items-center gap-4">
             <ConnectionStatus />
             <Link
+              href="/propuesta"
+              className="hidden items-center gap-1.5 rounded font-bold text-sea-200 transition hover:text-white md:inline-flex"
+            >
+              Propuesta municipal
+            </Link>
+            <Link
               href="/mi-progreso"
               className="inline-flex items-center gap-1.5 rounded font-bold text-white transition hover:text-sea-200"
             >
@@ -70,10 +77,14 @@ export function SiteHeader() {
       </div>
 
       <div className="container-page flex min-h-[72px] items-center justify-between gap-5 py-2">
-        <Logo />
+        <div className="flex min-w-0 items-center gap-3">
+          <Logo />
+          <span className="hidden h-10 w-px bg-line sm:block" aria-hidden="true" />
+          <InstitutionalCrest size="xs" className="hidden sm:inline-flex" />
+        </div>
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-0.5 xl:flex">
-          {site.nav.map((item) => {
+          {site.nav.filter((item) => item.href !== "/").map((item) => {
             const active = isActivePath(pathname, item.href);
             return (
               <Link
@@ -81,7 +92,7 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative rounded-lg px-2.5 py-2 text-[13.5px] font-bold transition",
+                  "relative whitespace-nowrap rounded-lg px-2.5 py-2 text-[13.5px] font-bold transition",
                   active
                     ? "text-brand-950 after:absolute after:inset-x-2.5 after:-bottom-[1px] after:h-0.5 after:rounded-full after:bg-sea-500"
                     : "text-body hover:bg-brand-50 hover:text-brand-900",
@@ -94,7 +105,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/cursos" className="btn btn-primary btn-sm hidden lg:inline-flex">
+          <Link href="/cursos" className="btn btn-primary btn-sm hidden lg:inline-flex xl:hidden 2xl:inline-flex">
             Explorar cursos
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>

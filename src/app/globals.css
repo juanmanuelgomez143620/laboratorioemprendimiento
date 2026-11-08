@@ -555,6 +555,13 @@
     text-decoration: none !important;
   }
 
+  .print-invert,
+  .print-invert * {
+    background: transparent !important;
+    color: #111 !important;
+    border-color: #ccc !important;
+  }
+
   .print-badge {
     border: 1px solid #444 !important;
     background: transparent !important;

@@ -63,6 +63,7 @@ const principles = [
 const currentFacts = [
   "La Escuela Normal Superior N.º 9 es una institución de gestión pública de Wanda, Misiones.",
   "Cuenta con la modalidad Técnico en Gestión y Administración de las Organizaciones (TGA) y un Departamento de Ciencias Económicas.",
+  "La Dirección de Oficina de Empleo y Proyectos de la Municipalidad de Wanda gestiona programas nacionales de empleo y proyectos comunitarios; el campus fue diseñado siguiendo sus lineamientos y se le ofrece como recurso educativo; la escuela lo utiliza en cualquier caso.",
   "El Aula-Taller de Simulación Empresarial N.º 17 fue fortalecida con equipamiento informático adquirido mediante el Programa de Crédito Fiscal INET: diez computadoras nuevas y diez computadoras existentes.",
   "La escuela necesita mejorar su conectividad para el acceso simultáneo a plataformas educativas y herramientas de desarrollo. Es una necesidad identificada, no un financiamiento confirmado.",
 ];
@@ -312,7 +313,7 @@ export default function ProjectPage() {
           </div>
           <ol className="space-y-2.5 rounded-2xl bg-slate-50 p-5">
             {[
-              "Recorré los cuatro cursos a tu ritmo.",
+              "Recorré los cursos a tu ritmo.",
               "Completá el diagnóstico inicial para identificar prioridades.",
               "Descargá o imprimí los recursos que necesites.",
               "Si completás un curso, imprimí tu constancia de demostración.",
