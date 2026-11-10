@@ -241,3 +241,16 @@ describe("rutas para la Oficina de Empleo", () => {
     }
   });
 });
+
+describe("material audiovisual de los cursos", () => {
+  it("usa enlaces HTTPS con título, descripción y proveedor", () => {
+    for (const course of courses) {
+      for (const item of course.media ?? []) {
+        expect(item.href.startsWith("https://"), item.href).toBe(true);
+        expect(item.title.length, course.slug).toBeGreaterThan(0);
+        expect(item.description.length, course.slug).toBeGreaterThan(0);
+        expect(item.provider.length, course.slug).toBeGreaterThan(0);
+      }
+    }
+  });
+});

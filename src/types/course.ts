@@ -90,6 +90,16 @@ export interface CourseProject {
   deliverables: string[];
 }
 
+/** Material audiovisual externo asociado a un curso (video, podcast, cuaderno interactivo). */
+export interface CourseMedia {
+  title: string;
+  description: string;
+  href: string;
+  provider: string;
+  /** Aclaración visible sobre el acceso, por ejemplo si pide iniciar sesión. */
+  note?: string;
+}
+
 export interface Course {
   id: string;
   slug: string;
@@ -109,4 +119,5 @@ export interface Course {
   finalQuiz: FinalQuiz;
   resourceSlugs: string[];
   toolIds: string[];
+  media?: CourseMedia[];
 }

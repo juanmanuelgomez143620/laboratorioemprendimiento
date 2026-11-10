@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Target,
   Users,
+  Video,
   Wrench,
 } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -198,6 +199,45 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 </span>
               </div>
             </section>
+
+            {course.media && course.media.length > 0 && (
+              <section className="card-surface p-5 sm:p-7" aria-labelledby="course-media-title">
+                <p className="eyebrow">Para empezar</p>
+                <h2 id="course-media-title" className="mt-1 text-2xl font-extrabold text-brand-950">
+                  {course.media.length === 1 ? "Video explicativo" : "Videos explicativos"}
+                </h2>
+                <ul className="mt-4 grid gap-3">
+                  {course.media.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-start gap-4 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-4 transition hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-lift sm:p-5"
+                      >
+                        <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-button">
+                          <Video className="h-6 w-6" aria-hidden="true" />
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-base font-extrabold text-brand-950 group-hover:text-brand-800">
+                            {item.title}
+                          </span>
+                          <span className="mt-1 block text-sm leading-relaxed text-body">{item.description}</span>
+                          {item.note && (
+                            <span className="mt-1.5 block text-xs leading-relaxed text-muted">{item.note}</span>
+                          )}
+                          <span className="btn btn-primary btn-sm mt-3">
+                            Ver en {item.provider}
+                            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                          </span>
+                        </span>
+                        <span className="sr-only">(abre en una pestaña nueva)</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             <CourseSyllabus course={toCourseOutlineData(course)} />
 

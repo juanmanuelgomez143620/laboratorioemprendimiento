@@ -681,4 +681,14 @@ export const miPrimerEmprendimiento: Course = {
     "guia-organizacion-administrativa",
   ],
   toolIds: ["diagnostico-emprendedor", "costoclaro"],
+  media: [
+    {
+      title: "Video explicativo: Mi primer emprendimiento",
+      description:
+        "Un resumen audiovisual de las ideas centrales del curso para mirar antes de empezar o para repasar al terminar.",
+      href: "https://notebook.google.com/notebook/62b0adb7-0a58-4061-8f35-c9b56b370bf2",
+      provider: "NotebookLM de Google",
+      note: "Se abre en NotebookLM, fuera del campus. Puede pedir iniciar sesión con una cuenta de Google.",
+    },
+  ],
 };
